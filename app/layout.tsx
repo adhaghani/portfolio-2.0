@@ -36,10 +36,9 @@ export default function RootLayout({
         >
           <Header />
 
-          <main className="p-4  container mx-auto">{children}</main>
+          <main className="container mx-auto">{children}</main>
 
           <Footer />
-          <DotPattern className="-z-10" />
         </ThemeProvider>
       </body>
     </html>
