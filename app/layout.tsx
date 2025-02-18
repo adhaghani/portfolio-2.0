@@ -3,8 +3,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { DotPattern } from "@/components/magicui/dot-pattern";
-import { cn } from "@/lib/utils";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -36,7 +35,7 @@ export default function RootLayout({
         >
           <Header />
 
-          <main className="container mx-auto">{children}</main>
+          <main className="px-4 max-w-6xl mx-auto">{children}</main>
 
           <Footer />
         </ThemeProvider>
