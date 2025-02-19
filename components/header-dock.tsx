@@ -47,9 +47,9 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: UserIcon, label: "About Me" },
-    { href: "#", icon: FolderGit2Icon, label: "Project" }
+    { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/about", icon: UserIcon, label: "About Me" },
+    { href: "/project", icon: FolderGit2Icon, label: "Project" }
   ],
   contact: {
     social: {

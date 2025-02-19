@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 import "./globals.css";
 
@@ -34,10 +35,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-
           <main className="px-4 max-w-6xl mx-auto">{children}</main>
-
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
