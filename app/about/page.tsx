@@ -11,10 +11,9 @@ import {
   TooltipTrigger,
   TooltipContent
 } from "@/components/ui/tooltip";
-import { MailIcon, ArrowRightIcon, LinkIcon } from "lucide-react";
+import { MailIcon, LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magicui/marquee";
-import { Badge } from "@/components/ui/badge";
 import {
   technologies,
   Certificate,
@@ -58,7 +57,7 @@ const page = () => {
           <Marquee className="[--duration:20s]">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
-                <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
+                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="p-4 aspect-video min-h-40 grid place-items-center border shadow rounded-lg">
@@ -80,7 +79,7 @@ const page = () => {
           <Marquee reverse className="[--duration:20s]">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
-                <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
+                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="p-4 aspect-video min-h-40 grid place-items-center border shadow rounded-lg">
@@ -102,7 +101,7 @@ const page = () => {
           <Marquee className="[--duration:20s]">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
-                <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
+                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="p-4 aspect-video min-h-40 grid place-items-center border shadow rounded-lg">
@@ -154,7 +153,7 @@ const page = () => {
         </div>
       </section>
       {/* Education */}
-      <section id="education" className="py-20">
+      <section id="education" className="py-20 px-4">
         <div className="container mx-auto">
           <Text as="h2" className="text-3xl font-bold ">
             Education
@@ -170,7 +169,7 @@ const page = () => {
         </div>
       </section>
       {/* CTA */}
-      <section id="CTA" className="py-20">
+      <section id="CTA" className="py-20 px-4">
         <div className="bg-secondary p-10 rounded-lg shadow flex justify-between gap-4 flex-wrap flex-col lg:flex-row lg:items-center">
           <div className="text-center lg:text-start">
             <Text as="h2">While you're here, View my projects</Text>
@@ -185,7 +184,7 @@ const page = () => {
         </div>
       </section>
       {/* Work */}
-      <section id="work" className="py-20">
+      <section id="work" className="py-20 px-4">
         <div className="container mx-auto">
           <Text as="h2" className="text-3xl font-bold ">
             Work Experience
@@ -201,7 +200,7 @@ const page = () => {
         </div>
       </section>
       {/* Certificate */}
-      <section id="work" className="py-20">
+      <section id="work" className="py-20 px-4">
         <div className="container mx-auto">
           <BlurFade inView>
             <Text as="h2" className="text-3xl font-bold ">
@@ -246,7 +245,7 @@ const page = () => {
         </div>
       </section>
       {/* Contact Section - New Addition */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 px-4">
         <div className="container mx-auto">
           <BlurFade inView>
             <Text as="h2" className="text-3xl font-bold mb-8">

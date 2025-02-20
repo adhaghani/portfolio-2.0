@@ -1,3 +1,5 @@
+"use client";
+
 import { BlurFade } from "./magicui/blur-fade";
 import { Text } from "./ui/text";
 import { Button } from "./ui/button";
@@ -34,7 +36,7 @@ interface EducationProp {
 
 const EducationCard = ({ data }: { data: EducationProp }) => {
   return (
-    <>
+    <div>
       <div className="flex flex-col md:flex-row gap-4">
         <BlurFade inView delay={0.1}>
           <div className="aspect-video rounded-lg bg-secondary grid place-items-center min-w-64">
@@ -73,7 +75,7 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
         </BlurFade>
         <div className="flex flex-wrap gap-2 mt-2">
           {data.relatedCourses.map((course, i) => (
-            <BlurFade inView delay={0.45}>
+            <BlurFade key={i} inView delay={0.45}>
               <Badge variant={"secondary"}>{course}</Badge>
             </BlurFade>
           ))}
@@ -121,7 +123,7 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

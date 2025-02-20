@@ -168,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <div className="py-20">
+      <div className="py-20 px-4 ">
         <Text as="h2" className="mt-2">
           Services
         </Text>
@@ -199,7 +199,7 @@ export default function Home() {
       </div>
 
       {/* Tech */}
-      <div className="py-20 !overflow-hidden">
+      <div className="py-20 px-4 !overflow-hidden">
         <Text as="h2" className="mt-2">
           Technology
         </Text>
@@ -210,7 +210,7 @@ export default function Home() {
           <Marquee className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
-                <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
+                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="p-4 aspect-square size-32 grid place-items-center border shadow rounded-lg">
@@ -257,7 +257,7 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="py-20">
+      <div className="py-20 px-4 ">
         <Text as="h2" className="mt-2">
           Projects
         </Text>
@@ -277,7 +277,7 @@ export default function Home() {
       </div>
 
       {/* Contact Section - New Addition */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 px-4">
         <div className="container mx-auto">
           <BlurFade inView>
             <Text as="h2" className="text-3xl font-bold mb-8">

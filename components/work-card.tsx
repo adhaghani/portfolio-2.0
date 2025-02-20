@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { BlurFade } from "./magicui/blur-fade";
 import { Text } from "./ui/text";
@@ -18,7 +20,7 @@ interface WorkProps {
 
 const WorkCard = ({ data }: { data: WorkProps }) => {
   return (
-    <>
+    <div>
       <div className="flex flex-col md:flex-row gap-4">
         <BlurFade inView delay={0.1}>
           <div className="aspect-video rounded-lg bg-secondary grid place-items-center min-w-64">
@@ -54,14 +56,14 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
           </Text>
         </BlurFade>
         {data.achievement.map((achievement, i) => (
-          <BlurFade inView delay={i === 0 ? 0.3 : i * 0.3}>
-            <li key={i} className="mt-2 ml-5 list-disc">
+          <BlurFade key={i} inView delay={i === 0 ? 0.3 : i * 0.3}>
+            <li className="mt-2 ml-5 list-disc">
               <Text as="p">{achievement}</Text>
             </li>
           </BlurFade>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
