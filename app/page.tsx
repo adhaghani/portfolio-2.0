@@ -21,7 +21,7 @@ import { PaintbrushIcon, CodeIcon, BrushIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magicui/marquee";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
-import { Badge } from "@/components/ui/badge";
+import ProjectCard from "@/components/project-card";
 const Service = [
   {
     icon: <PaintbrushIcon className="inline-block mr-2" />,
@@ -57,7 +57,10 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A modern portfolio website built with Next.js and Tailwind CSS",
-    image: "/projects/portfolio.png",
+    image: {
+      src: "/projects/portfolio.png",
+      alt: "Portfolio Website"
+    },
     link: "https://github.com/yourusername/portfolio",
     technologies: [
       "React",
@@ -71,7 +74,10 @@ const projects = [
     title: "E-commerce Dashboard",
     description:
       "Admin dashboard for managing online store inventory and orders",
-    image: "/projects/dashboard.png",
+    image: {
+      src: "/projects/portfolio.png",
+      alt: "Portfolio Website"
+    },
     link: "https://github.com/yourusername/dashboard",
     technologies: [
       "React",
@@ -84,7 +90,10 @@ const projects = [
   {
     title: "Weather App",
     description: "Real-time weather application with location-based forecasts",
-    image: "/projects/weather.png",
+    image: {
+      src: "/projects/portfolio.png",
+      alt: "Portfolio Website"
+    },
     link: "https://github.com/yourusername/weather-app",
     technologies: [
       "React",
@@ -190,15 +199,15 @@ export default function Home() {
       </div>
 
       {/* Tech */}
-      <div className="py-20">
+      <div className="py-20 !overflow-hidden">
         <Text as="h2" className="mt-2">
           Technology
         </Text>
         <Text as="p" className="text-muted-foreground">
           Technologies I work with.
         </Text>
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-5">
-          <Marquee className="[--duration:20s]">
+        <div className="relative flex flex-col items-center justify-center !overflow-hidden mt-5">
+          <Marquee className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
                 <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
@@ -220,7 +229,7 @@ export default function Home() {
               ))}
             </TooltipProvider>
           </Marquee>
-          <Marquee reverse className="[--duration:20s]">
+          <Marquee reverse className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
                 <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
@@ -258,37 +267,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
           {projects.map((project, i) => (
             <BlurFade inView key={i} delay={i * 0.1}>
-              <Card className="overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
-                <CardHeader className="space-y-4">
-                  <CardTitle>
-                    <Text as="h3">{project.title}</Text>
-                  </CardTitle>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((project, i) => (
-                      <Badge className="w-fit" variant={"secondary"} key={i}>
-                        {project}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    <Text as="p">{project.description}</Text>
-                  </CardDescription>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="mt-4">View Project</Button>
-                  </a>
-                </CardContent>
-              </Card>
+              <ProjectCard data={project} />
             </BlurFade>
           ))}
         </div>

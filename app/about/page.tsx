@@ -4,14 +4,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { Ripple } from "@/components/magicui/ripple";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Tooltip,
   TooltipProvider,
@@ -21,122 +14,15 @@ import {
 import { MailIcon, ArrowRightIcon, LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magicui/marquee";
-import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { Badge } from "@/components/ui/badge";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-const technologies = [
-  { name: "React", icon: "/tech/vercel.svg" },
-  { name: "TypeScript", icon: "/tech/vercel.svg" },
-  { name: "Next.js", icon: "/tech/vercel.svg" },
-  { name: "Tailwind CSS", icon: "/tech/vercel.svg" },
-  { name: "Node.js", icon: "/tech/vercel.svg" },
-  { name: "Git", icon: "/tech/vercel.svg" }
-];
-
-const Education = [
-  {
-    name: "Universiti Teknologi MARA (UiTM)",
-    logo: "/edu/uitm.svg",
-    degree: "Diploma in Computer Science",
-    duration: "October 2022 - February 2025",
-    relatedCoursework: [
-      "Object-Oriented Programming",
-      "Data Structure",
-      "Web and Mobile Development",
-      "Database Design",
-      "Information System Development",
-      "Programming Paradigm",
-      "Calculus",
-      "Probability and Statistic",
-      "Computer Organization",
-      "Discrete Mathematics"
-    ],
-    grade: "3.68/4.00",
-    activities: [
-      {
-        title: "Clubs Joined",
-        detail: [
-          {
-            title: "MARA Youth Technology Computer Club (MYTECC)",
-            date: "October 2023 - January 2025",
-            description:
-              "MYTECC is the Computer Science Faculty Club. Mainly organized activities for the student within the faculty. Program varies from prgoramming competition, to bonding program.",
-            role: "Multimedia Bureau"
-          },
-          {
-            title:
-              "Malaysia Agroentrepreneurial Club for University Student (MyAgrosis)",
-            date: "October 2023 - January 2025",
-            description:
-              "Entrepreneurship club that organized various activities aimed at achieving profit for every program. as lead graphic designer, my role is crucial to achieve our digital marketing goal.",
-            role: "Lead Graphic Designer"
-          },
-          {
-            title: "PhotoMedia Club (PMC)",
-            date: "October 2023 - January 2025",
-            description:
-              "Club mainly focus on photography and videography. My role in the club is to shoot Photo and Video for club program, and outside of club programs.",
-            role: "PhotoVideo Dision"
-          }
-        ]
-      },
-      {
-        title: "Competitions Involvement",
-        detail: [
-          {
-            title: "MYTECC Codevortex: C++ & Java",
-
-            description:
-              "Java & C++ Programming Competition, My team achieved First Place for Java Programming Category."
-          },
-          {
-            title: "CodeAthon UiTM Se-Malaysia 2024",
-
-            description:
-              "C++ Programming Competition that my team achieved third-runner up placement."
-          },
-          {
-            title: "i-CPROM 2023",
-            description:
-              "My first ever programming competition organized by UiTM, my team achieved 13th runner up in the competition."
-          }
-        ]
-      },
-      {
-        title: "Volunteers",
-        detail: [
-          {
-            title: "JPJPP 23-24 Election Committe",
-            date: "January 2024",
-            description:
-              "Election Committee, Mainly Responsible to manage election season. As lead multimedia, i am responsible to manage and deliver content in a timely manner.",
-            role: "Lead Mutlimedia Team"
-          }
-        ]
-      }
-    ]
-  }
-];
-
-const Work = [
-  {
-    name: "AbleAce Raakin Sdn. Bhd.",
-    logo: "/work/AAR.svg",
-    duration: "September 2024 - February 2025",
-    type: "Intenrship",
-    role: "Junior IT Executive",
-    Achievement: [
-      "Designed, Developed and launched the company’s new website",
-      "Streamlined Article publishing method for staff by developing a Content Management System for the website.",
-      "Optimised website bandwidth allocation by up to 60%",
-      "Redesigned and Optimised email footer imagery, 50% reduction in size.",
-      "Utilised AWS Service Screener to detect potential cost saving measures and security risk for the Trading System.",
-      "Conducted Excel Competency sessions, increasing excel competency by 30%"
-    ]
-  }
-];
-
-const Certificate = [{}, {}, {}, {}, {}, {}, {}, {}];
+import {
+  technologies,
+  Certificate,
+  Work,
+  Education
+} from "@/constant/constant";
+import EducationCard from "@/components/education-card";
+import WorkCard from "@/components/work-card";
 
 const page = () => {
   return (
@@ -167,8 +53,8 @@ const page = () => {
         </div>
       </div>
       {/* Photo Gallery */}
-      <section id="Gallery" className="pb-20">
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-5">
+      <section id="Gallery" className="pb-20 w-full !overflow-hidden">
+        <div className="relative flex w-full flex-col items-center justify-center !overflow-hidden mt-5">
           <Marquee className="[--duration:20s]">
             <TooltipProvider delayDuration={0}>
               {technologies.map((tech, i) => (
@@ -270,129 +156,48 @@ const page = () => {
       {/* Education */}
       <section id="education" className="py-20">
         <div className="container mx-auto">
-          <BlurFade inView>
-            <Text as="h2" className="text-3xl font-bold ">
-              Education
+          <Text as="h2" className="text-3xl font-bold ">
+            Education
+          </Text>
+          <Text as="p" styleVariant="muted" className="mt-2 mb-8">
+            My educational background
+          </Text>
+          {Education.map((edu, i) => (
+            <div key={i}>
+              <EducationCard data={edu} />
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* CTA */}
+      <section id="CTA" className="py-20">
+        <div className="bg-secondary p-10 rounded-lg shadow flex justify-between gap-4 flex-wrap flex-col lg:flex-row lg:items-center">
+          <div className="text-center lg:text-start">
+            <Text as="h2">While you're here, View my projects</Text>
+            <Text as="p" styleVariant="muted" className="mt-2 text-md">
+              for further service, contact me
             </Text>
-            <Text as="p" styleVariant="muted" className="mt-2 mb-8">
-              My educational background
-            </Text>
-            {Education.map((edu, i) => (
-              <div key={i}>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="aspect-video rounded-lg bg-secondary grid place-items-center min-w-64">
-                    <img src={edu.logo} alt={edu.name} />
-                  </div>
-                  <div className="w-full">
-                    <div className="flex gap-4 justify-between items-centerr">
-                      <Text as="h4">{edu.name}</Text>
-                      <Button size={"sm"} variant={"ghost"}>
-                        View Detail
-                        <ArrowRightIcon className="w-4 h-4 ml-2" />
-                      </Button>
-                    </div>
-                    <Text as="p" styleVariant="muted" className="font-medium">
-                      {edu.degree}
-                    </Text>
-                    <Text as="p" styleVariant="muted" className="font-medium">
-                      {edu.duration}
-                    </Text>
-                    <Text
-                      as="p"
-                      styleVariant="muted"
-                      className="pt-2 font-medium"
-                    >
-                      Related Coursework:
-                    </Text>
-                    <Text as="p" styleVariant="muted" className="font-medium">
-                      {edu.relatedCoursework.join(", ")}
-                    </Text>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                  {edu.activities.map((activity, i) => (
-                    <div key={i} className="mt-4">
-                      <Text as="p" className="font-semibold">
-                        {activity.title}
-                      </Text>
-                      {activity.detail.map((detail, i) => (
-                        <div key={i} className="mt-2">
-                          <div className="flex gap-2 flex-wrap">
-                            <Text as="p" className="font-medium">
-                              {detail.title}
-                            </Text>
-                            {detail?.role ? (
-                              <Badge variant={"secondary"}>
-                                {detail?.role}
-                              </Badge>
-                            ) : null}
-                          </div>
-                          {detail?.date ? (
-                            <Text as="p" styleVariant="muted" className="my-1">
-                              {detail?.date}
-                            </Text>
-                          ) : null}
-                          {detail.description ? (
-                            <Text as="p" styleVariant="muted">
-                              {detail.description}
-                            </Text>
-                          ) : null}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </BlurFade>
+          </div>
+          <div className="flex gap-3 items-center mx-auto lg:mx-0">
+            <Button>View Projects</Button>
+            <Button variant={"outline"}>Contact Me</Button>
+          </div>
         </div>
       </section>
       {/* Work */}
       <section id="work" className="py-20">
         <div className="container mx-auto">
-          <BlurFade inView>
-            <Text as="h2" className="text-3xl font-bold ">
-              Work Experience
-            </Text>
-            <Text as="p" styleVariant="muted" className="mt-2 mb-8">
-              My working experience
-            </Text>
-            {Work.map((work, i) => (
-              <div key={i}>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="aspect-video rounded-lg bg-secondary grid place-items-center min-w-64">
-                    <img src={work.logo} alt={work.name} />
-                  </div>
-                  <div className="w-full">
-                    <div className="flex gap-4 justify-between items-center">
-                      <Text as="h4">{work.name}</Text>
-                      <Button size={"sm"} variant={"ghost"}>
-                        View Detail
-                        <ArrowRightIcon className="w-4 h-4 ml-2" />
-                      </Button>
-                    </div>
-                    <Text as="p" styleVariant="muted" className="font-medium">
-                      {work.type}, {work.role}
-                    </Text>
-                    <Text as="p" styleVariant="muted" className="font-medium">
-                      {work.duration}
-                    </Text>
-                  </div>
-                </div>
-                <ul className="mt-4">
-                  <Text as="h4" className="font-semibold">
-                    Contribution
-                  </Text>
-                  {work.Achievement.map((achievement, i) => (
-                    <li key={i} className="mt-2 ml-5 list-disc">
-                      <Text as="p">{achievement}</Text>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </BlurFade>
+          <Text as="h2" className="text-3xl font-bold ">
+            Work Experience
+          </Text>
+          <Text as="p" styleVariant="muted" className="mt-2 mb-8">
+            My working experience
+          </Text>
+          {Work.map((work, i) => (
+            <div key={i}>
+              <WorkCard data={work} />
+            </div>
+          ))}
         </div>
       </section>
       {/* Certificate */}
@@ -417,12 +222,21 @@ const page = () => {
                           styleVariant="muted"
                           className="w-fit font-medium"
                         >
-                          Certification Date
+                          June 2024
                         </Text>
                       </div>
-                      <Text as="p" styleVariant="muted" className="font-medium">
-                        Certification By
-                      </Text>
+                      <div className="flex justify-between gap-4 items-center">
+                        <Text
+                          as="p"
+                          styleVariant="muted"
+                          className="font-medium"
+                        >
+                          Certification By Microsoft and LinkedIn
+                        </Text>
+                        <Button size={"sm"} variant={"secondary"}>
+                          <LinkIcon /> Credentials
+                        </Button>
+                      </div>
                     </CardHeader>
                   </Card>
                 </BlurFade>

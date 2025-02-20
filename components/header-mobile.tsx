@@ -1,5 +1,17 @@
 "use client";
-
+import { Text } from "./ui/text";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from "@/components/ui/drawer";
+import { Menu, X } from "lucide-react";
 import {
   HomeIcon,
   MailIcon,
@@ -7,21 +19,10 @@ import {
   FolderGit2Icon,
   File
 } from "lucide-react";
+import { Separator } from "./ui/separator";
 import Link from "next/link";
-import React from "react";
-import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { ModeToggle } from "./mode-toggle";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
-import { Dock, DockIcon } from "@/components/magicui/dock";
 
- type IconProps = React.HTMLAttributes<SVGElement>;
+type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
   email: (props: IconProps) => <MailIcon {...props} />,
@@ -44,7 +45,7 @@ const Icons = {
   )
 };
 
-const DATA = {
+const Data = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/about", icon: UserIcon, label: "About Me" },
@@ -76,59 +77,56 @@ const DATA = {
   }
 };
 
-export function DockDemo() {
+const HeaderMobile = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <TooltipProvider delayDuration={0}>
-        <Dock direction="middle">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="bottom">
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={social.url}
-                    aria-label={social.name}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
-                    )}
-                  >
-                    <social.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="bottom">
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full py-2" />
-
-          <ModeToggle />
-        </Dock>
-      </TooltipProvider>
+    <div className=" mt-5 mx-auto w-full flex gap-2 justify-end items-center px-5">
+      <ModeToggle />
+      <Drawer>
+        <DrawerTrigger asChild>
+          <Button size={"icon"}>
+            <Menu className="size-10" />
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent className="pb-20">
+          <DrawerHeader className="flex justify-between gap-2 items-center">
+            <DrawerTitle>Adhaghani</DrawerTitle>
+            <DrawerClose>
+              <X className="size-6" />
+            </DrawerClose>
+          </DrawerHeader>
+          <div className="mt-5 space-y-2 px-5">
+            {Data.navbar.map((data, i) => (
+              <DrawerClose asChild key={i} className="w-full">
+                <Link
+                  href={data.href}
+                  className="flex gap-2 items-center w-full p-2 rounded-lg hover:bg-muted active:bg-muted focus:bg-muted"
+                >
+                  <data.icon className="size-5" />
+                  <Text as="p" className="font-light ml-2">
+                    {data.label}
+                  </Text>
+                </Link>
+              </DrawerClose>
+            ))}
+            <Separator className="my-4 mx-auto" />
+            {Object.entries(Data.contact.social).map(([name, social], i) => (
+              <DrawerClose asChild key={i} className="w-full">
+                <Link
+                  href={social.url}
+                  className="flex gap-2 items-center w-full p-2 rounded-lg hover:bg-muted active:bg-muted focus:bg-muted"
+                >
+                  <social.icon className="size-5" />
+                  <Text as="p" className="font-light ml-2">
+                    {social.name}
+                  </Text>
+                </Link>
+              </DrawerClose>
+            ))}
+          </div>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
-}
+};
+
+export default HeaderMobile;

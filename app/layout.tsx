@@ -4,7 +4,6 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/components/scroll-to-top";
-
 import "./globals.css";
 
 const poppins = Poppins({
@@ -35,7 +34,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="px-4 max-w-6xl mx-auto">{children}</main>
+          <main className="md:px-4 max-w-6xl mx-auto overflow-x-hidden">
+            {children}
+          </main>
           <Footer />
           <ScrollToTop />
         </ThemeProvider>
