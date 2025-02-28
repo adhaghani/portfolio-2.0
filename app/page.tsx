@@ -9,47 +9,39 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
-  TooltipContent
+  TooltipContent,
 } from "@/components/ui/tooltip";
 import { PaintbrushIcon, CodeIcon, BrushIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magicui/marquee";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import ProjectCard from "@/components/project-card";
+import Icon from "@/components/technology-stack-icon";
 const Service = [
   {
     icon: <PaintbrushIcon className="inline-block mr-2" />,
     title: "Web Design",
     description:
-      "With experience using Adobe Figma, I am able to create a user interface that is intuitive and developer-friendly."
+      "With experience using Adobe Figma, I am able to create a user interface that is intuitive and developer-friendly.",
   },
   {
     icon: <CodeIcon className="inline-block mr-2" />,
     title: "Web Development",
     description:
-      "Using Typescript, Tailwind, and others Front-end Library, I am capable of creating a modern, responsive and interactive landing page, resume site, portfolio site and others."
+      "Using Typescript, Tailwind, and others Front-end Library, I am capable of creating a modern, responsive and interactive landing page, resume site, portfolio site and others.",
   },
   {
     icon: <BrushIcon className="inline-block mr-2" />,
     title: "Graphic Design",
     description:
-      "Using modern tools like canva, Adobe Photoshop, and Adobe Illustrator, I am able to create design elements that are up to client standard."
-  }
-];
-
-const technologies = [
-  { name: "React", icon: "/tech/vercel.svg" },
-  { name: "TypeScript", icon: "/tech/vercel.svg" },
-  { name: "Next.js", icon: "/tech/vercel.svg" },
-  { name: "Tailwind CSS", icon: "/tech/vercel.svg" },
-  { name: "Node.js", icon: "/tech/vercel.svg" },
-  { name: "Git", icon: "/tech/vercel.svg" }
+      "Using modern tools like canva, Adobe Photoshop, and Adobe Illustrator, I am able to create design elements that are up to client standard.",
+  },
 ];
 
 const projects = [
@@ -59,7 +51,7 @@ const projects = [
       "A modern portfolio website built with Next.js and Tailwind CSS",
     image: {
       src: "/projects/portfolio.png",
-      alt: "Portfolio Website"
+      alt: "Portfolio Website",
     },
     link: "https://github.com/yourusername/portfolio",
     technologies: [
@@ -67,8 +59,8 @@ const projects = [
       "TypeScript",
       "Next.js",
       "Tailwind CSS",
-      "Shadcn UI"
-    ]
+      "Shadcn UI",
+    ],
   },
   {
     title: "E-commerce Dashboard",
@@ -76,7 +68,7 @@ const projects = [
       "Admin dashboard for managing online store inventory and orders",
     image: {
       src: "/projects/portfolio.png",
-      alt: "Portfolio Website"
+      alt: "Portfolio Website",
     },
     link: "https://github.com/yourusername/dashboard",
     technologies: [
@@ -84,15 +76,15 @@ const projects = [
       "TypeScript",
       "Next.js",
       "Tailwind CSS",
-      "Shadcn UI"
-    ]
+      "Shadcn UI",
+    ],
   },
   {
     title: "Weather App",
     description: "Real-time weather application with location-based forecasts",
     image: {
       src: "/projects/portfolio.png",
-      alt: "Portfolio Website"
+      alt: "Portfolio Website",
     },
     link: "https://github.com/yourusername/weather-app",
     technologies: [
@@ -100,12 +92,24 @@ const projects = [
       "TypeScript",
       "Next.js",
       "Tailwind CSS",
-      "Shadcn UI"
-    ]
-  }
+      "Shadcn UI",
+    ],
+  },
 ];
 
 export default function Home() {
+  const shuffleArray = (array: typeof Icon) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const firstMarqueeIcons = shuffleArray(Icon);
+  const secondMarqueeIcons = shuffleArray(Icon);
+
   return (
     <>
       {/* Hero */}
@@ -125,7 +129,7 @@ export default function Home() {
                 words={[
                   "Full-Time Student",
                   "Tech Enthusiast",
-                  "Web Developer"
+                  "Web Developer",
                 ]}
               />
             </Text>
@@ -209,16 +213,12 @@ export default function Home() {
         <div className="relative flex flex-col items-center justify-center !overflow-hidden mt-5">
           <Marquee className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
-              {technologies.map((tech, i) => (
-                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
+              {firstMarqueeIcons.map((tech, i) => (
+                <BlurFade key={i} inView delay={0.5}>
                   <Tooltip>
                     <TooltipTrigger>
-                      <div className="p-4 aspect-square size-32 grid place-items-center border shadow rounded-lg">
-                        <img
-                          src={tech.icon}
-                          alt={tech.name}
-                          className="w-12 h-12 mx-2"
-                        />
+                      <div className="p-4 aspect-square size-24 grid place-items-center border shadow rounded-lg">
+                        {tech.icon}
                       </div>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
@@ -231,16 +231,12 @@ export default function Home() {
           </Marquee>
           <Marquee reverse className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
-              {technologies.map((tech, i) => (
-                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
+              {secondMarqueeIcons.map((tech, i) => (
+                <BlurFade key={i} inView delay={0.5}>
                   <Tooltip>
                     <TooltipTrigger>
-                      <div className="p-4 aspect-square size-32 grid place-items-center border shadow rounded-lg">
-                        <img
-                          src={tech.icon}
-                          alt={tech.name}
-                          className="w-12 h-12 mx-2"
-                        />
+                      <div className="p-4 aspect-square size-24 grid place-items-center border shadow rounded-lg">
+                        {tech.icon}
                       </div>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
