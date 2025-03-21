@@ -5,7 +5,7 @@ import { Text } from "./ui/text";
 import { Button } from "./ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
-
+import Link from "next/link";
 interface ActivityDetails {
   title: string;
   role?: string;
@@ -25,22 +25,19 @@ interface EducationProp {
   name: string;
   degree: string;
   duration: string;
-  grade: string;
-  image: {
-    src: string;
-    alt: string;
-  };
+  grade?: string;
+  Logo: any;
   relatedCourses: string[];
-  activities: EducationActivites[];
+  activities?: EducationActivites[];
 }
 
 const EducationCard = ({ data }: { data: EducationProp }) => {
   return (
-    <div>
+    <>
       <div className="flex flex-col md:flex-row gap-4">
         <BlurFade inView delay={0.1}>
-          <div className="aspect-video rounded-lg bg-secondary grid place-items-center min-w-64">
-            <img src={data.image.src} alt={data.image.alt} />
+          <div className="aspect-video bg-background shadow rounded-lg grid place-items-center min-w-64">
+            {data.Logo}
           </div>
         </BlurFade>
         <div className="w-full">
@@ -49,9 +46,11 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
               <Text as="h3">{data.name}</Text>
             </BlurFade>
             <BlurFade inView delay={0.2}>
-              <Button size={"sm"} variant={"ghost"}>
-                View Detail
-                <ArrowRightIcon className="w-4 h-4 ml-2" />
+              <Button size={"sm"} variant={"ghost"} asChild>
+                <Link href={data.name}>
+                  View Detail
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </Link>
               </Button>
             </BlurFade>
           </div>
@@ -65,6 +64,13 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
               {data.duration}
             </Text>
           </BlurFade>
+          {data.grade && (
+            <BlurFade delay={0.3} inView>
+              <Text as="p" styleVariant="muted" className="font-medium">
+                Grade : {data.grade}
+              </Text>
+            </BlurFade>
+          )}
         </div>
       </div>
       <div className="mt-5">
@@ -82,48 +88,49 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {data.activities.map((activity, i) => (
-          <div key={i} className="mt-4">
-            <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
-              <Text as="h4" className="font-semibold">
-                {activity.title}
-              </Text>
-            </BlurFade>
-            {activity.details?.map((detail, i) => (
-              <div key={i} className="mt-2 ml-3">
-                <div className="flex gap-2 flex-wrap">
-                  <BlurFade inView delay={i === 0 ? 0.3 : i * 0.3}>
-                    <Text as="p" className="font-medium">
-                      {detail.title}
-                    </Text>
-                  </BlurFade>
+        {data.activities &&
+          data.activities.map((activity, i) => (
+            <div key={i} className="mt-4">
+              <BlurFade inView delay={i === 0 ? 0.2 : 0.2 * i}>
+                <Text as="h4" className="font-semibold">
+                  {activity.title}
+                </Text>
+              </BlurFade>
+              {activity.details?.map((detail, i) => (
+                <div key={i} className="mt-2 ml-3">
+                  <div className="flex gap-2 flex-wrap">
+                    <BlurFade inView delay={i === 0 ? 0.3 : i * 0.3}>
+                      <Text as="p" className="font-medium">
+                        {detail.title}
+                      </Text>
+                    </BlurFade>
 
-                  {detail.role && (
+                    {detail.role && (
+                      <BlurFade inView delay={0.3 + i * 0.1}>
+                        <Badge variant="secondary">{detail.role}</Badge>
+                      </BlurFade>
+                    )}
+                  </div>
+                  {detail.date && (
                     <BlurFade inView delay={0.3 + i * 0.1}>
-                      <Badge variant="secondary">{detail.role}</Badge>
+                      <Text as="p" styleVariant="muted" className="my-1">
+                        {detail.date}
+                      </Text>
                     </BlurFade>
                   )}
+                  {detail.description ? (
+                    <BlurFade inView delay={i === 0 ? 0.3 : i * 0.3}>
+                      <Text as="p" styleVariant="muted">
+                        {detail.description}
+                      </Text>
+                    </BlurFade>
+                  ) : null}
                 </div>
-                {detail.date && (
-                  <BlurFade inView delay={0.3 + i * 0.1}>
-                    <Text as="p" styleVariant="muted" className="my-1">
-                      {detail.date}
-                    </Text>
-                  </BlurFade>
-                )}
-                {detail.description ? (
-                  <BlurFade inView delay={i === 0 ? 0.3 : i * 0.3}>
-                    <Text as="p" styleVariant="muted">
-                      {detail.description}
-                    </Text>
-                  </BlurFade>
-                ) : null}
-              </div>
-            ))}
-          </div>
-        ))}
+              ))}
+            </div>
+          ))}
       </div>
-    </div>
+    </>
   );
 };
 

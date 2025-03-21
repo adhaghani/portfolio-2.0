@@ -2,128 +2,40 @@
 
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
-import { WordRotate } from "@/components/magicui/word-rotate";
-import { Ripple } from "@/components/magicui/ripple";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-  TooltipContent
-} from "@/components/ui/tooltip";
+import { Education, Work, Certificate } from "@/constant/constant";
 import { MailIcon, LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Marquee } from "@/components/magicui/marquee";
-import {
-  technologies,
-  Certificate,
-  Work,
-  Education
-} from "@/constant/constant";
 import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
+import { Spotlight } from "@/components/ui/spotlight-new";
 
 const page = () => {
   return (
     <>
       {/* Hero */}
+      <Spotlight />
       <div className="h-screen max-h-[1100px] flex items-center justify-center relative pt-16">
-        <div className="container mx-auto px-4 text-center">
-          <BlurFade delay={0.1}>
-            <Text as="h1" className="text-4xl md:text-6xl font-bold mb-4">
-              A little bit about me
-            </Text>
-          </BlurFade>
-          <BlurFade delay={0.2}>
+        <div className=" w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
+          <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
             <Text
-              as="h2"
-              className="text-2xl md:text-4xl text-muted-foreground mb-8"
+              as="h1"
+              className="text-center text-2xl md:text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
             >
-              <WordRotate
-                words={[
-                  "Full-Time Student",
-                  "Tech Enthusiast",
-                  "Volunteer Activities"
-                ]}
-              />
+              About me, <br /> my experience, <br /> and education.
             </Text>
-          </BlurFade>
-          <Ripple className="z-[5]" />
+            <Text
+              as="p"
+              styleVariant="muted"
+              className="mt-4 font-normal text-base max-w-lg text-center mx-auto"
+            >
+              More detailed version of what i do, what i learn, and what i
+              actually am.
+            </Text>
+          </div>
         </div>
       </div>
-      {/* Photo Gallery */}
-      <section id="Gallery" className="pb-20 w-full !overflow-hidden">
-        <div className="relative flex w-full flex-col items-center justify-center !overflow-hidden mt-5">
-          <Marquee className="[--duration:20s]">
-            <TooltipProvider delayDuration={0}>
-              {technologies.map((tech, i) => (
-                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="p-4 aspect-video min-h-40 grid place-items-center border shadow rounded-lg">
-                        <img
-                          src={tech.icon}
-                          alt={tech.name}
-                          className="w-12 h-12 mx-2"
-                        />
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <Text as="p">{tech.name}</Text>
-                    </TooltipContent>
-                  </Tooltip>
-                </BlurFade>
-              ))}
-            </TooltipProvider>
-          </Marquee>
-          <Marquee reverse className="[--duration:20s]">
-            <TooltipProvider delayDuration={0}>
-              {technologies.map((tech, i) => (
-                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="p-4 aspect-video min-h-40 grid place-items-center border shadow rounded-lg">
-                        <img
-                          src={tech.icon}
-                          alt={tech.name}
-                          className="w-12 h-12 mx-2"
-                        />
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <Text as="p">{tech.name}</Text>
-                    </TooltipContent>
-                  </Tooltip>
-                </BlurFade>
-              ))}
-            </TooltipProvider>
-          </Marquee>
-          <Marquee className="[--duration:20s]">
-            <TooltipProvider delayDuration={0}>
-              {technologies.map((tech, i) => (
-                <BlurFade key={i} inView delay={i === 0 ? 0.2 : 0.2 * i}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="p-4 aspect-video min-h-40 grid place-items-center border shadow rounded-lg">
-                        <img
-                          src={tech.icon}
-                          alt={tech.name}
-                          className="w-12 h-12 mx-2"
-                        />
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <Text as="p">{tech.name}</Text>
-                    </TooltipContent>
-                  </Tooltip>
-                </BlurFade>
-              ))}
-            </TooltipProvider>
-          </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
-        </div>
-      </section>
       {/* About */}
       <section id="about" className="py-20">
         <div className="container mx-auto px-4">
@@ -162,7 +74,7 @@ const page = () => {
             My educational background
           </Text>
           {Education.map((edu, i) => (
-            <div key={i}>
+            <div key={i} className="mb-24">
               <EducationCard data={edu} />
             </div>
           ))}
@@ -170,7 +82,7 @@ const page = () => {
       </section>
       {/* CTA */}
       <section id="CTA" className="py-20 px-4">
-        <div className="bg-secondary p-10 rounded-lg shadow flex justify-between gap-4 flex-wrap flex-col lg:flex-row lg:items-center">
+        <div className="bg-primary-foreground p-10 rounded-lg shadow flex justify-between gap-4 flex-wrap flex-col lg:flex-row lg:items-center">
           <div className="text-center lg:text-start">
             <Text as="h2">While you're here, View my projects</Text>
             <Text as="p" styleVariant="muted" className="mt-2 text-md">

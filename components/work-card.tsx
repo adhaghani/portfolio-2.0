@@ -11,10 +11,7 @@ interface WorkProps {
   type: string;
   role: string;
   duration: string;
-  image: {
-    src: string;
-    alt: string;
-  };
+  Logo: any;
   achievement: string[];
 }
 
@@ -23,14 +20,14 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
     <div>
       <div className="flex flex-col md:flex-row gap-4">
         <BlurFade inView delay={0.1}>
-          <div className="aspect-video rounded-lg bg-secondary grid place-items-center min-w-64">
-            <img src={data.image.src} alt={data.image.alt} />
+          <div className="aspect-video bg-background shadow rounded-lg grid place-items-center min-w-64">
+            {data.Logo}
           </div>
         </BlurFade>
         <div className="w-full">
           <BlurFade inView delay={0.2}>
             <div className="flex gap-4 justify-between items-center">
-              <Text as="h4">{data.name}</Text>
+              <Text as="h3">{data.name}</Text>
               <Button size={"sm"} variant={"ghost"}>
                 View Detail
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
@@ -38,7 +35,7 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
             </div>
           </BlurFade>
           <BlurFade inView delay={0.3}>
-            <Text as="p" styleVariant="muted" className="font-medium">
+            <Text as="h4" className="font-medium">
               {data.type}, {data.role}
             </Text>
           </BlurFade>

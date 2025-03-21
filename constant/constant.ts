@@ -1,21 +1,29 @@
-const technologies = [
-  { name: "React", icon: "/tech/vercel.svg" },
-  { name: "TypeScript", icon: "/tech/vercel.svg" },
-  { name: "Next.js", icon: "/tech/vercel.svg" },
-  { name: "Tailwind CSS", icon: "/tech/vercel.svg" },
-  { name: "Node.js", icon: "/tech/vercel.svg" },
-  { name: "Git", icon: "/tech/vercel.svg" }
-];
+import AboutLogo from "@/components/about-logo";
 
 const Education = [
   {
     name: "Universiti Teknologi MARA (UiTM)",
+    degree: "Bachelors Degree in Computer Science With Honours",
+    duration: "March 2025 - Present",
+    Logo: AboutLogo.UiTM,
+    relatedCourses: [
+      "Software Engineering Principle",
+      "Technology Entrepreneurship",
+      "Algorithm Analysis and Design",
+      "Parallel Processing",
+      "Artificial Intelligence Algorithm",
+      "Data Structures",
+      "Principles of Compilers",
+      "Software Project Management",
+      "Introductory Mandarin",
+      "Linear Algebra"
+    ]
+  },
+  {
+    name: "Universiti Teknologi MARA (UiTM)",
     degree: "Diploma in Computer Science",
     duration: "October 2022 - February 2025",
-    image: {
-      src: "/education/uitm.svg",
-      alt: "UiTM Logo"
-    },
+    Logo: AboutLogo.UiTM,
     relatedCourses: [
       "Object-Oriented Programming",
       "Data Structure",
@@ -98,10 +106,7 @@ const Education = [
 const Work = [
   {
     name: "AbleAce Raakin Sdn. Bhd.",
-    image: {
-      src: "/work/ableace.svg",
-      alt: "AbleAce Logo"
-    },
+    Logo: AboutLogo.AAR,
     duration: "September 2024 - February 2025",
     type: "Intenrship",
     role: "Junior IT Executive",
@@ -118,4 +123,4 @@ const Work = [
 
 const Certificate = [{}, {}, {}, {}, {}, {}, {}, {}];
 
-export { technologies, Education, Work, Certificate };
+export { Education, Work, Certificate };

@@ -5,7 +5,8 @@ import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import "./globals.css";
-
+import { GridPattern } from "@/components/magicui/grid-pattern";
+import { cn } from "@/lib/utils";
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "300", "200", "800"],
   variable: "--font-poppins",
@@ -25,12 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased w-full mx-auto overflow-x-hidden`}
+        className={`${poppins.className} antialiased w-full mx-auto overflow-x-hidden selection:bg-primary/50 selection:text-white`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
+          defaultTheme="dark"
           disableTransitionOnChange
         >
           <Header />
@@ -39,6 +39,15 @@ export default function RootLayout({
           </main>
           <Footer />
           <ScrollToTop />
+          <GridPattern
+            width={30}
+            x={-1}
+            y={-1}
+            strokeDasharray={"4 2"}
+            className={cn(
+              "fixed -z-10 [mask-image:radial-gradient(900px_circle_at_center,white,transparent)]"
+            )}
+          />
         </ThemeProvider>
       </body>
     </html>

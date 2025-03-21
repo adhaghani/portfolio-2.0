@@ -11,7 +11,6 @@ import Link from "next/link";
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ModeToggle } from "./mode-toggle";
 import {
   Tooltip,
   TooltipContent,
@@ -21,7 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 
- type IconProps = React.HTMLAttributes<SVGElement>;
+type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
   email: (props: IconProps) => <MailIcon {...props} />,
@@ -124,9 +123,6 @@ export function DockDemo() {
               </Tooltip>
             </DockIcon>
           ))}
-          <Separator orientation="vertical" className="h-full py-2" />
-
-          <ModeToggle />
         </Dock>
       </TooltipProvider>
     </div>

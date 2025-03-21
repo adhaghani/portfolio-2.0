@@ -239,7 +239,7 @@ const FigmaIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-     fillRule="evenodd"
+      fillRule="evenodd"
       clipRule="evenodd"
       d="M16 16C16 13.7909 17.7909 12 20 12C22.2091 12 24 13.7909 24 16C24 18.2091 22.2091 20 20 20C17.7909 20 16 18.2091 16 16Z"
       fill="#1ABCFE"
@@ -324,7 +324,7 @@ const TraeIcon = (
   </svg>
 );
 
-const Icon = [
+const TechStackIcon = [
   {
     name: "Git",
     icon: GitIcon,
@@ -387,4 +387,4 @@ const Icon = [
   },
 ];
 
-export default Icon;
+export default TechStackIcon;
