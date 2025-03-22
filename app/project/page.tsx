@@ -5,7 +5,13 @@ import ProjectCard from "@/components/ui/project-card";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MailIcon } from "lucide-react";
+import { FilterIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger
+} from "@/components/ui/popover";
 const page = () => {
   return (
     <>
@@ -34,9 +40,22 @@ const page = () => {
       <section id="about" className="py-20">
         <div className="container mx-auto px-4">
           <BlurFade inView>
-            <Text as="h2" className="text-3xl font-bold mb-8">
-              Development Projects
-            </Text>
+            <div className="flex justify-between items-center gap-4 mb-8">
+              <Text as="h2" className="text-3xl font-bold">
+                Development Projects
+              </Text>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button size={"lg"} variant="secondary">
+                    <FilterIcon className="h-5 w-5" />
+                    Filter
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="m-4">
+                  Place content for the popover here.
+                </PopoverContent>
+              </Popover>
+            </div>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {/* Put all Coding projects here */}
               <ProjectCard />

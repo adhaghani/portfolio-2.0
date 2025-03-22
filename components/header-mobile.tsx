@@ -1,12 +1,10 @@
 "use client";
 import { Text } from "./ui/text";
-import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
@@ -80,7 +78,6 @@ const Data = {
 const HeaderMobile = () => {
   return (
     <div className=" mt-5 mx-auto w-full flex gap-2 justify-end items-center px-5">
-      <ModeToggle />
       <Drawer>
         <DrawerTrigger asChild>
           <Button size={"icon"}>

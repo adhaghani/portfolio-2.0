@@ -2,7 +2,7 @@
 
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
-
+import { LinkPreview } from "@/components/ui/link-preview";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Education, Work, Certificate } from "@/constant/constant";
 import { MailIcon, LinkIcon } from "lucide-react";
@@ -10,7 +10,8 @@ import { Button } from "@/components/ui/button";
 import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
 import { Spotlight } from "@/components/ui/spotlight-new";
-
+import CertificateCard from "@/components/ui/certificate-card";
+import React from "react";
 const page = () => {
   return (
     <>
@@ -123,34 +124,9 @@ const page = () => {
             </Text>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {Certificate.map((cert, i) => (
-                <BlurFade inView key={i} delay={i === 0 ? 0.2 : 0.2 * i}>
-                  <Card>
-                    <CardHeader>
-                      <div className="flex justify-between gap-2">
-                        <CardTitle>Certificate Name</CardTitle>
-                        <Text
-                          as="p"
-                          styleVariant="muted"
-                          className="w-fit font-medium"
-                        >
-                          June 2024
-                        </Text>
-                      </div>
-                      <div className="flex justify-between gap-4 items-center">
-                        <Text
-                          as="p"
-                          styleVariant="muted"
-                          className="font-medium"
-                        >
-                          Certification By Microsoft and LinkedIn
-                        </Text>
-                        <Button size={"sm"} variant={"secondary"}>
-                          <LinkIcon /> Credentials
-                        </Button>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </BlurFade>
+                <React.Fragment key={i}>
+                  <CertificateCard data={cert} key={i} />
+                </React.Fragment>
               ))}
             </div>
           </BlurFade>
