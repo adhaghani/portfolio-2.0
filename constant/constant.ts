@@ -108,7 +108,7 @@ const Work = [
     name: "AbleAce Raakin Sdn. Bhd.",
     Logo: AboutLogo.AAR,
     duration: "September 2024 - February 2025",
-    type: "Intenrship",
+    development_Type: "Intenrship",
     role: "Junior IT Executive",
     achievement: [
       "Designed, Developed and launched the company’s new website",
@@ -212,4 +212,222 @@ const Certificate = [
   }
 ];
 
-export { Education, Work, Certificate };
+const DesignProjects = [
+  {
+    imgLink: "/Designs/FPPPolo.png",
+    title: "Business Society Activity Jersey",
+    timeline: "April 2024",
+    technologies: ["PhotoShop", "Illustrator", "Figma"],
+    description: "Transforming from a 2D Mock-Ups given into 3D Mock-Ups."
+  },
+  {
+    imgLink: "/Designs/BSCorporateShirt.png",
+    title: "Business Society Corporate Shirt",
+    timeline: "April 2024",
+    technologies: ["PhotoShop", "Illustrator"],
+    description:
+      "Designed and created mockup for Business Society's new Corporate Shirt."
+  },
+  {
+    imgLink: "/Designs/MPPLanyard.png",
+    title: "Programme Lanyard",
+    timeline: "June 2024",
+    technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    description:
+      "A Lanyard to be used by Student Representative of UiTM Pahang 2023-2024 Session for an international Programme."
+  },
+  {
+    imgLink: "/Designs/MYTECCJersey.png",
+    title: "Mytecc Activity Jersey",
+    timeline: "March 2024",
+    technologies: ["Photoshop", "Illustrator", "Figma", "Canva"],
+    description:
+      "Designed a Retro-Like jersey as a commercial Project to be sold by MYTECC UiTM Raub 2023-2024 Session."
+  },
+  {
+    imgLink: "/Designs/NFRRunner.png",
+    title: "NFR Runner Jersey",
+    timeline: "February 2024",
+    technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    description:
+      "Runner jersey to be wear by runner during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub."
+  },
+  {
+    imgLink: "/Designs/NFRCommittee.png",
+    title: "NFR Committee Jersey",
+    timeline: "February 2024",
+    technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    description:
+      "Committee jersey to be wear by Committee during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub."
+  }
+];
+
+const DevelopmentProjects = [
+  {
+    asset: {
+      url: "/Projects/Qrcode.png",
+      alt: "QR Code Generator"
+    },
+    development_Type: "Front-End",
+    project_Name: "QR Code Generator",
+    project_Timeline: "August 2024",
+    project_Technologies: ["React.js", "SCSS", "QRcode.react", "HTML2Canvas"],
+    project_description:
+      "A simple QR Code generated that generate a link to a given url. User's are able to download the QR code generated. Simple, fast, efficient, and no ads.",
+    project_DemoLink: "https://adhaghani.github.io/qrcodegen/",
+    project_RepoLink: "https://github.com/adhaghani/qrcodegen"
+  },
+  // {
+  //   asset: {
+  //     url: "/Projects/Todo.png",
+  //     alt: "To-Do List"
+  //   },
+  //   development_Type: "Front-End",
+  //   project_Name: "To-Do List Application",
+  //   project_Timeline: "August 2024",
+  //   project_Technologies: ["React.js", "SCSS "],
+  //   project_description:
+  //     "A simple Todo-List utilizing localstorage to store data. User's are able to keep track of the progress in Todo-List",
+  //   project_DemoLink: "https://adhaghani.github.io/todo-list/",
+  //   project_RepoLink: "https://github.com/adhaghani/todo-list"
+  // },
+  // {
+  //   asset: {
+  //     url: "/Projects/notification.png",
+  //     alt: "Notification Page"
+  //   },
+  //   development_Type: "Front-End",
+  //   project_Name: "Notification Page",
+  //   project_Timeline: "August 2024",
+  //   project_Technologies: ["React.js", "SCSS", "framer-motion"],
+  //   project_description:
+  //     "A Simple notification page showcasing various development_Types of notification in a resuable react component with smooth animation.",
+  //   project_DemoLink: "https://adhaghani.github.io/notificationpage/",
+  //   project_RepoLink: "https://github.com/adhaghani/notificationpage"
+  // },
+  // {
+  //   asset: {
+  //     url: "/Projects/advice.png",
+  //     alt: "Advice Generator"
+  //   },
+  //   development_Type: "Front-End",
+  //   project_Name: "NewsLetter Subscription Form",
+  //   project_Timeline: "August 2024",
+  //   project_Technologies: ["React.js", "SCSS", "framer-motion"],
+  //   project_description:
+  //     "A Newsletter subscription form that verifies the given email and update the users when subscribed.",
+  //   project_DemoLink: "https://adhaghani.github.io/newslettersubs/",
+  //   project_RepoLink: "https://github.com/adhaghani/newslettersubs"
+  // },
+  // {
+  //   asset: {
+  //     url: "/Projects/advice.png",
+  //     alt: "Advice Generator"
+  //   },
+  //   development_Type: "Front-End",
+  //   project_Name: "FAQs Accordion",
+  //   project_Timeline: "August 2024",
+  //   project_Technologies: ["React.js", "SCSS", "framer-motion"],
+  //   project_description:
+  //     "A Frequently Asked Question Accordion Using reusable react component and framer motion for smooth animation.",
+  //   project_DemoLink: "https://adhaghani.github.io/faqaccordion/",
+  //   project_RepoLink: "https://github.com/adhaghani/faqaccordion"
+  // },
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    development_Type: "Full-Stack",
+    project_Name: "Room E-Commerce",
+    project_Timeline: "July 2024",
+    project_Technologies: ["React.js", "PHP", "SCSS", "MySQL", "Chart.JS"],
+    project_description:
+      "An E-Commerce platform that showcases basic shopping features like checkout, adding product to card and many mores. Developed during my 4th semester for an assignment.",
+    project_RepoLink: "https://github.com/adhaghani/roomecommerce"
+  },
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    development_Type: "Front-End",
+    project_Name: "Personal Portfolio Website",
+    project_Timeline: "July 2024",
+    project_Technologies: ["React.js", "Framer Motion", "SCSS"],
+    project_description:
+      "personal portfolio websites to showcase my front-end development skills. The site also contains all my previous projects either in design or development.",
+    project_DemoLink: "https://www.adhaghani.com/",
+    project_RepoLink: "https://github.com/adhaghani/Portfolio"
+  },
+
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    development_Type: "Others",
+    project_Name: "Simple Bank System",
+    project_Timeline: "December 2023",
+    project_Technologies: ["Java", "OOP", "Data Structure"],
+    project_description:
+      "A simple Banking application developed to demonstrate my abilities with handling Object Oriented Programming using Java. User are able to create account and do basic transaction like deposit, withdraw and transfer.",
+    project_RepoLink: "https://github.com/adhaghani/SimpleBankingApplication"
+  },
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    development_Type: "Front-End",
+    project_Name: "SunnySide Landing Page",
+    project_Timeline: "June 2024",
+    project_Technologies: ["HTML", "CSS", "JavaScript", "React.js", "SCSS "],
+    project_description:
+      "A simple landing page completed for task by FrontEnd Mentor. Showcasing my abilities to developed basic Landing Page for companies.",
+    project_DemoLink: "https://adhaghani.github.io/SunnySideLandingPage/",
+    project_RepoLink: "https://github.com/adhaghani/SunnySideLandingPage"
+  },
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    development_Type: "Front-End",
+    project_Name: "Social Media Card",
+    project_Timeline: "June 2024",
+    project_Technologies: ["HTML", "CSS", "SCSS"],
+    project_description:
+      "A simple Social Media Card useful to share all my social media link in one place.",
+    project_DemoLink: "https://adhaghani.github.io/SocialLink/",
+    project_RepoLink: "https://github.com/adhaghani/SocialLink"
+  },
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    development_Type: "Front-End",
+    project_Name: "Starbucks Landing Page",
+    project_Timeline: "December 2022",
+    project_Technologies: ["HTML", "CSS", "JavaScript"],
+    project_description:
+      "My first ever Landing Page project, a copy of starbucks landing page. Developed to learn and understand the basics and fundamental of HTML, CSS and Javasript languages, which greatly helps me in the long run.",
+    project_DemoLink: "https://adhaghani.github.io/starbuck-lp.github.io/",
+    project_RepoLink: "https://github.com/adhaghani/starbuck-lp.github.io"
+  },
+  {
+    asset: {
+      url: "/Projects/advice.png",
+      alt: "Advice Generator"
+    },
+    project_Name: "Car DealerShip Application",
+    project_Timeline: "June 2023",
+    project_Technologies: ["Java", "OOP"],
+    project_description:
+      "A Car Dealership Application developed to increase understanding of OOP concepts. Contain objects like car, dealership and buyer.",
+    project_RepoLink:
+      "https://github.com/adhaghani/SimpleCarDealershipApplication"
+  }
+];
+export { Education, Work, Certificate, DesignProjects, DevelopmentProjects };

@@ -1,8 +1,9 @@
 "use client";
 import { Text } from "@/components/ui/text";
 import { Spotlight } from "@/components/ui/spotlight-new";
-import ProjectCard from "@/components/ui/project-card";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import DesignCard from "@/components/ui/design-card";
+import DevelopmentCard from "@/components/ui/development-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MailIcon } from "lucide-react";
 import { FilterIcon } from "lucide-react";
@@ -12,6 +13,8 @@ import {
   PopoverContent,
   PopoverTrigger
 } from "@/components/ui/popover";
+import { DevelopmentProjects, DesignProjects } from "@/constant/constant";
+import { DevelopmentProjectType } from "@/constant/types";
 const page = () => {
   return (
     <>
@@ -58,12 +61,12 @@ const page = () => {
             </div>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {/* Put all Coding projects here */}
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
+              {DevelopmentProjects.map((project, i) => (
+                <DevelopmentCard
+                  key={i}
+                  data={project as DevelopmentProjectType}
+                />
+              ))}
             </div>
           </BlurFade>
         </div>
@@ -77,12 +80,9 @@ const page = () => {
             </Text>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {/* Put all Coding projects here */}
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
+              {DesignProjects.map((project, i) => (
+                <DesignCard key={i} data={project} />
+              ))}
             </div>
           </BlurFade>
         </div>

@@ -9,11 +9,12 @@ import {
 import React, { useState } from "react";
 import { BlurFade } from "../magicui/blur-fade";
 import { Text } from "./text";
+import { DesignProjectType } from "@/constant/types";
 import { Badge } from "./badge";
 import { Button } from "./button";
 import { Lens } from "./lens";
 import { MonitorIcon, DatabaseIcon, ImageIcon } from "lucide-react";
-const ProjectCard = () => {
+const DesignCard = ({ data }: { data: DesignProjectType }) => {
   const [hovering, setHovering] = useState(false);
   return (
     <BlurFade inView delay={0.2}>
@@ -60,4 +61,4 @@ const ProjectCard = () => {
   );
 };
 
-export default ProjectCard;
+export default DesignCard;

@@ -5,13 +5,7 @@ import { Card, CardHeader, CardTitle } from "./card";
 import { Text } from "./text";
 import { Button } from "./button";
 import { LinkIcon } from "lucide-react";
-
-interface CertificateCardProps {
-  PreviewLink: string;
-  Name: string;
-  Organization: string;
-  Date: string;
-}
+import { CertificateCardProps } from "@/constant/types";
 
 const CertificateCard = ({
   data,
