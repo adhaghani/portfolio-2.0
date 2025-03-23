@@ -214,50 +214,71 @@ const Certificate = [
 
 const DesignProjects = [
   {
-    imgLink: "/Designs/FPPPolo.png",
-    title: "Business Society Activity Jersey",
-    timeline: "April 2024",
-    technologies: ["PhotoShop", "Illustrator", "Figma"],
-    description: "Transforming from a 2D Mock-Ups given into 3D Mock-Ups."
+    asset: {
+      url: "/assets/design/FPPPolo.png",
+      alt: "QR Code Generator"
+    },
+    project_Name: "Business Society Activity Jersey",
+    project_Timeline: "April 2024",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma"],
+    project_description:
+      "Transforming from a 2D Mock-Ups given into 3D Mock-Ups."
   },
   {
-    imgLink: "/Designs/BSCorporateShirt.png",
-    title: "Business Society Corporate Shirt",
-    timeline: "April 2024",
-    technologies: ["PhotoShop", "Illustrator"],
-    description:
+    asset: {
+      url: "/assets/design/BSCorporateShirt.png",
+      alt: "QR Code Generator"
+    },
+    project_Name: "Business Society Corporate Shirt",
+    project_Timeline: "April 2024",
+    project_Technologies: ["PhotoShop", "Illustrator"],
+    project_description:
       "Designed and created mockup for Business Society's new Corporate Shirt."
   },
   {
-    imgLink: "/Designs/MPPLanyard.png",
-    title: "Programme Lanyard",
-    timeline: "June 2024",
-    technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
-    description:
+    asset: {
+      url: "/assets/design/MPPLanyard.png",
+      alt: "Programme Lanyard"
+    },
+    imgLink: "/design/MPPLanyard.png",
+    project_Name: "Programme Lanyard",
+    project_Timeline: "June 2024",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
       "A Lanyard to be used by Student Representative of UiTM Pahang 2023-2024 Session for an international Programme."
   },
   {
-    imgLink: "/Designs/MYTECCJersey.png",
-    title: "Mytecc Activity Jersey",
-    timeline: "March 2024",
-    technologies: ["Photoshop", "Illustrator", "Figma", "Canva"],
-    description:
+    asset: {
+      url: "/assets/design/MYTECCJersey.png",
+      alt: "Mytecc Activity Jersey"
+    },
+    project_Name: "Mytecc Activity Jersey",
+    project_Timeline: "March 2024",
+    project_Technologies: ["Photoshop", "Illustrator", "Figma", "Canva"],
+    project_description:
       "Designed a Retro-Like jersey as a commercial Project to be sold by MYTECC UiTM Raub 2023-2024 Session."
   },
   {
-    imgLink: "/Designs/NFRRunner.png",
-    title: "NFR Runner Jersey",
-    timeline: "February 2024",
-    technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
-    description:
+    asset: {
+      url: "/assets/design/NFRRunner.png",
+      alt: "NFR Runner Jersey"
+    },
+    project_Name: "NFR Runner Jersey",
+    project_Timeline: "February 2024",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
       "Runner jersey to be wear by runner during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub."
   },
   {
-    imgLink: "/Designs/NFRCommittee.png",
-    title: "NFR Committee Jersey",
-    timeline: "February 2024",
-    technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
-    description:
+    asset: {
+      url: "/assets/design/NFRCommittee.png",
+      alt: "NFR Committee Jersey"
+    },
+
+    project_Name: "NFR Committee Jersey",
+    project_Timeline: "February 2024",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
       "Committee jersey to be wear by Committee during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub."
   }
 ];
@@ -265,7 +286,7 @@ const DesignProjects = [
 const DevelopmentProjects = [
   {
     asset: {
-      url: "/Projects/Qrcode.png",
+      url: "/assets/project/Qrcode.png",
       alt: "QR Code Generator"
     },
     development_Type: "Front-End",
@@ -277,9 +298,29 @@ const DevelopmentProjects = [
     project_DemoLink: "https://adhaghani.github.io/qrcodegen/",
     project_RepoLink: "https://github.com/adhaghani/qrcodegen"
   },
+  {
+    asset: {
+      url: "/assets/project/UniParcel.png",
+      alt: "QR Code Generator"
+    },
+    development_Type: "Full-Stack",
+    project_Name: "UniParcel",
+    project_Timeline: "February 2025",
+    project_Technologies: [
+      "React",
+      "TypeScript",
+      "Axios",
+      "Laravel",
+      "MySQL",
+      "ShadCN UI"
+    ],
+    project_description:
+      "A Full-Stack Web-Based Parcel Management System that tracks parcel movement in an institution/office. Include feature like payment, parcel tracking, staff management.",
+    project_DemoLink: "https://uniparcel.my/"
+  },
   // {
   //   asset: {
-  //     url: "/Projects/Todo.png",
+  //     url: "/assets/project/Todo.png",
   //     alt: "To-Do List"
   //   },
   //   development_Type: "Front-End",
@@ -293,7 +334,7 @@ const DevelopmentProjects = [
   // },
   // {
   //   asset: {
-  //     url: "/Projects/notification.png",
+  //     url: "/assets/project/notification.png",
   //     alt: "Notification Page"
   //   },
   //   development_Type: "Front-End",
@@ -307,7 +348,7 @@ const DevelopmentProjects = [
   // },
   // {
   //   asset: {
-  //     url: "/Projects/advice.png",
+  //     url: "/assets/project/advice.png",
   //     alt: "Advice Generator"
   //   },
   //   development_Type: "Front-End",
@@ -321,7 +362,7 @@ const DevelopmentProjects = [
   // },
   // {
   //   asset: {
-  //     url: "/Projects/advice.png",
+  //     url: "/assets/project/advice.png",
   //     alt: "Advice Generator"
   //   },
   //   development_Type: "Front-End",
@@ -335,11 +376,11 @@ const DevelopmentProjects = [
   // },
   {
     asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
+      url: "/assets/project/Room.png",
+      alt: "Room E-Commerce"
     },
     development_Type: "Full-Stack",
-    project_Name: "Room E-Commerce",
+    project_Name: "E-Commerce Platform",
     project_Timeline: "July 2024",
     project_Technologies: ["React.js", "PHP", "SCSS", "MySQL", "Chart.JS"],
     project_description:
@@ -348,36 +389,40 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
+      url: "/assets/project/Portfolio.png",
+      alt: "Personal Portfolio Website"
     },
     development_Type: "Front-End",
     project_Name: "Personal Portfolio Website",
     project_Timeline: "July 2024",
-    project_Technologies: ["React.js", "Framer Motion", "SCSS"],
+    project_Technologies: ["React", "TypeScript", "ShadCN UI", "Tailwind CSS"],
     project_description:
-      "personal portfolio websites to showcase my front-end development skills. The site also contains all my previous projects either in design or development.",
+      "personal portfolio websites to showcase my front-end development skills. The site also contains all my previous project either in design or development.",
     project_DemoLink: "https://www.adhaghani.com/",
     project_RepoLink: "https://github.com/adhaghani/Portfolio"
   },
 
   {
     asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
+      url: "/assets/project/Bank.png",
+      alt: "Simple Bank System"
     },
     development_Type: "Others",
     project_Name: "Simple Bank System",
     project_Timeline: "December 2023",
-    project_Technologies: ["Java", "OOP", "Data Structure"],
+    project_Technologies: [
+      "JAVA",
+      "Object Oriented Programming",
+      "Data Structure"
+    ],
     project_description:
       "A simple Banking application developed to demonstrate my abilities with handling Object Oriented Programming using Java. User are able to create account and do basic transaction like deposit, withdraw and transfer.",
     project_RepoLink: "https://github.com/adhaghani/SimpleBankingApplication"
   },
   {
     asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
+      url: "/assets/project/SunnySide.png",
+      alt: "SunnySide Landing Page"
     },
     development_Type: "Front-End",
     project_Name: "SunnySide Landing Page",
@@ -390,40 +435,27 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
-    },
-    development_Type: "Front-End",
-    project_Name: "Social Media Card",
-    project_Timeline: "June 2024",
-    project_Technologies: ["HTML", "CSS", "SCSS"],
-    project_description:
-      "A simple Social Media Card useful to share all my social media link in one place.",
-    project_DemoLink: "https://adhaghani.github.io/SocialLink/",
-    project_RepoLink: "https://github.com/adhaghani/SocialLink"
-  },
-  {
-    asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
+      url: "/assets/project/starbucks.png",
+      alt: "Starbucks Landing Page"
     },
     development_Type: "Front-End",
     project_Name: "Starbucks Landing Page",
     project_Timeline: "December 2022",
-    project_Technologies: ["HTML", "CSS", "JavaScript"],
+    project_Technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Web Design"
+    ],
     project_description:
       "My first ever Landing Page project, a copy of starbucks landing page. Developed to learn and understand the basics and fundamental of HTML, CSS and Javasript languages, which greatly helps me in the long run.",
     project_DemoLink: "https://adhaghani.github.io/starbuck-lp.github.io/",
     project_RepoLink: "https://github.com/adhaghani/starbuck-lp.github.io"
   },
   {
-    asset: {
-      url: "/Projects/advice.png",
-      alt: "Advice Generator"
-    },
     project_Name: "Car DealerShip Application",
     project_Timeline: "June 2023",
-    project_Technologies: ["Java", "OOP"],
+    project_Technologies: ["Java", "Object Oriented Programming"],
     project_description:
       "A Car Dealership Application developed to increase understanding of OOP concepts. Contain objects like car, dealership and buyer.",
     project_RepoLink:

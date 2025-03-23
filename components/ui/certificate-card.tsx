@@ -9,13 +9,13 @@ import { CertificateCardProps } from "@/constant/types";
 
 const CertificateCard = ({
   data,
-  key
+  i
 }: {
   data: CertificateCardProps;
-  key: number;
+  i: number;
 }) => {
   return (
-    <BlurFade inView key={key} delay={key === 0 ? 0.2 : 0.2 * key}>
+    <BlurFade inView key={i} delay={i === 0 ? 0.2 : 0.2 * i}>
       <LinkPreview url={data.PreviewLink}>
         <Card>
           <CardHeader>

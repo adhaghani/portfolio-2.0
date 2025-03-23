@@ -26,13 +26,7 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
         </BlurFade>
         <div className="w-full">
           <BlurFade inView delay={0.2}>
-            <div className="flex gap-4 justify-between items-center">
-              <Text as="h3">{data.name}</Text>
-              <Button size={"sm"} variant={"ghost"}>
-                View Detail
-                <ArrowRightIcon className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
+            <Text as="h3">{data.name}</Text>
           </BlurFade>
           <BlurFade inView delay={0.3}>
             <Text as="h4" className="font-medium">

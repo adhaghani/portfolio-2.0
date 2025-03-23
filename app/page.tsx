@@ -198,7 +198,7 @@ export default function Home() {
           <Marquee className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
               {firstMarqueeIcons.map((tech, i) => (
-                <BlurFade key={i} inView delay={0.5}>
+                <BlurFade key={i} inView delay={0.2}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="p-4 aspect-square size-24 grid place-items-center bg-background border shadow rounded-lg">
@@ -216,7 +216,7 @@ export default function Home() {
           <Marquee reverse className="[--duration:20s] !overflow-hidden">
             <TooltipProvider delayDuration={0}>
               {secondMarqueeIcons.map((tech, i) => (
-                <BlurFade key={i} inView delay={0.5}>
+                <BlurFade key={i} inView delay={0.2}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div className="p-4 aspect-square size-24 grid place-items-center bg-background border shadow rounded-lg">

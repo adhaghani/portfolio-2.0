@@ -20,11 +20,19 @@ const DevelopmentCard = ({ data }: { data: DevelopmentProjectType }) => {
   return (
     <BlurFade inView delay={0.2}>
       <Card className="h-full">
-        <CardHeader>
+        <CardHeader className="h-fit">
           <CardTitle>
             <Lens hovering={hovering} setHovering={setHovering}>
               <div className="w-full aspect-video bg-neutral-900 rounded grid place-items-center">
-                <ImageIcon className="w-10 h-10 text-neutral-100" />
+                {data.asset && data.asset.url ? (
+                  <img
+                    className="aspect-video object-cover object-center"
+                    src={data.asset.url}
+                    alt={data.asset.alt}
+                  />
+                ) : (
+                  <ImageIcon className="w-10 h-10 text-gray-500" />
+                )}
               </div>
             </Lens>
           </CardTitle>
@@ -47,7 +55,7 @@ const DevelopmentCard = ({ data }: { data: DevelopmentProjectType }) => {
               })}
           </div>
         </CardContent>
-        <CardFooter className="gap-2">
+        <CardFooter className="gap-2 ">
           {data.project_DemoLink && (
             <Button className="w-full" variant={"secondary"} asChild>
               <Link href={data.project_DemoLink}>

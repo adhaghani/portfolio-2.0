@@ -1,5 +1,5 @@
 export interface DevelopmentProjectType {
-  asset: {
+  asset?: {
     url: string;
     alt: string;
   };
@@ -13,7 +13,7 @@ export interface DevelopmentProjectType {
 }
 
 export interface DesignProjectType {
-  asset: {
+  asset?: {
     url: string;
     alt: string;
   };

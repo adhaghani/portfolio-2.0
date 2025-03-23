@@ -45,14 +45,6 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
             <BlurFade inView delay={0.2}>
               <Text as="h3">{data.name}</Text>
             </BlurFade>
-            <BlurFade inView delay={0.2}>
-              <Button size={"sm"} variant={"ghost"} asChild>
-                <Link href={data.name}>
-                  View Detail
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </BlurFade>
           </div>
           <BlurFade delay={0.3} inView>
             <Text as="h4" className="font-medium">
