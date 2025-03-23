@@ -4,10 +4,9 @@ import { Spotlight } from "@/components/ui/spotlight-new";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import DesignCard from "@/components/ui/design-card";
 import DevelopmentCard from "@/components/ui/development-card";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MailIcon } from "lucide-react";
 import { FilterIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Contact from "@/components/contact";
 import {
   Popover,
   PopoverContent,
@@ -94,48 +93,7 @@ const page = () => {
             <Text as="h2" className="text-3xl font-bold mb-8">
               Let's Connect
             </Text>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <MailIcon className="h-5 w-5" />
-                    <Text as="p">email@example.com</Text>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button variant="outline">Github</Button>
-                    <Button variant="outline">lindkedin</Button>
-                    <Button variant="outline">Resume</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full p-2 rounded-md border bg-background"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full p-2 rounded-md border bg-background"
-                    />
-                    <textarea
-                      placeholder="Your Message"
-                      className="w-full p-2 rounded-md border bg-background min-h-[100px]"
-                    />
-                    <Button className="w-full">Send Message</Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+            <Contact />
           </BlurFade>
         </div>
       </section>

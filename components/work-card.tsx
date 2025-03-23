@@ -19,7 +19,7 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
   return (
     <div>
       <div className="flex flex-col md:flex-row gap-4">
-        <BlurFade inView delay={0.1}>
+        <BlurFade inView delay={0.2}>
           <div className="aspect-video bg-background shadow rounded-lg grid place-items-center min-w-64">
             {data.Logo}
           </div>
@@ -28,12 +28,12 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
           <BlurFade inView delay={0.2}>
             <Text as="h3">{data.name}</Text>
           </BlurFade>
-          <BlurFade inView delay={0.3}>
+          <BlurFade inView delay={0.2}>
             <Text as="h4" className="font-medium">
               {data.type}, {data.role}
             </Text>
           </BlurFade>
-          <BlurFade inView delay={0.3}>
+          <BlurFade inView delay={0.2}>
             <Text as="p" styleVariant="muted" className="font-medium">
               {data.duration}
             </Text>
@@ -41,13 +41,13 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
         </div>
       </div>
       <ul className="mt-4">
-        <BlurFade inView delay={0.3}>
+        <BlurFade inView delay={0.2}>
           <Text as="h4" className="font-semibold">
             Contribution
           </Text>
         </BlurFade>
         {data.achievement.map((achievement, i) => (
-          <BlurFade key={i} inView delay={i === 0 ? 0.3 : i * 0.3}>
+          <BlurFade key={i} inView delay={0.2}>
             <li className="mt-2 ml-5 list-disc">
               <Text as="p">{achievement}</Text>
             </li>

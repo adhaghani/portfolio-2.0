@@ -2,28 +2,21 @@
 
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
-
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { Marquee } from "@/components/magicui/marquee";
 import TechCard from "@/components/ui/tech-card";
-import {
-  PaintbrushIcon,
-  CodeIcon,
-  BrushIcon,
-  MailIcon,
-  MapPinIcon
-} from "lucide-react";
+import { PaintbrushIcon, CodeIcon, BrushIcon } from "lucide-react";
 import Contact from "@/components/contact";
-import { Button } from "@/components/ui/button";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import DevelopmentCard from "@/components/ui/development-card";
 import { BackgroundLines } from "@/components/ui/background-lines";
-import { Separator } from "@/components/ui/separator";
 import {
   DevelopmentTech,
   DesignTech,
@@ -52,56 +45,26 @@ const Service = [
   }
 ];
 
-const projects = [
+const testimonials = [
   {
-    title: "Portfolio Website",
-    description:
-      "A modern portfolio website built with Next.js and Tailwind CSS",
-    image: {
-      src: "/projects/portfolio.png",
-      alt: "Portfolio Website"
-    },
-    link: "https://github.com/yourusername/portfolio",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Shadcn UI"
-    ]
+    title: "Great Design",
+    quote:
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+    name: "Syahreen Kamarulzaman",
+    position: "President, BS UiTM Raub (23-24)"
   },
   {
-    title: "E-commerce Dashboard",
-    description:
-      "Admin dashboard for managing online store inventory and orders",
-    image: {
-      src: "/projects/portfolio.png",
-      alt: "Portfolio Website"
-    },
-    link: "https://github.com/yourusername/dashboard",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Shadcn UI"
-    ]
+    title: "Very fast timing",
+    quote:
+      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+    name: "Muhammad Aidiel",
+    position: "President, MYTECC UiTM Raub (23-24)"
   },
   {
-    title: "Weather App",
-    description: "Real-time weather application with location-based forecasts",
-    image: {
-      src: "/projects/portfolio.png",
-      alt: "Portfolio Website"
-    },
-    link: "https://github.com/yourusername/weather-app",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Shadcn UI"
-    ]
+    title: "Very Proffessional Ethic",
+    quote: "All that we see or seem is but a dream within a dream.",
+    name: "Mazidah Merican",
+    position: "IT Manager, AbleAce Raakin Sdn. Bhd."
   }
 ];
 
@@ -195,9 +158,11 @@ export default function Home() {
         <Text as="p" className="text-muted-foreground">
           My Technical Expertise
         </Text>
-        <div className="relative grid grid-cols-1 gap-4 !overflow-hidden mt-5">
+        <div className="relative grid grid-cols-1 gap-12 !overflow-hidden mt-5">
           <div>
-            <Text as="h3">Development Technologies</Text>
+            <Text as="h3" className="mb-12">
+              Development Technologies
+            </Text>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-3 gap-2">
               {DevelopmentTech.map((tech, i) => (
                 <TechCard key={i} Data={tech} />
@@ -205,7 +170,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <Text as="h3">Design Technologies</Text>
+            <Text as="h3" className="mb-12">
+              Design Technologies
+            </Text>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-3 gap-2">
               {DesignTech.map((tech, i) => (
                 <TechCard key={i} Data={tech} />
@@ -213,7 +180,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <Text as="h3">Others</Text>
+            <Text as="h3" className="mb-12">
+              Others
+            </Text>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-3 gap-2">
               {OtherTech.map((tech, i) => (
                 <TechCard key={i} Data={tech} />
@@ -241,6 +210,33 @@ export default function Home() {
             <InteractiveHoverButton>View All Projects</InteractiveHoverButton>
           </Link>
         </BlurFade>
+      </div>
+
+      {/* Reviews */}
+      <div className="py-20 px-4 ">
+        <Text as="h2" className="mt-2">
+          Reviews
+        </Text>
+        <Text as="p" className="text-muted-foreground mb-10">
+          Here what my clients say about me.
+        </Text>
+        <Marquee>
+          {testimonials.map((testimonial, i) => (
+            <Card key={i} className="h-fit max-w-xl">
+              <CardHeader>
+                <CardTitle className="text-2xl">{testimonial.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Text as="p">{testimonial.quote}</Text>
+              </CardContent>
+              <CardFooter>
+                <Text as="p" styleVariant="muted">
+                  {testimonial.name} - {testimonial.position}
+                </Text>
+              </CardFooter>
+            </Card>
+          ))}
+        </Marquee>
       </div>
 
       {/* Contact Section - New Addition */}

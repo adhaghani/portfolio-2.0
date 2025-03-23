@@ -15,7 +15,7 @@ const CertificateCard = ({
   i: number;
 }) => {
   return (
-    <BlurFade inView key={i} delay={i === 0 ? 0.2 : 0.2 * i}>
+    <BlurFade inView key={i} delay={0.2}>
       <LinkPreview url={data.PreviewLink}>
         <Card>
           <CardHeader>

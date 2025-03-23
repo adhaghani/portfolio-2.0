@@ -2,12 +2,13 @@
 
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import { Education, Work, Certificate } from "@/constant/constant";
-import { MailIcon } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
+import Contact from "@/components/contact";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import CertificateCard from "@/components/ui/certificate-card";
 import React from "react";
@@ -46,9 +47,9 @@ const page = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <Text as="p" className="text-md" styleVariant="muted">
-                  I'm a passionate tech enthusiast and full-time student, deeply
-                  immersed in the world of software development and design. With
-                  a keen eye for detail and a love for creating intuitive user
+                  I'm a tech enthusiast and full-time student, deeply immersed
+                  in the world of software development and design. With a keen
+                  eye for detail and a love for creating intuitive user
                   experiences, I specialize in building modern web applications
                   using cutting-edge technologies.
                 </Text>
@@ -57,7 +58,9 @@ const page = () => {
                 <Text as="p" className="text-md" styleVariant="muted">
                   Currently pursuing my degree, I balance my academic pursuits
                   with hands-on project work, constantly learning and adapting
-                  to new technologies in the ever-evolving tech landscape.
+                  to new technologies in the ever-evolving tech landscape. Oh
+                  and other than coding and studying, i also love going to the
+                  gym.
                 </Text>
               </div>
             </div>
@@ -138,48 +141,7 @@ const page = () => {
             <Text as="h2" className="text-3xl font-bold mb-8">
               Let's Connect
             </Text>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <MailIcon className="h-5 w-5" />
-                    <Text as="p">email@example.com</Text>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button variant="outline">Github</Button>
-                    <Button variant="outline">lindkedin</Button>
-                    <Button variant="outline">Resume</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full p-2 rounded-md border bg-background"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full p-2 rounded-md border bg-background"
-                    />
-                    <textarea
-                      placeholder="Your Message"
-                      className="w-full p-2 rounded-md border bg-background min-h-[100px]"
-                    />
-                    <Button className="w-full">Send Message</Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+            <Contact />
           </BlurFade>
         </div>
       </section>
