@@ -2,8 +2,7 @@
 
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
-import { WordRotate } from "@/components/magicui/word-rotate";
-import { Ripple } from "@/components/magicui/ripple";
+
 import {
   Card,
   CardContent,
@@ -11,20 +10,27 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import TechCard from "@/components/ui/tech-card";
 import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-  TooltipContent
-} from "@/components/ui/tooltip";
-import { PaintbrushIcon, CodeIcon, BrushIcon, MailIcon } from "lucide-react";
+  PaintbrushIcon,
+  CodeIcon,
+  BrushIcon,
+  MailIcon,
+  MapPinIcon
+} from "lucide-react";
+import Contact from "@/components/contact";
 import { Button } from "@/components/ui/button";
-import { Marquee } from "@/components/magicui/marquee";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
-import ProjectCard from "@/components/project-card";
-import TechStackIcon from "@/components/technology-stack-icon";
-import Link from "next/link";
+import DevelopmentCard from "@/components/ui/development-card";
 import { BackgroundLines } from "@/components/ui/background-lines";
+import { Separator } from "@/components/ui/separator";
+import {
+  DevelopmentTech,
+  DesignTech,
+  OtherTech
+} from "@/components/technology-stack-icon";
+import Link from "next/link";
+import { DevelopmentProjects } from "@/constant/constant";
 const Service = [
   {
     icon: <PaintbrushIcon className="inline-block mr-2" />,
@@ -100,17 +106,12 @@ const projects = [
 ];
 
 export default function Home() {
-  const shuffleArray = (array: typeof TechStackIcon) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  };
-
-  const firstMarqueeIcons = shuffleArray(TechStackIcon);
-  const secondMarqueeIcons = shuffleArray(TechStackIcon);
+  const SelectedProjects = DevelopmentProjects.filter(
+    (project) =>
+      project.project_Name === "UniParcel" ||
+      project.project_Name === "E-Commerce Platform" ||
+      project.project_Name === "Personal Portfolio Website"
+  );
 
   return (
     <>
@@ -192,47 +193,33 @@ export default function Home() {
           Technology
         </Text>
         <Text as="p" className="text-muted-foreground">
-          Technologies I work with.
+          My Technical Expertise
         </Text>
-        <div className="relative flex flex-col items-center justify-center !overflow-hidden mt-5">
-          <Marquee className="[--duration:20s] !overflow-hidden">
-            <TooltipProvider delayDuration={0}>
-              {firstMarqueeIcons.map((tech, i) => (
-                <BlurFade key={i} inView delay={0.2}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="p-4 aspect-square size-24 grid place-items-center bg-background border shadow rounded-lg">
-                        {tech.icon}
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <Text as="p">{tech.name}</Text>
-                    </TooltipContent>
-                  </Tooltip>
-                </BlurFade>
+        <div className="relative grid grid-cols-1 gap-4 !overflow-hidden mt-5">
+          <div>
+            <Text as="h3">Development Technologies</Text>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-3 gap-2">
+              {DevelopmentTech.map((tech, i) => (
+                <TechCard key={i} Data={tech} />
               ))}
-            </TooltipProvider>
-          </Marquee>
-          <Marquee reverse className="[--duration:20s] !overflow-hidden">
-            <TooltipProvider delayDuration={0}>
-              {secondMarqueeIcons.map((tech, i) => (
-                <BlurFade key={i} inView delay={0.2}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="p-4 aspect-square size-24 grid place-items-center bg-background border shadow rounded-lg">
-                        {tech.icon}
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <Text as="p">{tech.name}</Text>
-                    </TooltipContent>
-                  </Tooltip>
-                </BlurFade>
+            </div>
+          </div>
+          <div>
+            <Text as="h3">Design Technologies</Text>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-3 gap-2">
+              {DesignTech.map((tech, i) => (
+                <TechCard key={i} Data={tech} />
               ))}
-            </TooltipProvider>
-          </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+            </div>
+          </div>
+          <div>
+            <Text as="h3">Others</Text>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-3 gap-2">
+              {OtherTech.map((tech, i) => (
+                <TechCard key={i} Data={tech} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -245,14 +232,14 @@ export default function Home() {
           Some of my recent work.
         </Text>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
-          {projects.map((project, i) => (
-            <BlurFade inView key={i} delay={i * 0.1}>
-              <ProjectCard data={project} />
-            </BlurFade>
-          ))}
+          {SelectedProjects.map((project, i) => {
+            return <DevelopmentCard key={i} data={project} />;
+          })}
         </div>
         <BlurFade inView>
-          <InteractiveHoverButton>View All Projects</InteractiveHoverButton>
+          <Link href={"project"}>
+            <InteractiveHoverButton>View All Projects</InteractiveHoverButton>
+          </Link>
         </BlurFade>
       </div>
 
@@ -263,48 +250,7 @@ export default function Home() {
             <Text as="h2" className="text-3xl font-bold mb-8">
               Let's Connect
             </Text>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <MailIcon className="h-5 w-5" />
-                    <Text as="p">email@example.com</Text>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button variant="outline">Github</Button>
-                    <Button variant="outline">lindkedin</Button>
-                    <Button variant="outline">Resume</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full p-2 rounded-md border bg-background"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full p-2 rounded-md border bg-background"
-                    />
-                    <textarea
-                      placeholder="Your Message"
-                      className="w-full p-2 rounded-md border bg-background min-h-[100px]"
-                    />
-                    <Button className="w-full">Send Message</Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+            <Contact />
           </BlurFade>
         </div>
       </section>

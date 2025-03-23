@@ -21,7 +21,7 @@ const DesignCard = ({ data }: { data: DesignProjectType }) => {
         <CardHeader>
           <CardTitle>
             <Lens hovering={hovering} setHovering={setHovering}>
-              <div className="w-full aspect-square bg-neutral-900 rounded grid place-items-center">
+              <div className="w-full aspect-square dark:bg-neutral-900 bg-neutral-100 rounded grid place-items-center">
                 {data.asset && data.asset.url ? (
                   <img src={data.asset.url} alt={data.asset.alt} />
                 ) : (
