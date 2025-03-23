@@ -108,7 +108,8 @@ const Work = [
     name: "AbleAce Raakin Sdn. Bhd.",
     Logo: AboutLogo.AAR,
     duration: "September 2024 - February 2025",
-    development_Type: "Intenrship",
+    website: "https://ableaceraakin.com",
+    type: "Intenrship",
     role: "Junior IT Executive",
     achievement: [
       "Designed, Developed and launched the company’s new website",
@@ -289,7 +290,7 @@ const DevelopmentProjects = [
       url: "/assets/project/Qrcode.png",
       alt: "QR Code Generator"
     },
-    development_Type: "Front-End",
+    development_Type: ["Front-End"],
     project_Name: "QR Code Generator",
     project_Timeline: "August 2024",
     project_Technologies: ["React.js", "SCSS", "QRcode.react", "HTML2Canvas"],
@@ -303,7 +304,7 @@ const DevelopmentProjects = [
       url: "/assets/project/UniParcel.png",
       alt: "QR Code Generator"
     },
-    development_Type: "Full-Stack",
+    development_Type: ["Full-Stack", "Front-End", "Back-End"],
     project_Name: "UniParcel",
     project_Timeline: "February 2025",
     project_Technologies: [
@@ -379,7 +380,7 @@ const DevelopmentProjects = [
       url: "/assets/project/Room.png",
       alt: "Room E-Commerce"
     },
-    development_Type: "Full-Stack",
+    development_Type: ["Full-Stack", "Front-End", "Back-End"],
     project_Name: "E-Commerce Platform",
     project_Timeline: "July 2024",
     project_Technologies: ["React.js", "PHP", "SCSS", "MySQL", "Chart.JS"],
@@ -392,7 +393,7 @@ const DevelopmentProjects = [
       url: "/assets/project/Portfolio.png",
       alt: "Personal Portfolio Website"
     },
-    development_Type: "Front-End",
+    development_Type: ["Front-End"],
     project_Name: "Personal Portfolio Website",
     project_Timeline: "July 2024",
     project_Technologies: ["React", "TypeScript", "ShadCN UI", "Tailwind CSS"],
@@ -407,7 +408,7 @@ const DevelopmentProjects = [
       url: "/assets/project/Bank.png",
       alt: "Simple Bank System"
     },
-    development_Type: "Others",
+    development_Type: ["Others"],
     project_Name: "Simple Bank System",
     project_Timeline: "December 2023",
     project_Technologies: [
@@ -424,7 +425,7 @@ const DevelopmentProjects = [
       url: "/assets/project/SunnySide.png",
       alt: "SunnySide Landing Page"
     },
-    development_Type: "Front-End",
+    development_Type: ["Front-End"],
     project_Name: "SunnySide Landing Page",
     project_Timeline: "June 2024",
     project_Technologies: ["HTML", "CSS", "JavaScript", "React.js", "SCSS "],
@@ -438,7 +439,7 @@ const DevelopmentProjects = [
       url: "/assets/project/starbucks.png",
       alt: "Starbucks Landing Page"
     },
-    development_Type: "Front-End",
+    development_Type: ["Front-End"],
     project_Name: "Starbucks Landing Page",
     project_Timeline: "December 2022",
     project_Technologies: [
@@ -454,8 +455,13 @@ const DevelopmentProjects = [
   },
   {
     project_Name: "Car DealerShip Application",
+    development_Type: ["Others"],
     project_Timeline: "June 2023",
-    project_Technologies: ["Java", "Object Oriented Programming"],
+    project_Technologies: [
+      "Java",
+      "Object Oriented Programming",
+      "Java Foundation"
+    ],
     project_description:
       "A Car Dealership Application developed to increase understanding of OOP concepts. Contain objects like car, dealership and buyer.",
     project_RepoLink:

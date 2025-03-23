@@ -7,6 +7,7 @@ import DevelopmentCard from "@/components/ui/development-card";
 import { FilterIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Contact from "@/components/contact";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
   Popover,
   PopoverContent,
@@ -14,7 +15,26 @@ import {
 } from "@/components/ui/popover";
 import { DevelopmentProjects, DesignProjects } from "@/constant/constant";
 import { DevelopmentProjectType } from "@/constant/types";
+import { useState } from "react";
+
 const page = () => {
+  const [ViewValue, setViewValue] = useState<string[]>([
+    "Full-Stack",
+    "Front-End",
+    "Back-End",
+    "Others"
+  ]);
+
+  const handleChange = (value: string[]) => {
+    setViewValue(value);
+  };
+
+  const FilteredDevelopmentProjects = DevelopmentProjects.filter((project) => {
+    return ViewValue.some((value) => {
+      return project.development_Type.includes(value);
+    });
+  });
+
   return (
     <>
       {/* Hero */}
@@ -53,19 +73,53 @@ const page = () => {
                     Filter
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="m-4">
-                  Place content for the popover here.
+                <PopoverContent className="m-4 w-fit">
+                  <ToggleGroup
+                    type="multiple"
+                    className="flex-col gap-2l"
+                    size={"lg"}
+                    variant={"outline"}
+                    defaultValue={ViewValue}
+                    onValueChange={handleChange}
+                  >
+                    <ToggleGroupItem value="Full-Stack">
+                      Full-Stack Development
+                    </ToggleGroupItem>
+                    <ToggleGroupItem value="Front-End">
+                      Front-End Development
+                    </ToggleGroupItem>
+                    <ToggleGroupItem value="Back-End">
+                      Back-End Development
+                    </ToggleGroupItem>
+                    <ToggleGroupItem className="w-full" value="Others">
+                      Others
+                    </ToggleGroupItem>
+                  </ToggleGroup>
                 </PopoverContent>
               </Popover>
             </div>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {/* Put all Coding projects here */}
-              {DevelopmentProjects.map((project, i) => (
-                <DevelopmentCard
-                  key={i}
-                  data={project as DevelopmentProjectType}
-                />
-              ))}
+              {FilteredDevelopmentProjects.length > 0 ? (
+                FilteredDevelopmentProjects.map((project, i) => (
+                  <DevelopmentCard
+                    key={i}
+                    data={project as DevelopmentProjectType}
+                  />
+                ))
+              ) : (
+                <BlurFade
+                  inView
+                  delay={0.2}
+                  className="col-span-1 md:col-span-2 lg:col-span-3"
+                >
+                  <div className=" bg-secondary/50 py-10 rounded-lg border-2 border-dashed border-secondary">
+                    <Text as="h2" className="text-center text-base">
+                      No projects found.
+                    </Text>
+                  </div>
+                </BlurFade>
+              )}
             </div>
           </BlurFade>
         </div>

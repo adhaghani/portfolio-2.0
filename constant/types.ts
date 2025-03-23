@@ -3,7 +3,7 @@ export interface DevelopmentProjectType {
     url: string;
     alt: string;
   };
-  development_Type?: string;
+  development_Type?: string[];
   project_Name?: string;
   project_Timeline?: string;
   project_Technologies?: string[];

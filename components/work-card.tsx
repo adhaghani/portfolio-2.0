@@ -3,14 +3,16 @@
 import React from "react";
 import { BlurFade } from "./magicui/blur-fade";
 import { Text } from "./ui/text";
+import { LinkPreview } from "./ui/link-preview";
+import Link from "next/link";
 import { Button } from "./ui/button";
-import { ArrowRightIcon } from "lucide-react";
-
+import { MonitorIcon } from "lucide-react";
 interface WorkProps {
   name: string;
   type: string;
   role: string;
   duration: string;
+  website: string;
   Logo: any;
   achievement: string[];
 }
@@ -25,16 +27,28 @@ const WorkCard = ({ data }: { data: WorkProps }) => {
           </div>
         </BlurFade>
         <div className="w-full">
-          <BlurFade inView delay={0.2}>
-            <Text as="h3">{data.name}</Text>
-          </BlurFade>
+          <div className="flex justify-between gap-2 items-center">
+            <BlurFade inView delay={0.2}>
+              <Text as="h3">{data.name}</Text>
+            </BlurFade>
+            {data.website && (
+              <BlurFade inView delay={0.2}>
+                <LinkPreview url={data.website}>
+                  <Button size={"sm"} variant={"ghost"} className="mt-2">
+                    <MonitorIcon className="w-5 h-5" />
+                    Company Website
+                  </Button>
+                </LinkPreview>
+              </BlurFade>
+            )}
+          </div>
           <BlurFade inView delay={0.2}>
             <Text as="h4" className="font-medium">
               {data.type}, {data.role}
             </Text>
           </BlurFade>
           <BlurFade inView delay={0.2}>
-            <Text as="p" styleVariant="muted" className="font-medium">
+            <Text as="p" styleVariant="muted" className="font-medium mt-2">
               {data.duration}
             </Text>
           </BlurFade>

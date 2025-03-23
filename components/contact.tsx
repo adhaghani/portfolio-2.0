@@ -13,7 +13,8 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select";
-
+import { Separator } from "./ui/separator";
+import Link from "next/link";
 const Contact = () => {
   const [isSending, setisSending] = useState<boolean>(false);
 
@@ -28,7 +29,7 @@ const Contact = () => {
     <Card>
       <CardHeader className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <CardTitle>Contact Information</CardTitle>
-        <CardTitle>Let's work together</CardTitle>
+        <CardTitle className="hidden md:visible">Let's work together</CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-6">
@@ -56,7 +57,16 @@ const Contact = () => {
               <Text as="p">Bandar Baru Bangi, Selangor, Malaysia</Text>
             </div>
           </div>
+          <Separator />
+          <div className="grid grid-cols-3 gap-3">
+            <Button variant={"secondary"}>Github</Button>
+            <Button variant={"secondary"}>LinkedIn</Button>
+            <Button variant={"secondary"}>Resume</Button>
+            <Button variant={"secondary"}>Instagram</Button>
+          </div>
         </div>
+        <CardTitle className="md:hidden visible">Let's work together</CardTitle>
+
         <form className="space-y-4">
           <Input type="text" placeholder="Your Name" disabled={isSending} />
           <Input type="email" placeholder="Your Email" disabled={isSending} />

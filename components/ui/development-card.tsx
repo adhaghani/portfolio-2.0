@@ -22,24 +22,35 @@ const DevelopmentCard = ({ data }: { data: DevelopmentProjectType }) => {
       <Card className="h-full">
         <CardHeader className="h-fit">
           <CardTitle>
-            <Lens hovering={hovering} setHovering={setHovering}>
+            {data.asset && data.asset.url ? (
+              <Lens hovering={hovering} setHovering={setHovering}>
+                <div className="w-full aspect-video dark:bg-neutral-900 bg-neutral-100 rounded grid place-items-center">
+                  {data.asset && data.asset.url ? (
+                    <img
+                      className="aspect-video object-cover object-center"
+                      src={data.asset.url}
+                      alt={data.asset.alt}
+                    />
+                  ) : (
+                    <div>
+                      <ImageIcon className="w-10 h-10 mx-auto text-gray-500 mb-3" />
+                      <Text as="p" styleVariant="muted">
+                        No Image Available
+                      </Text>
+                    </div>
+                  )}
+                </div>
+              </Lens>
+            ) : (
               <div className="w-full aspect-video dark:bg-neutral-900 bg-neutral-100 rounded grid place-items-center">
-                {data.asset && data.asset.url ? (
-                  <img
-                    className="aspect-video object-cover object-center"
-                    src={data.asset.url}
-                    alt={data.asset.alt}
-                  />
-                ) : (
-                  <div>
-                    <ImageIcon className="w-10 h-10 mx-auto text-gray-500 mb-3" />
-                    <Text as="p" styleVariant="muted">
-                      No Image Available
-                    </Text>
-                  </div>
-                )}
+                <div>
+                  <ImageIcon className="w-10 h-10 mx-auto text-gray-500 mb-3" />
+                  <Text as="p" styleVariant="muted">
+                    No Image Available
+                  </Text>
+                </div>
               </div>
-            </Lens>
+            )}
           </CardTitle>
         </CardHeader>
         <CardContent>
