@@ -4,7 +4,6 @@ import React from "react";
 import { BlurFade } from "./magicui/blur-fade";
 import { Text } from "./ui/text";
 import { LinkPreview } from "./ui/link-preview";
-import Link from "next/link";
 import { Button } from "./ui/button";
 import { MonitorIcon } from "lucide-react";
 interface WorkProps {
@@ -13,7 +12,7 @@ interface WorkProps {
   role: string;
   duration: string;
   website: string;
-  Logo: any;
+  Logo: React.ReactNode;
   achievement: string[];
 }
 

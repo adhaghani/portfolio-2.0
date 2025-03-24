@@ -38,7 +38,7 @@ const page = () => {
   return (
     <>
       {/* Hero */}
-      <Spotlight />
+      <Spotlight xOffset={0} />
       <div className="h-screen max-h-[1100px] flex items-center justify-center relative pt-16">
         <div className=" w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
           <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
@@ -145,7 +145,7 @@ const page = () => {
         <div className="container mx-auto">
           <BlurFade inView>
             <Text as="h2" className="text-3xl font-bold mb-8">
-              Let's Connect
+              Let{`'`}s Connect
             </Text>
             <Contact />
           </BlurFade>

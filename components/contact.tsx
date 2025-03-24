@@ -29,7 +29,9 @@ const Contact = () => {
     <Card>
       <CardHeader className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <CardTitle>Contact Information</CardTitle>
-        <CardTitle className="hidden md:visible">Let's work together</CardTitle>
+        <CardTitle className="hidden md:block">
+          Let{`'`}s work together
+        </CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-6">
@@ -59,13 +61,25 @@ const Contact = () => {
           </div>
           <Separator />
           <div className="grid grid-cols-3 gap-3">
-            <Button variant={"secondary"}>Github</Button>
-            <Button variant={"secondary"}>LinkedIn</Button>
+            <Button variant={"secondary"} asChild>
+              <Link href={"https://www.github.com/adhaghani"}>Github</Link>
+            </Button>
+            <Button variant={"secondary"} asChild>
+              <Link href={"https://www.linkedin.com/in/adhaghani"}>
+                Linkedin
+              </Link>
+            </Button>
             <Button variant={"secondary"}>Resume</Button>
-            <Button variant={"secondary"}>Instagram</Button>
+            <Button variant={"secondary"} asChild>
+              <Link href={"https://www.instagram.com/adhaghani"}>
+                instagram
+              </Link>
+            </Button>
           </div>
         </div>
-        <CardTitle className="md:hidden visible">Let's work together</CardTitle>
+        <CardTitle className="md:hidden visible">
+          Let{`'`}s work together
+        </CardTitle>
 
         <form className="space-y-4">
           <Input type="text" placeholder="Your Name" disabled={isSending} />

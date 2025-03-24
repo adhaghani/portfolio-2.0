@@ -2,10 +2,8 @@
 
 import { BlurFade } from "./magicui/blur-fade";
 import { Text } from "./ui/text";
-import { Button } from "./ui/button";
-import { ArrowRightIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
-import Link from "next/link";
+
 interface ActivityDetails {
   title: string;
   role?: string;
@@ -26,7 +24,7 @@ interface EducationProp {
   degree: string;
   duration: string;
   grade?: string;
-  Logo: any;
+  Logo: React.ReactNode;
   relatedCourses: string[];
   activities?: EducationActivites[];
 }

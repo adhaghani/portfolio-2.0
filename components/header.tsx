@@ -7,7 +7,7 @@ import { useIsMobile } from "@/hooks/use-is-mobile";
 const Header = () => {
   const isMobile = useIsMobile();
   return (
-    <header className="fixed top-0 z-50 w-full">
+    <header className="fixed z-50 w-full max-w-screen mx-auto px-2 md:px-4">
       {isMobile ? <HeaderMobile /> : <DockDemo />}
     </header>
   );

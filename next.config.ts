@@ -7,7 +7,11 @@ const nextConfig: NextConfig = {
     domains: [
       "api.microlink.io" // Microlink Image Preview
     ]
+  },
+  eslint: {
+    ignoreDuringBuilds: true
   }
+  // output: "export"
 };
 
 export default nextConfig;

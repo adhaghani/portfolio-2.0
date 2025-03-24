@@ -77,9 +77,9 @@ const DATA = {
 
 export function DockDemo() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-full max-w-screen-xl mx-auto px-4 overflow-hidden">
       <TooltipProvider delayDuration={0}>
-        <Dock direction="middle">
+        <Dock direction="middle" className="max-w-full">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -89,10 +89,10 @@ export function DockDemo() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 md:size-12 rounded-full"
                     )}
                   >
-                    <item.icon className="size-4" />
+                    <item.icon className="size-4 md:size-5" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side="bottom">
@@ -111,10 +111,10 @@ export function DockDemo() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 md:size-12 rounded-full"
                     )}
                   >
-                    <social.icon className="size-4" />
+                    <social.icon className="size-4 md:size-5" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side="bottom">

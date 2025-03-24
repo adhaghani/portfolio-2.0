@@ -49,16 +49,16 @@ const testimonials = [
   {
     title: "Great Design",
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+      "Working with adha is truly a great experience, his work is on-time, well designed and he communicated throughout the process thus meeting our demands.",
     name: "Syahreen Kamarulzaman",
-    position: "President, BS UiTM Raub (23-24)"
+    position: "President, BS UiTM Raub (session 23/24)"
   },
   {
-    title: "Very fast timing",
+    title: "Great Collaboration",
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "Muhammad Aidiel",
-    position: "President, MYTECC UiTM Raub (23-24)"
+      "Working with Adha is very enjoyable, and he has a great personality, especially in creating works that contribute to the growth of MYTECC while meeting the necessary criteria within the MYTECC organization.",
+    name: "Aidiel Hussin",
+    position: "President, President, MYTECC Pahang (session 23/24)"
   },
   {
     title: "Very Proffessional Ethic",
@@ -84,7 +84,7 @@ export default function Home() {
           as="h1"
           className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
         >
-          hello Everyone, <br /> I'm Adha.
+          hello Everyone, <br /> I{`'`}m Adha.
         </Text>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
           Coding changes line by line, and sipping coffee whenever i can.
@@ -100,11 +100,11 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <Text as="p" className="text-md" styleVariant="muted">
-                  I'm a passionate tech enthusiast and full-time student, deeply
-                  immersed in the world of software development and design. With
-                  a keen eye for detail and a love for creating intuitive user
-                  experiences, I specialize in building modern web applications
-                  using cutting-edge technologies.
+                  I{`'`}m a passionate tech enthusiast and full-time student,
+                  deeply immersed in the world of software development and
+                  design. With a keen eye for detail and a love for creating
+                  intuitive user experiences, I specialize in building modern
+                  web applications using cutting-edge technologies.
                 </Text>
               </div>
               <div>
@@ -244,7 +244,7 @@ export default function Home() {
         <div className="container mx-auto">
           <BlurFade inView>
             <Text as="h2" className="text-3xl font-bold mb-8">
-              Let's Connect
+              Let{`'`}s Connect
             </Text>
             <Contact />
           </BlurFade>

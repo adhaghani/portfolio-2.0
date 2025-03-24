@@ -77,11 +77,11 @@ const Data = {
 
 const HeaderMobile = () => {
   return (
-    <div className=" mt-5 mx-auto w-full flex gap-2 justify-end items-center px-5">
+    <div className="mt-4 w-full flex justify-end items-center px-4">
       <Drawer>
         <DrawerTrigger asChild>
-          <Button size={"icon"}>
-            <Menu className="size-10" />
+          <Button size={"icon"} className="relative z-50">
+            <Menu className="size-6" />
           </Button>
         </DrawerTrigger>
         <DrawerContent className="pb-20">

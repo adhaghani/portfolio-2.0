@@ -4,7 +4,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
 
 import { Education, Work, Certificate } from "@/constant/constant";
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
@@ -16,7 +16,9 @@ const page = () => {
   return (
     <>
       {/* Hero */}
-      <Spotlight />
+
+      <Spotlight xOffset={0} />
+
       <div className="h-screen max-h-[1100px] flex items-center justify-center relative pt-16">
         <div className=" w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
           <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
@@ -47,9 +49,9 @@ const page = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <Text as="p" className="text-md" styleVariant="muted">
-                  I'm a tech enthusiast and full-time student, deeply immersed
-                  in the world of software development and design. With a keen
-                  eye for detail and a love for creating intuitive user
+                  I{`'`}m a tech enthusiast and full-time student, deeply
+                  immersed in the world of software development and design. With
+                  a keen eye for detail and a love for creating intuitive user
                   experiences, I specialize in building modern web applications
                   using cutting-edge technologies.
                 </Text>
@@ -87,14 +89,15 @@ const page = () => {
       <section id="CTA" className="py-20 px-4">
         <div className="bg-primary-foreground p-10 rounded-lg shadow flex justify-between gap-4 flex-wrap flex-col lg:flex-row lg:items-center">
           <div className="text-center lg:text-start">
-            <Text as="h2">While you're here, View my projects</Text>
+            <Text as="h2">While you{`'`}re here, View my projects</Text>
             <Text as="p" styleVariant="muted" className="mt-2 text-md">
               for further service, contact me
             </Text>
           </div>
           <div className="flex gap-3 items-center mx-auto lg:mx-0">
-            <Button>View Projects</Button>
-            <Button variant={"outline"}>Contact Me</Button>
+            <Button asChild>
+              <Link href={"/project"}>View Projects</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -139,7 +142,7 @@ const page = () => {
         <div className="container mx-auto">
           <BlurFade inView>
             <Text as="h2" className="text-3xl font-bold mb-8">
-              Let's Connect
+              Let{`'`}s Connect
             </Text>
             <Contact />
           </BlurFade>
