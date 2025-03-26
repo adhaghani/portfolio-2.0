@@ -15,7 +15,7 @@ const Education = [
       "Data Structures",
       "Principles of Compilers",
       "Software Project Management",
-      "Introductory Mandarin",
+      "Introductory German Language",
       "Linear Algebra"
     ]
   },
@@ -217,7 +217,18 @@ const DesignProjects = [
   {
     asset: {
       url: "/assets/design/FPPPolo.png",
-      alt: "QR Code Generator"
+      alt: "QR Code Generator",
+      image_bundle: [
+        {
+          url: "/assets/design/FPPPolo.png"
+        },
+        {
+          url: "/assets/design/FPPPolo/IMG_01.png"
+        },
+        {
+          url: "/assets/design/FPPPolo/IMG_02.png"
+        }
+      ]
     },
     project_Name: "Business Society Activity Jersey",
     project_Timeline: "April 2024",
@@ -251,7 +262,18 @@ const DesignProjects = [
   {
     asset: {
       url: "/assets/design/MYTECCJersey.png",
-      alt: "Mytecc Activity Jersey"
+      alt: "Mytecc Activity Jersey",
+      image_bundle: [
+        {
+          url: "/assets/design/MYTECCJersey.png"
+        },
+        {
+          url: "/assets/design/MAJ/IMG_01.JPG"
+        },
+        {
+          url: "/assets/design/MAJ/IMG_02.JPG"
+        }
+      ]
     },
     project_Name: "Mytecc Activity Jersey",
     project_Timeline: "March 2024",
@@ -262,7 +284,27 @@ const DesignProjects = [
   {
     asset: {
       url: "/assets/design/NFRRunner.png",
-      alt: "NFR Runner Jersey"
+      alt: "NFR Runner Jersey",
+      image_bundle: [
+        {
+          url: "/assets/design/NFRRunner.png"
+        },
+        {
+          url: "/assets/design/NFRRunner/IMG_01.png"
+        },
+        {
+          url: "/assets/design/NFRRunner/IMG_02.png"
+        },
+        {
+          url: "/assets/design/NFRRunner/IMG_03.png"
+        },
+        {
+          url: "/assets/design/NFRRunner/IMG_04.png"
+        },
+        {
+          url: "/assets/design/NFRRunner/IMG_05.png"
+        }
+      ]
     },
     project_Name: "NFR Runner Jersey",
     project_Timeline: "February 2024",

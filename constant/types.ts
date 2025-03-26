@@ -16,6 +16,11 @@ export interface DesignProjectType {
   asset?: {
     url: string;
     alt: string;
+    image_bundle?: [
+      {
+        url: string;
+      }
+    ];
   };
   project_Name: string;
   project_Timeline: string;
