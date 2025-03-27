@@ -47,22 +47,23 @@ const Service = [
 
 const testimonials = [
   {
-    title: "Great Design",
+    title: "Best man for the job",
     quote:
-      "Working with adha is truly a great experience, his work is on-time, well designed and he communicated throughout the process thus meeting our demands.",
+      "his work is on-time, well designed and he communicated throughout the process thus meeting our demands.",
     name: "Syahreen Kamarulzaman",
     position: "President, BS UiTM Raub (session 23/24)"
   },
   {
     title: "Great Collaboration",
     quote:
-      "Working with Adha is very enjoyable, and he has a great personality, especially in creating works that contribute to the growth of MYTECC while meeting the necessary criteria within the MYTECC organization.",
+      "Working with adha is very enjoyable, and he has a great personality, especially in creating works that contribute to the growth of MYTECC while meeting the necessary criteria within the MYTECC organization.",
     name: "Aidiel Hussin",
-    position: "President, President, MYTECC Pahang (session 23/24)"
+    position: "President, MYTECC Pahang (session 23/24)"
   },
   {
     title: "Very Proffessional Ethic",
-    quote: "All that we see or seem is but a dream within a dream.",
+    quote:
+      "Task that was given to adha exceeds our expectation, and he delivers all the work sooner than expected.",
     name: "Mazidah Merican",
     position: "IT Manager, AbleAce Raakin Sdn. Bhd."
   }
@@ -224,7 +225,9 @@ export default function Home() {
           {testimonials.map((testimonial, i) => (
             <Card key={i} className="h-fit max-w-xl">
               <CardHeader>
-                <CardTitle className="text-2xl">{testimonial.title}</CardTitle>
+                <CardTitle className="text-2xl">
+                  " {testimonial.title} "
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <Text as="p">{testimonial.quote}</Text>
