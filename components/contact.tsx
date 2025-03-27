@@ -44,7 +44,9 @@ const Contact = () => {
               <Text as="p" className="font-semibold">
                 Email
               </Text>
-              <Text as="p">adhaahmadwork@gmail.com</Text>
+              <a href={"mailto:adhaahmadwork@gmail.com"}>
+                <Text as="p">adhaahmadwork@gmail.com</Text>
+              </a>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -69,7 +71,11 @@ const Contact = () => {
                 Linkedin
               </Link>
             </Button>
-            <Button variant={"secondary"}>Resume</Button>
+            <Button variant={"secondary"}>
+              <a target="_BLANK" href={"/assets/Resume.pdf"}>
+                resume
+              </a>
+            </Button>
             <Button variant={"secondary"} asChild>
               <Link href={"https://www.instagram.com/adhaghani"}>
                 instagram

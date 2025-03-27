@@ -63,12 +63,12 @@ const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:adhaahmadwork@gmail.com",
         icon: Icons.email
       },
       resume: {
         name: "Resume",
-        url: "#",
+        url: "/assets/Resume.pdf",
         icon: File
       }
     }
