@@ -326,6 +326,79 @@ const DesignProjects = [
   }
 ];
 
+const AboutPhotoGallery = [
+  {
+    image: {
+      src: "/assets/photoGallery/image1.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image2.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image3.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image4.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image5.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image6.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image7.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image8.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image9.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/photoGallery/image10.JPG",
+      alt: ""
+    },
+    tooltipMessage: ""
+  }
+];
+
 const DevelopmentProjects = [
   {
     asset: {
@@ -510,4 +583,11 @@ const DevelopmentProjects = [
       "https://github.com/adhaghani/SimpleCarDealershipApplication"
   }
 ];
-export { Education, Work, Certificate, DesignProjects, DevelopmentProjects };
+export {
+  AboutPhotoGallery,
+  Education,
+  Work,
+  Certificate,
+  DesignProjects,
+  DevelopmentProjects
+};

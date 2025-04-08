@@ -92,12 +92,10 @@ const DesignCard = ({ data }: { data: DesignProjectType }) => {
                         key={i}
                         className="w-full mb-4 dark:bg-neutral-900 bg-neutral-100 rounded-lg overflow-hidden grid place-items-center"
                       >
-                        <Lens>
-                          <img
-                            className=" object-cover  object-center"
-                            src={image.url}
-                          />
-                        </Lens>
+                        <img
+                          className=" object-cover  object-center"
+                          src={image.url}
+                        />
                       </div>
                     );
                   })}

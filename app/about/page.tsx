@@ -3,15 +3,23 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Text } from "@/components/ui/text";
 
-import { Education, Work, Certificate } from "@/constant/constant";
+import {
+  Education,
+  Work,
+  Certificate,
+  AboutPhotoGallery
+} from "@/constant/constant";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
+import { Marquee } from "@/components/magicui/marquee";
 import Contact from "@/components/contact";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import CertificateCard from "@/components/ui/certificate-card";
 import React from "react";
+
+const PhotoGalleryReverse = AboutPhotoGallery.toReversed();
 const page = () => {
   return (
     <>
@@ -39,6 +47,39 @@ const page = () => {
           </div>
         </div>
       </div>
+      {/* Photo gallery */}
+      <section id="about" className="py-20">
+        <div className="container mx-auto px-4 relative">
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+          <Marquee>
+            {AboutPhotoGallery.map((photo, index) => {
+              return (
+                <BlurFade inView delay={0.2} key={index}>
+                  <img
+                    className="aspect-video object-cover max-w-xl rounded-lg"
+                    src={photo.image.src}
+                    alt={photo.image.alt}
+                  />
+                </BlurFade>
+              );
+            })}
+          </Marquee>
+          <Marquee reverse>
+            {PhotoGalleryReverse.map((photo, index) => {
+              return (
+                <BlurFade inView delay={0.2} key={index}>
+                  <img
+                    className="aspect-video object-cover max-w-xl rounded-lg"
+                    src={photo.image.src}
+                    alt={photo.image.alt}
+                  />
+                </BlurFade>
+              );
+            })}
+          </Marquee>
+        </div>
+      </section>
       {/* About */}
       <section id="about" className="py-20">
         <div className="container mx-auto px-4">
