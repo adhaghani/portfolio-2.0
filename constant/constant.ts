@@ -279,10 +279,10 @@ const DesignProjects = [
           url: "/assets/images/design/MYTECCJersey.png"
         },
         {
-          url: "/assets/images/design/MAJ/IMG_01.JPG"
+          url: "/assets/images/design/MAJ/IMG_01.png"
         },
         {
-          url: "/assets/images/design/MAJ/IMG_02.JPG"
+          url: "/assets/images/design/MAJ/IMG_02.png"
         }
       ]
     },
@@ -403,7 +403,7 @@ const AboutPhotoGallery = [
   },
   {
     image: {
-      src: "/assets/images/photoGallery/image10.JPG",
+      src: "/assets/images/photoGallery/image10.png",
       alt: ""
     },
     tooltipMessage: ""
