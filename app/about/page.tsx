@@ -10,6 +10,7 @@ import {
   AboutPhotoGallery
 } from "@/constant/constant";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
@@ -56,10 +57,13 @@ const page = () => {
             {AboutPhotoGallery.map((photo, index) => {
               return (
                 <BlurFade inView delay={0.2} key={index}>
-                  <img
-                    className="aspect-video object-cover max-w-xl rounded-lg"
+                  <Image
+                    className="aspect-video object-cover max-w-xl rounded-lg object-center"
                     src={photo.image.src}
                     alt={photo.image.alt}
+                    quality={100}
+                    width={500}
+                    height={200}
                   />
                 </BlurFade>
               );
@@ -69,10 +73,13 @@ const page = () => {
             {PhotoGalleryReverse.map((photo, index) => {
               return (
                 <BlurFade inView delay={0.2} key={index}>
-                  <img
-                    className="aspect-video object-cover max-w-xl rounded-lg"
+                  <Image
+                    className="aspect-video object-cover max-w-xl rounded-lg object-center"
                     src={photo.image.src}
                     alt={photo.image.alt}
+                    quality={100}
+                    width={500}
+                    height={200}
                   />
                 </BlurFade>
               );

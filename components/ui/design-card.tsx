@@ -17,6 +17,7 @@ import { ScrollArea } from "./scroll-area";
 import React, { useState } from "react";
 import { BlurFade } from "../magicui/blur-fade";
 import { Text } from "./text";
+import Image from "next/image";
 import { DesignProjectType } from "@/constant/types";
 import { Badge } from "./badge";
 import { Lens } from "./lens";
@@ -34,10 +35,13 @@ const DesignCard = ({ data }: { data: DesignProjectType }) => {
                 {data.asset && data.asset.url ? (
                   <div className="relative">
                     <Lens hovering={hovering} setHovering={setHovering}>
-                      <img
+                      <Image
                         className="object-cover object-center"
                         src={data.asset.url}
                         alt={data.asset.alt}
+                        quality={100}
+                        width={300}
+                        height={300}
                       />
                     </Lens>
                     <DialogTrigger
@@ -92,9 +96,13 @@ const DesignCard = ({ data }: { data: DesignProjectType }) => {
                         key={i}
                         className="w-full mb-4 dark:bg-neutral-900 bg-neutral-100 rounded-lg overflow-hidden grid place-items-center"
                       >
-                        <img
-                          className=" object-cover  object-center"
+                        <Image
+                          className="object-cover object-center"
                           src={image.url}
+                          alt=""
+                          quality={100}
+                          width={500}
+                          height={300}
                         />
                       </div>
                     );

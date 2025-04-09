@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Text } from "@/components/ui/text";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface ProjectCard {
@@ -24,10 +25,13 @@ interface ProjectCard {
 const ProjectCard = ({ data }: { data: ProjectCard }) => {
   return (
     <Card className="overflow-hidden">
-      <img
+      <Image
+        className="object-cover object-center"
         src={data.image.src}
         alt={data.image.alt}
-        className="w-full h-48 object-cover"
+        quality={100}
+        width={300}
+        height={300}
       />
       <CardHeader className="space-y-4">
         <CardTitle>

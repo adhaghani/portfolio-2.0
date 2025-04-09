@@ -17,6 +17,18 @@ const Education = [
       "Software Project Management",
       "Introductory German Language",
       "Linear Algebra"
+    ],
+    activities: [
+      {
+        title: "Competitions Involvement",
+        details: [
+          {
+            title: "PPKomp 2025",
+            description:
+              "Pertandingan Pengaturcaraan Komputer 2025, held online for all students from higher studies all the way to primary school."
+          }
+        ]
+      }
     ]
   },
   {
@@ -216,17 +228,17 @@ const Certificate = [
 const DesignProjects = [
   {
     asset: {
-      url: "/assets/design/FPPPolo.png",
+      url: "/assets/images/design/FPPPolo.png",
       alt: "QR Code Generator",
       image_bundle: [
         {
-          url: "/assets/design/FPPPolo.png"
+          url: "/assets/images/design/FPPPolo.png"
         },
         {
-          url: "/assets/design/FPPPolo/IMG_01.png"
+          url: "/assets/images/design/FPPPolo/IMG_01.png"
         },
         {
-          url: "/assets/design/FPPPolo/IMG_02.png"
+          url: "/assets/images/design/FPPPolo/IMG_02.png"
         }
       ]
     },
@@ -238,7 +250,7 @@ const DesignProjects = [
   },
   {
     asset: {
-      url: "/assets/design/BSCorporateShirt.png",
+      url: "/assets/images/design/BSCorporateShirt.png",
       alt: "QR Code Generator"
     },
     project_Name: "Business Society Corporate Shirt",
@@ -249,10 +261,9 @@ const DesignProjects = [
   },
   {
     asset: {
-      url: "/assets/design/MPPLanyard.png",
+      url: "/assets/images/design/MPPLanyard.png",
       alt: "Programme Lanyard"
     },
-    imgLink: "/design/MPPLanyard.png",
     project_Name: "Programme Lanyard",
     project_Timeline: "June 2024",
     project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
@@ -261,17 +272,17 @@ const DesignProjects = [
   },
   {
     asset: {
-      url: "/assets/design/MYTECCJersey.png",
+      url: "/assets/images/design/MYTECCJersey.png",
       alt: "Mytecc Activity Jersey",
       image_bundle: [
         {
-          url: "/assets/design/MYTECCJersey.png"
+          url: "/assets/images/design/MYTECCJersey.png"
         },
         {
-          url: "/assets/design/MAJ/IMG_01.JPG"
+          url: "/assets/images/design/MAJ/IMG_01.JPG"
         },
         {
-          url: "/assets/design/MAJ/IMG_02.JPG"
+          url: "/assets/images/design/MAJ/IMG_02.JPG"
         }
       ]
     },
@@ -283,26 +294,26 @@ const DesignProjects = [
   },
   {
     asset: {
-      url: "/assets/design/NFRRunner.png",
+      url: "/assets/images/design/NFRRunner.png",
       alt: "NFR Runner Jersey",
       image_bundle: [
         {
-          url: "/assets/design/NFRRunner.png"
+          url: "/assets/images/design/NFRRunner.png"
         },
         {
-          url: "/assets/design/NFRRunner/IMG_01.png"
+          url: "/assets/images/design/NFRRunner/IMG_01.png"
         },
         {
-          url: "/assets/design/NFRRunner/IMG_02.png"
+          url: "/assets/images/design/NFRRunner/IMG_02.png"
         },
         {
-          url: "/assets/design/NFRRunner/IMG_03.png"
+          url: "/assets/images/design/NFRRunner/IMG_03.png"
         },
         {
-          url: "/assets/design/NFRRunner/IMG_04.png"
+          url: "/assets/images/design/NFRRunner/IMG_04.png"
         },
         {
-          url: "/assets/design/NFRRunner/IMG_05.png"
+          url: "/assets/images/design/NFRRunner/IMG_05.png"
         }
       ]
     },
@@ -314,7 +325,7 @@ const DesignProjects = [
   },
   {
     asset: {
-      url: "/assets/design/NFRCommittee.png",
+      url: "/assets/images/design/NFRCommittee.png",
       alt: "NFR Committee Jersey"
     },
 
@@ -329,70 +340,70 @@ const DesignProjects = [
 const AboutPhotoGallery = [
   {
     image: {
-      src: "/assets/photoGallery/image1.png",
+      src: "/assets/images/photoGallery/image1.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image2.png",
+      src: "/assets/images/photoGallery/image2.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image3.png",
+      src: "/assets/images/photoGallery/image3.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image4.png",
+      src: "/assets/images/photoGallery/image4.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image5.png",
+      src: "/assets/images/photoGallery/image5.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image6.png",
+      src: "/assets/images/photoGallery/image6.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image7.png",
+      src: "/assets/images/photoGallery/image7.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image8.png",
+      src: "/assets/images/photoGallery/image8.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image9.png",
+      src: "/assets/images/photoGallery/image9.png",
       alt: ""
     },
     tooltipMessage: ""
   },
   {
     image: {
-      src: "/assets/photoGallery/image10.JPG",
+      src: "/assets/images/photoGallery/image10.JPG",
       alt: ""
     },
     tooltipMessage: ""
@@ -402,7 +413,7 @@ const AboutPhotoGallery = [
 const DevelopmentProjects = [
   {
     asset: {
-      url: "/assets/project/Qrcode.png",
+      url: "/assets/images/project/Qrcode.png",
       alt: "QR Code Generator"
     },
     development_Type: ["Front-End"],
@@ -416,7 +427,7 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/assets/project/UniParcel.png",
+      url: "/assets/images/project/UniParcel.png",
       alt: "QR Code Generator"
     },
     development_Type: ["Full-Stack", "Front-End", "Back-End"],
@@ -492,7 +503,7 @@ const DevelopmentProjects = [
   // },
   {
     asset: {
-      url: "/assets/project/Room.png",
+      url: "/assets/images/project/Room.png",
       alt: "Room E-Commerce"
     },
     development_Type: ["Full-Stack", "Front-End", "Back-End"],
@@ -505,7 +516,7 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/assets/project/Portfolio.png",
+      url: "/assets/images/project/Portfolio.png",
       alt: "Personal Portfolio Website"
     },
     development_Type: ["Front-End"],
@@ -520,7 +531,7 @@ const DevelopmentProjects = [
 
   {
     asset: {
-      url: "/assets/project/Bank.png",
+      url: "/assets/images/project/Bank.png",
       alt: "Simple Bank System"
     },
     development_Type: ["Others"],
@@ -537,7 +548,7 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/assets/project/SunnySide.png",
+      url: "/assets/images/project/SunnySide.png",
       alt: "SunnySide Landing Page"
     },
     development_Type: ["Front-End"],
@@ -551,7 +562,7 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/assets/project/starbucks.png",
+      url: "/assets/images/project/starbucks.png",
       alt: "Starbucks Landing Page"
     },
     development_Type: ["Front-End"],
