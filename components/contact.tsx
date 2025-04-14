@@ -4,29 +4,12 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import { Text } from "./ui/text";
-import { Button } from "./ui/button";
-import { useState } from "react";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from "@/components/ui/select";
-import { Separator } from "./ui/separator";
-import Link from "next/link";
-const Contact = () => {
-  const [isSending, setisSending] = useState<boolean>(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setisSending(true);
-    setTimeout(() => {
-      setisSending(false);
-    }, 10000);
-  };
+import { useState } from "react";
+
+const Contact = () => {
+
+
   return (
     <Card>
       <CardHeader className="grid grid-cols-1 md:grid-cols-2 gap-4">
