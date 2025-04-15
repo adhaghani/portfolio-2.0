@@ -44,7 +44,7 @@ const page = () => {
           <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
             <Text
               as="h1"
-              className="text-center text-2xl md:text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
+              className="text-center text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
             >
               All of my Projects
             </Text>

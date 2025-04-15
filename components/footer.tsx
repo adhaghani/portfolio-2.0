@@ -70,7 +70,7 @@ const Footer = () => {
     <footer className="py-10 bg-background/80">
       <div className="max-w-6xl container mx-auto px-4 md:px-8 flex justify-between flex-wrap items-start gap-10">
         <div className="justify-between items-center gap-4 md:flex">
-          <div className="grid place-items-center">
+          <div className="md:grid md:place-items-center">
             <img src={"/assets/logo.svg"} alt="" className="size-12" />
           </div>
           <div className="flex-1 max-w-lg">

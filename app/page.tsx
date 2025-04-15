@@ -83,11 +83,11 @@ export default function Home() {
       <BackgroundLines className="h-screen max-h-[1100px] flex items-center justify-center w-full flex-col px-4 bg-transparent">
         <Text
           as="h1"
-          className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
+          className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-5xl lg:text-7xl py-2 md:py-10 tracking-tight"
         >
           hello Everyone, <br /> I{`'`}m Adha.
         </Text>
-        <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
+        <p className="max-w-xl mx-auto text-lg text-neutral-700 dark:text-neutral-400 text-center">
           Coding changes line by line, and sipping coffee whenever i can.
         </p>
       </BackgroundLines>
@@ -221,7 +221,28 @@ export default function Home() {
         <Text as="p" className="text-muted-foreground mb-10">
           Here what my clients say about me.
         </Text>
-        <Marquee>
+        <div className="hidden md:block">
+          <Marquee>
+            {testimonials.map((testimonial, i) => (
+              <Card key={i} className="h-fit md:max-w-xl max-w-sm">
+                <CardHeader>
+                  <CardTitle className="text-2xl">
+                    " {testimonial.title} "
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Text as="p">{testimonial.quote}</Text>
+                </CardContent>
+                <CardFooter>
+                  <Text as="p" styleVariant="muted">
+                    {testimonial.name} - {testimonial.position}
+                  </Text>
+                </CardFooter>
+              </Card>
+            ))}
+          </Marquee>
+        </div>
+        <div className="space-y-6 visible md:hidden">
           {testimonials.map((testimonial, i) => (
             <Card key={i} className="h-fit max-w-xl">
               <CardHeader>
@@ -239,7 +260,7 @@ export default function Home() {
               </CardFooter>
             </Card>
           ))}
-        </Marquee>
+        </div>
       </div>
 
       {/* Contact Section - New Addition */}

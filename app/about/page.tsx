@@ -33,7 +33,7 @@ const page = () => {
           <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
             <Text
               as="h1"
-              className="text-center text-2xl md:text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
+              className="text-center text-4xl lg:text-7xl py-2 md:py-10 tracking-tight"
             >
               About me, <br /> my experience, <br /> and education.
             </Text>
@@ -58,7 +58,7 @@ const page = () => {
               return (
                 <BlurFade inView delay={0.2} key={index}>
                   <Image
-                    className="aspect-video object-cover max-w-xl rounded-lg object-center"
+                    className="aspect-video object-cover md:max-w-xl max-w-sm w-2/3 md:w-full rounded-lg object-center"
                     src={photo.image.src}
                     alt={photo.image.alt}
                     quality={100}
@@ -74,7 +74,7 @@ const page = () => {
               return (
                 <BlurFade inView delay={0.2} key={index}>
                   <Image
-                    className="aspect-video object-cover max-w-xl rounded-lg object-center"
+                    className="aspect-video object-cover md:max-w-xl max-w-sm w-2/3 md:w-full rounded-lg object-center"
                     src={photo.image.src}
                     alt={photo.image.alt}
                     quality={100}
