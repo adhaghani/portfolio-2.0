@@ -14,10 +14,12 @@ const nextConfig: NextConfig = {
       }
     ]
   },
+
   eslint: {
     ignoreDuringBuilds: true
   },
-  output: "export"
+  // output: "export",
+  // assetPrefix: "https://www.adhaghani.com"
 };
 
 export default nextConfig;
