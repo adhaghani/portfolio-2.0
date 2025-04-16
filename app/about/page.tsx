@@ -56,9 +56,9 @@ const page = () => {
           <Marquee>
             {AboutPhotoGallery.map((photo, index) => {
               return (
-                <BlurFade inView delay={0.2} key={index}>
+                <BlurFade className="w-1/2" inView delay={0.2} key={index}>
                   <Image
-                    className="aspect-video object-cover md:max-w-xl max-w-sm w-2/3 md:w-full rounded-lg object-center"
+                    className="aspect-video object-cover md:max-w-xl max-w-[200px] w-full rounded-lg object-center"
                     src={photo.image.src}
                     alt={photo.image.alt}
                     quality={100}
@@ -72,9 +72,9 @@ const page = () => {
           <Marquee reverse>
             {PhotoGalleryReverse.map((photo, index) => {
               return (
-                <BlurFade inView delay={0.2} key={index}>
+                <BlurFade className="w-1/2" inView delay={0.2} key={index}>
                   <Image
-                    className="aspect-video object-cover md:max-w-xl max-w-sm w-2/3 md:w-full rounded-lg object-center"
+                    className="aspect-video object-cover md:max-w-xl max-w-[200px] w-full rounded-lg object-center"
                     src={photo.image.src}
                     alt={photo.image.alt}
                     quality={100}
