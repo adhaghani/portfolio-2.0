@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
@@ -29,6 +31,8 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased w-full mx-auto overflow-x-hidden selection:bg-primary/50 selection:text-white`}
       >
+        <SpeedInsights />
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
