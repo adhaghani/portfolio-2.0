@@ -47,18 +47,19 @@ const Service = [
 
 const testimonials = [
   {
-    title: "Best man for the job",
+    title: "Outstanding Creativity and Dedication",
     quote:
-      "his work is on-time, well designed and he communicated throughout the process thus meeting our demands.",
-    name: "Syahreen Kamarulzaman",
-    position: "President, BS UiTM Raub (session 23/24)"
+      "Collaborating with Ahmad Adha has been a truly rewarding experience. Their creativity, professionalism, and consistent ability to deliver high-quality graphic design work played a significant role in elevating the visual appeal of our faculty projects. Whether it was event posters, social media content, or presentation materials, their designs always reflected excellence and aligned perfectly with our goals. I'm grateful for their support and dedication throughout our term.",
+    name: "Syahreen",
+    position:
+      "Former President, Faculty of Business and Management, UiTM Pahang (Session 23/24)"
   },
   {
     title: "Great Collaboration",
     quote:
       "Working with adha is very enjoyable, and he has a great personality, especially in creating works that contribute to the growth of MYTECC while meeting the necessary criteria within the MYTECC organization.",
     name: "Aidiel Hussin",
-    position: "President, MYTECC Pahang (session 23/24)"
+    position: "Former President, MYTECC Pahang (session 23/24)"
   },
   {
     title: "Very Proffessional Ethic",

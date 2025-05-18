@@ -26,6 +26,25 @@ const Education = [
             title: "PPKomp 2025",
             description:
               "Pertandingan Pengaturcaraan Komputer 2025, held online for all students from higher studies all the way to primary school."
+          },
+          {
+            title: "Prosolve National 2025",
+            role: "Third Runner Up",
+            date: "April 2025",
+            description:
+              "Prosolve National 2025, a national-level programming competition involving public universities throughout malaysia, with more than 60 teams participating. my team manages to get an overall achievement of third runner up for the entire competition, and the only team from Universiti Teknologi MARA (UiTM) to make it to the top 5 of all the 60 teams participated."
+          }
+        ]
+      },
+      {
+        title: "Volunteers",
+        details: [
+          {
+            title: "Sekretariat Parlimen Mahasiswa UiTM",
+            date: "May 2025 - Present",
+            description:
+              "Parliamentary Secretariat, I am mainly responsible for managing the media sides of the parliament. Mainly taking photos and shooting videos of the entire parliamentary sessions. I am also involved with creating graphical posters, editing secretariat photos and lending a hand to other units in need.",
+            role: "Multimedia and Publicity Unit"
           }
         ]
       }
@@ -228,6 +247,18 @@ const Certificate = [
 const DesignProjects = [
   {
     asset: {
+      url: "/assets/images/design/LanyardSPM.webp",
+      alt: "Lanyard SPM 24/25"
+    },
+
+    project_Name: "Lanyard Sekretariat Parlimen Mahasiswa UiTM",
+    project_Timeline: "May 2025",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
+      "I created and designed the lanyard for Sekretariat Parlimen Mahasiswa 24/25 Sessions."
+  },
+  {
+    asset: {
       url: "/assets/images/design/FPPPolo.png",
       alt: "QR Code Generator",
       image_bundle: [
@@ -404,6 +435,13 @@ const AboutPhotoGallery = [
   {
     image: {
       src: "/assets/images/photoGallery/image10.png",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/images/photoGallery/image11.jpg",
       alt: ""
     },
     tooltipMessage: ""
