@@ -24,6 +24,8 @@ const Education = [
         details: [
           {
             title: "PPKomp 2025",
+            role: "Second Overall Group",
+            date: "April 2025",
             description:
               "Pertandingan Pengaturcaraan Komputer 2025, held online for all students from higher studies all the way to primary school."
           },
@@ -40,11 +42,30 @@ const Education = [
         title: "Volunteers",
         details: [
           {
+            logo: AboutLogo.SPM,
             title: "Sekretariat Parlimen Mahasiswa UiTM",
             date: "May 2025 - Present",
             description:
               "Parliamentary Secretariat, I am mainly responsible for managing the media sides of the parliament. Mainly taking photos and shooting videos of the entire parliamentary sessions. I am also involved with creating graphical posters, editing secretariat photos and lending a hand to other units in need.",
             role: "Multimedia and Publicity Unit"
+          }
+        ]
+      },
+      {
+        logo: AboutLogo.PWC,
+        title: "PWC Trust Ambassador 2025/2026",
+        details: [
+          {
+            title: "Selection Day",
+            date: "July 2025",
+            description:
+              "A day where more than 70+ candidates from various institution across Malaysia gathers at PWC Malaysia HQ and solve a Case Study based around the topic of Artificial Intelligence."
+          },
+          {
+            title: "Ambassador Day",
+            date: "July 2025",
+            description:
+              "Ambassador Day is the day where i was officialy recognized as PWC Trust Ambassador for 2025/2026. It is also the day where PWC Trust Ambassador 2024/2025 oficially graduates from their ambassadorship."
           }
         ]
       }
@@ -442,6 +463,13 @@ const AboutPhotoGallery = [
   {
     image: {
       src: "/assets/images/photoGallery/image11.jpg",
+      alt: ""
+    },
+    tooltipMessage: ""
+  },
+  {
+    image: {
+      src: "/assets/images/photoGallery/image12.jpg",
       alt: ""
     },
     tooltipMessage: ""

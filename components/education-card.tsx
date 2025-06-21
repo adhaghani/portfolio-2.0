@@ -5,6 +5,7 @@ import { Text } from "./ui/text";
 import { Badge } from "./ui/badge";
 
 interface ActivityDetails {
+  logo?: React.ReactNode;
   title: string;
   role?: string;
   date?: string;
@@ -12,6 +13,7 @@ interface ActivityDetails {
 }
 
 interface EducationActivites {
+  logo?: React.ReactNode;
   title: string;
   role?: string;
   date?: string;
@@ -82,25 +84,48 @@ const EducationCard = ({ data }: { data: EducationProp }) => {
           data.activities.map((activity, i) => (
             <div key={i} className="mt-4">
               <BlurFade inView delay={0.2}>
-                <Text as="h4" className="font-semibold">
-                  {activity.title}
-                </Text>
+                {activity.logo ? (
+                  <div className="flex gap-2 items-center">
+                    <div className="w-fit h-fit ">{activity.logo}</div>
+                    <Text as="h4" className="font-semibold">
+                      {activity.title}
+                    </Text>
+                  </div>
+                ) : (
+                  <Text as="h4" className="font-semibold">
+                    {activity.title}
+                  </Text>
+                )}
               </BlurFade>
               {activity.details?.map((detail, i) => (
                 <div key={i} className="mt-2 ml-3">
-                  <div className="flex gap-2 flex-wrap">
+                  {detail.logo ? (
                     <BlurFade inView delay={0.2}>
-                      <Text as="p" className="font-medium">
-                        {detail.title}
-                      </Text>
+                      <div className="flex gap-4 items-center ">
+                        <div>{detail.logo}</div>
+                        <div className="flex-col gap-2 ">
+                          <Badge variant="secondary">{detail.role}</Badge>
+                          <Text as="h4" className="font-semibold">
+                            {detail.title}
+                          </Text>
+                        </div>
+                      </div>
                     </BlurFade>
-
-                    {detail.role && (
+                  ) : (
+                    <div className="flex gap-2 items-center flex-wrap">
                       <BlurFade inView delay={0.2}>
-                        <Badge variant="secondary">{detail.role}</Badge>
+                        <Text as="h4" className="font-semibold">
+                          {detail.title}
+                        </Text>
                       </BlurFade>
-                    )}
-                  </div>
+
+                      {detail.role && (
+                        <BlurFade inView delay={0.2}>
+                          <Badge variant="secondary">{detail.role}</Badge>
+                        </BlurFade>
+                      )}
+                    </div>
+                  )}
                   {detail.date && (
                     <BlurFade inView delay={0.2}>
                       <Text as="p" styleVariant="muted" className="my-1">
