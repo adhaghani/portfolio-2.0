@@ -6,17 +6,9 @@ import { Text } from "./ui/text";
 import { LinkPreview } from "./ui/link-preview";
 import { Button } from "./ui/button";
 import { MonitorIcon } from "lucide-react";
-interface WorkProps {
-  name: string;
-  type: string;
-  role: string;
-  duration: string;
-  website: string;
-  Logo: React.ReactNode;
-  achievement: string[];
-}
+import { WorkCardProps } from "@/constant/types";
 
-const WorkCard = ({ data }: { data: WorkProps }) => {
+const WorkCard = ({ data }: { data: WorkCardProps }) => {
   return (
     <div>
       <div className="flex flex-col md:flex-row gap-4">

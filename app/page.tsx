@@ -23,7 +23,8 @@ import {
   OtherTech
 } from "@/components/technology-stack-icon";
 import Link from "next/link";
-import { DevelopmentProjects } from "@/constant/constant";
+import { DevelopmentProjects, Testimonials } from "@/constant/constant";
+
 const Service = [
   {
     icon: <PaintbrushIcon className="inline-block mr-2" />,
@@ -42,31 +43,6 @@ const Service = [
     title: "Graphic Design",
     description:
       "Using modern tools like canva, Adobe Photoshop, and Adobe Illustrator, I am able to create design elements that are up to client standard."
-  }
-];
-
-const testimonials = [
-  {
-    title: "Outstanding Creativity and Dedication",
-    quote:
-      "Collaborating with Ahmad Adha has been a truly rewarding experience. Their creativity, professionalism, and consistent ability to deliver high-quality graphic design work played a significant role in elevating the visual appeal of our faculty projects. Whether it was event posters, social media content, or presentation materials, their designs always reflected excellence and aligned perfectly with our goals. I'm grateful for their support and dedication throughout our term.",
-    name: "Syahreen",
-    position:
-      "Former President, Faculty of Business and Management, UiTM Pahang (Session 23/24)"
-  },
-  {
-    title: "Great Collaboration",
-    quote:
-      "Working with adha is very enjoyable, and he has a great personality, especially in creating works that contribute to the growth of MYTECC while meeting the necessary criteria within the MYTECC organization.",
-    name: "Aidiel Hussin",
-    position: "Former President, MYTECC Pahang (session 23/24)"
-  },
-  {
-    title: "Very Proffessional Ethic",
-    quote:
-      "Task that was given to adha exceeds our expectation, and he delivers all the work sooner than expected.",
-    name: "Mazidah Merican",
-    position: "IT Manager, AbleAce Raakin Sdn. Bhd."
   }
 ];
 
@@ -224,7 +200,7 @@ export default function Home() {
         </Text>
         <div className="hidden md:block">
           <Marquee>
-            {testimonials.map((testimonial, i) => (
+            {Testimonials.map((testimonial, i) => (
               <Card key={i} className="h-fit md:max-w-xl max-w-sm">
                 <CardHeader>
                   <CardTitle className="text-2xl">
@@ -244,7 +220,7 @@ export default function Home() {
           </Marquee>
         </div>
         <div className="space-y-6 visible md:hidden">
-          {testimonials.map((testimonial, i) => (
+          {Testimonials.map((testimonial, i) => (
             <Card key={i} className="h-fit max-w-xl">
               <CardHeader>
                 <CardTitle className="text-2xl">

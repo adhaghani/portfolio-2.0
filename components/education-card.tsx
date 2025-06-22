@@ -3,35 +3,9 @@
 import { BlurFade } from "./magicui/blur-fade";
 import { Text } from "./ui/text";
 import { Badge } from "./ui/badge";
+import { EducationCardProps } from "@/constant/types";
 
-interface ActivityDetails {
-  logo?: React.ReactNode;
-  title: string;
-  role?: string;
-  date?: string;
-  description?: string;
-}
-
-interface EducationActivites {
-  logo?: React.ReactNode;
-  title: string;
-  role?: string;
-  date?: string;
-  description?: string;
-  details?: ActivityDetails[];
-}
-
-interface EducationProp {
-  name: string;
-  degree: string;
-  duration: string;
-  grade?: string;
-  Logo: React.ReactNode;
-  relatedCourses: string[];
-  activities?: EducationActivites[];
-}
-
-const EducationCard = ({ data }: { data: EducationProp }) => {
+const EducationCard = ({ data }: { data: EducationCardProps }) => {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4">
