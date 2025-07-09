@@ -7,22 +7,22 @@ const Testimonials = [
       "Collaborating with Ahmad Adha has been a truly rewarding experience. Their creativity, professionalism, and consistent ability to deliver high-quality graphic design work played a significant role in elevating the visual appeal of our faculty projects. Whether it was event posters, social media content, or presentation materials, their designs always reflected excellence and aligned perfectly with our goals. I'm grateful for their support and dedication throughout our term.",
     name: "Syahreen",
     position:
-      "Former President, Faculty of Business and Management, UiTM Pahang (Session 23/24)"
+      "Former President, Faculty of Business and Management, UiTM Pahang (Session 23/24)",
   },
   {
     title: "Great Collaboration",
     quote:
       "Working with adha is very enjoyable, and he has a great personality, especially in creating works that contribute to the growth of MYTECC while meeting the necessary criteria within the MYTECC organization.",
     name: "Aidiel Hussin",
-    position: "Former President, MYTECC Pahang (session 23/24)"
+    position: "Former President, MYTECC Pahang (session 23/24)",
   },
   {
     title: "Very Proffessional Ethic",
     quote:
       "Task that was given to adha exceeds our expectation, and he delivers all the work sooner than expected.",
     name: "Mazidah Merican",
-    position: "IT Manager, AbleAce Raakin Sdn. Bhd."
-  }
+    position: "IT Manager, AbleAce Raakin Sdn. Bhd.",
+  },
 ];
 
 const Education = [
@@ -41,7 +41,7 @@ const Education = [
       "Principles of Compilers",
       "Software Project Management",
       "Introductory German Language",
-      "Linear Algebra"
+      "Linear Algebra",
     ],
     activities: [
       {
@@ -52,16 +52,16 @@ const Education = [
             role: "Second Overall Group",
             date: "April 2025",
             description:
-              "Pertandingan Pengaturcaraan Komputer 2025, held online for all students from higher studies all the way to primary school."
+              "Pertandingan Pengaturcaraan Komputer 2025, held online for all students from higher studies all the way to primary school.",
           },
           {
             title: "Prosolve National 2025",
             role: "Third Runner Up",
             date: "April 2025",
             description:
-              "Prosolve National 2025, a national-level programming competition involving public universities throughout malaysia, with more than 60 teams participating. my team manages to get an overall achievement of third runner up for the entire competition, and the only team from Universiti Teknologi MARA (UiTM) to make it to the top 5 of all the 60 teams participated."
-          }
-        ]
+              "Prosolve National 2025, a national-level programming competition involving public universities throughout malaysia, with more than 60 teams participating. my team manages to get an overall achievement of third runner up for the entire competition, and the only team from Universiti Teknologi MARA (UiTM) to make it to the top 5 of all the 60 teams participated.",
+          },
+        ],
       },
       {
         title: "Volunteers",
@@ -72,9 +72,9 @@ const Education = [
             date: "May 2025 - Present",
             description:
               "Parliamentary Secretariat, I am mainly responsible for managing the media sides of the parliament. Mainly taking photos and shooting videos of the entire parliamentary sessions. I am also involved with creating graphical posters, editing secretariat photos and lending a hand to other units in need.",
-            role: "Multimedia and Publicity Unit"
-          }
-        ]
+            role: "Multimedia and Publicity Unit",
+          },
+        ],
       },
       {
         logo: AboutLogo.PWC,
@@ -84,17 +84,17 @@ const Education = [
             title: "Selection Day",
             date: "July 2025",
             description:
-              "A day where more than 70+ candidates from various institution across Malaysia gathers at PWC Malaysia HQ and solve a Case Study based around the topic of Artificial Intelligence."
+              "A day where more than 70+ candidates from various institution across Malaysia gathers at PWC Malaysia HQ and solve a Case Study based around the topic of Artificial Intelligence.",
           },
           {
             title: "Ambassador Day",
             date: "July 2025",
             description:
-              "Ambassador Day is the day where i was officialy recognized as PWC Trust Ambassador for 2025/2026. It is also the day where PWC Trust Ambassador 2024/2025 oficially graduates from their ambassadorship."
-          }
-        ]
-      }
-    ]
+              "Ambassador Day is the day where i was officialy recognized as PWC Trust Ambassador for 2025/2026. It is also the day where PWC Trust Ambassador 2024/2025 oficially graduates from their ambassadorship.",
+          },
+        ],
+      },
+    ],
   },
   {
     name: "Universiti Teknologi MARA (UiTM)",
@@ -111,7 +111,7 @@ const Education = [
       "Calculus",
       "Probability and Statistic",
       "Computer Organization",
-      "Discrete Mathematics"
+      "Discrete Mathematics",
     ],
     grade: "3.68/4.00",
     activities: [
@@ -123,7 +123,7 @@ const Education = [
             date: "October 2023 - January 2025",
             description:
               "MYTECC is the Computer Science Faculty Club. Mainly organized activities for the student within the faculty. Program varies from prgoramming competition, to bonding program.",
-            role: "Multimedia Bureau"
+            role: "Multimedia Bureau",
           },
           {
             title:
@@ -131,16 +131,16 @@ const Education = [
             date: "October 2023 - January 2025",
             description:
               "Entrepreneurship club that organized various activities aimed at achieving profit for every program. as lead graphic designer, my role is crucial to achieve our digital marketing goal.",
-            role: "Lead Graphic Designer"
+            role: "Lead Graphic Designer",
           },
           {
             title: "PhotoMedia Club (PMC)",
             date: "October 2023 - January 2025",
             description:
               "Club mainly focus on photography and videography. My role in the club is to shoot Photo and Video for club program, and outside of club programs.",
-            role: "PhotoVideo Dision"
-          }
-        ]
+            role: "PhotoVideo Dision",
+          },
+        ],
       },
       {
         title: "Competitions Involvement",
@@ -149,20 +149,20 @@ const Education = [
             title: "MYTECC Codevortex: C++ & Java",
 
             description:
-              "Java & C++ Programming Competition, My team achieved First Place for Java Programming Category."
+              "Java & C++ Programming Competition, My team achieved First Place for Java Programming Category.",
           },
           {
             title: "CodeAthon UiTM Se-Malaysia 2024",
 
             description:
-              "C++ Programming Competition that my team achieved third-runner up placement."
+              "C++ Programming Competition that my team achieved third-runner up placement.",
           },
           {
             title: "i-CPROM 2023",
             description:
-              "My first ever programming competition organized by UiTM, my team achieved 13th runner up in the competition."
-          }
-        ]
+              "My first ever programming competition organized by UiTM, my team achieved 13th runner up in the competition.",
+          },
+        ],
       },
       {
         title: "Volunteers",
@@ -172,12 +172,12 @@ const Education = [
             date: "January 2024",
             description:
               "Election Committee, Mainly Responsible to manage election season. As lead multimedia, i am responsible to manage and deliver content in a timely manner.",
-            role: "Lead Mutlimedia Team"
-          }
-        ]
-      }
-    ]
-  }
+            role: "Lead Mutlimedia Team",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const Work = [
@@ -194,9 +194,9 @@ const Work = [
       "Optimised website bandwidth allocation by up to 60%",
       "Redesigned and Optimised email footer imagery, 50% reduction in size.",
       "Utilised AWS Service Screener to detect potential cost saving measures and security risk for the Trading System.",
-      "Conducted Excel Competency sessions, increasing excel competency by 30%"
-    ]
-  }
+      "Conducted Excel Competency sessions, increasing excel competency by 30%",
+    ],
+  },
 ];
 
 const Certificate = [
@@ -205,7 +205,7 @@ const Certificate = [
       "https://www.linkedin.com/learning/certificates/ad7e82da17938e49141a34db201226dc362d16e99fa7f05ea032f84045636e0d",
     Name: "Career Essential in Software Development",
     Organization: "Microsoft and LinkeIn",
-    Date: "31 May 2024"
+    Date: "31 May 2024",
   },
   {
     PreviewLink:
@@ -213,7 +213,7 @@ const Certificate = [
 
     Name: "Communication Foundation (2018)",
     Organization: "LinkedIn",
-    Date: "20 March 2024"
+    Date: "20 March 2024",
   },
   {
     PreviewLink:
@@ -221,7 +221,7 @@ const Certificate = [
 
     Name: "Programming Foundations: Fundamentals",
     Organization: "LinkedIn",
-    Date: "31 May 2024"
+    Date: "31 May 2024",
   },
   {
     PreviewLink:
@@ -229,56 +229,56 @@ const Certificate = [
 
     Name: "What is Generative Ai?",
     Organization: "LinkedIn",
-    Date: "20 March 2024"
+    Date: "20 March 2024",
   },
   {
     PreviewLink: "https://www.hackerrank.com/certificates/9c6976cbd36a",
 
     Name: "CSS (Basic)",
     Organization: "HackerRank",
-    Date: "24 March 2024"
+    Date: "24 March 2024",
   },
   {
     PreviewLink: "https://www.hackerrank.com/certificates/34cb146483f9",
 
     Name: "Java (Basic)",
     Organization: "HackerRank",
-    Date: "4 June 2024"
+    Date: "4 June 2024",
   },
   {
     PreviewLink: "https://www.hackerrank.com/certificates/7a93cbba13ae",
 
     Name: "JavaScript (Intermediate)",
     Organization: "HackerRank",
-    Date: "24 March 2024"
+    Date: "24 March 2024",
   },
   {
     PreviewLink: "https://www.hackerrank.com/certificates/bafdfd44e1bb",
 
     Name: "Problem Solving (Basic)",
     Organization: "HackerRank",
-    Date: "10 May 2024"
+    Date: "10 May 2024",
   },
   {
     PreviewLink: "https://www.hackerrank.com/certificates/0a3a2bdd4111",
 
     Name: "React (Basic)",
     Organization: "HackerRank",
-    Date: "15 June 2024"
+    Date: "15 June 2024",
   },
   {
     PreviewLink: "https://www.hackerrank.com/certificates/016e6df5a9dc",
 
     Name: "SQL (Basic)",
     Organization: "HackerRank",
-    Date: "10 May 2024"
+    Date: "10 May 2024",
   },
   {
     PreviewLink: "https://www.mygreatlearning.com/certificate/KINBERIP",
 
     Name: "OOPs in Java",
     Organization: "Great Learning",
-    Date: "May 2024"
+    Date: "May 2024",
   },
   {
     PreviewLink:
@@ -286,22 +286,22 @@ const Certificate = [
 
     Name: "Responsive Web Design",
     Organization: "FreeCodeCamp",
-    Date: "21 March 2024"
-  }
+    Date: "21 March 2024",
+  },
 ];
 
 const DesignProjects = [
   {
     asset: {
       url: "/assets/images/design/LanyardSPM.webp",
-      alt: "Lanyard SPM 24/25"
+      alt: "Lanyard SPM 24/25",
     },
 
     project_Name: "Lanyard Sekretariat Parlimen Mahasiswa UiTM",
     project_Timeline: "May 2025",
     project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
     project_description:
-      "I created and designed the lanyard for Sekretariat Parlimen Mahasiswa 24/25 Sessions."
+      "I created and designed the lanyard for Sekretariat Parlimen Mahasiswa 24/25 Sessions.",
   },
   {
     asset: {
@@ -309,43 +309,43 @@ const DesignProjects = [
       alt: "QR Code Generator",
       image_bundle: [
         {
-          url: "/assets/images/design/FPPPolo.png"
+          url: "/assets/images/design/FPPPolo.png",
         },
         {
-          url: "/assets/images/design/FPPPolo/IMG_01.png"
+          url: "/assets/images/design/FPPPolo/IMG_01.png",
         },
         {
-          url: "/assets/images/design/FPPPolo/IMG_02.png"
-        }
-      ]
+          url: "/assets/images/design/FPPPolo/IMG_02.png",
+        },
+      ],
     },
     project_Name: "Business Society Activity Jersey",
     project_Timeline: "April 2024",
     project_Technologies: ["PhotoShop", "Illustrator", "Figma"],
     project_description:
-      "Transforming from a 2D Mock-Ups given into 3D Mock-Ups."
+      "Transforming from a 2D Mock-Ups given into 3D Mock-Ups.",
   },
   {
     asset: {
       url: "/assets/images/design/BSCorporateShirt.png",
-      alt: "QR Code Generator"
+      alt: "QR Code Generator",
     },
     project_Name: "Business Society Corporate Shirt",
     project_Timeline: "April 2024",
     project_Technologies: ["PhotoShop", "Illustrator"],
     project_description:
-      "Designed and created mockup for Business Society's new Corporate Shirt."
+      "Designed and created mockup for Business Society's new Corporate Shirt.",
   },
   {
     asset: {
       url: "/assets/images/design/MPPLanyard.png",
-      alt: "Programme Lanyard"
+      alt: "Programme Lanyard",
     },
     project_Name: "Programme Lanyard",
     project_Timeline: "June 2024",
     project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
     project_description:
-      "A Lanyard to be used by Student Representative of UiTM Pahang 2023-2024 Session for an international Programme."
+      "A Lanyard to be used by Student Representative of UiTM Pahang 2023-2024 Session for an international Programme.",
   },
   {
     asset: {
@@ -353,21 +353,21 @@ const DesignProjects = [
       alt: "Mytecc Activity Jersey",
       image_bundle: [
         {
-          url: "/assets/images/design/MYTECCJersey.png"
+          url: "/assets/images/design/MYTECCJersey.png",
         },
         {
-          url: "/assets/images/design/MAJ/IMG_01.png"
+          url: "/assets/images/design/MAJ/IMG_01.png",
         },
         {
-          url: "/assets/images/design/MAJ/IMG_02.png"
-        }
-      ]
+          url: "/assets/images/design/MAJ/IMG_02.png",
+        },
+      ],
     },
     project_Name: "Mytecc Activity Jersey",
     project_Timeline: "March 2024",
     project_Technologies: ["Photoshop", "Illustrator", "Figma", "Canva"],
     project_description:
-      "Designed a Retro-Like jersey as a commercial Project to be sold by MYTECC UiTM Raub 2023-2024 Session."
+      "Designed a Retro-Like jersey as a commercial Project to be sold by MYTECC UiTM Raub 2023-2024 Session.",
   },
   {
     asset: {
@@ -375,137 +375,156 @@ const DesignProjects = [
       alt: "NFR Runner Jersey",
       image_bundle: [
         {
-          url: "/assets/images/design/NFRRunner.png"
+          url: "/assets/images/design/NFRRunner.png",
         },
         {
-          url: "/assets/images/design/NFRRunner/IMG_01.png"
+          url: "/assets/images/design/NFRRunner/IMG_01.png",
         },
         {
-          url: "/assets/images/design/NFRRunner/IMG_02.png"
+          url: "/assets/images/design/NFRRunner/IMG_02.png",
         },
         {
-          url: "/assets/images/design/NFRRunner/IMG_03.png"
+          url: "/assets/images/design/NFRRunner/IMG_03.png",
         },
         {
-          url: "/assets/images/design/NFRRunner/IMG_04.png"
+          url: "/assets/images/design/NFRRunner/IMG_04.png",
         },
         {
-          url: "/assets/images/design/NFRRunner/IMG_05.png"
-        }
-      ]
+          url: "/assets/images/design/NFRRunner/IMG_05.png",
+        },
+      ],
     },
     project_Name: "NFR Runner Jersey",
     project_Timeline: "February 2024",
     project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
     project_description:
-      "Runner jersey to be wear by runner during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub."
+      "Runner jersey to be wear by runner during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub.",
   },
   {
     asset: {
       url: "/assets/images/design/NFRCommittee.png",
-      alt: "NFR Committee Jersey"
+      alt: "NFR Committee Jersey",
     },
 
     project_Name: "NFR Committee Jersey",
     project_Timeline: "February 2024",
     project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
     project_description:
-      "Committee jersey to be wear by Committee during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub."
-  }
+      "Committee jersey to be wear by Committee during Neon Fun Run: Raya Edition organized by MyAgrosis UiTM Raub and Business Society UiTM Raub.",
+  },
 ];
 
 const AboutPhotoGallery = [
   {
     image: {
       src: "/assets/images/photoGallery/image1.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image2.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image3.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image4.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image5.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image6.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image7.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image8.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image9.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image10.png",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image11.jpg",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
+    tooltipMessage: "",
   },
   {
     image: {
       src: "/assets/images/photoGallery/image12.jpg",
-      alt: ""
+      alt: "",
     },
-    tooltipMessage: ""
-  }
+    tooltipMessage: "",
+  },
 ];
 
 const DevelopmentProjects = [
   {
     asset: {
+      url: "/assets/images/project/Boatly.png",
+      alt: "Boatly Puzzle Game",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "Boatly - The Puzzle Game",
+    project_Timeline: "July 2025",
+    project_Technologies: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+    ],
+    project_description:
+      "A Simple boat puzzle game where user have to guessed the details of a cargo ship based on all the clues given.",
+    project_DemoLink: "https://adhaghani.github.io/boatgame/",
+    project_RepoLink: "https://github.com/adhaghani/boatgame",
+  },
+  {
+    asset: {
       url: "/assets/images/project/Qrcode.png",
-      alt: "QR Code Generator"
+      alt: "QR Code Generator",
     },
     development_Type: ["Front-End"],
     project_Name: "QR Code Generator",
@@ -514,12 +533,12 @@ const DevelopmentProjects = [
     project_description:
       "A simple QR Code generated that generate a link to a given url. User's are able to download the QR code generated. Simple, fast, efficient, and no ads.",
     project_DemoLink: "https://adhaghani.github.io/qrcodegen/",
-    project_RepoLink: "https://github.com/adhaghani/qrcodegen"
+    project_RepoLink: "https://github.com/adhaghani/qrcodegen",
   },
   {
     asset: {
       url: "/assets/images/project/UniParcel.png",
-      alt: "QR Code Generator"
+      alt: "QR Code Generator",
     },
     development_Type: ["Full-Stack", "Front-End", "Back-End"],
     project_Name: "UniParcel",
@@ -530,11 +549,11 @@ const DevelopmentProjects = [
       "Axios",
       "Laravel",
       "MySQL",
-      "ShadCN UI"
+      "ShadCN UI",
     ],
     project_description:
       "A Full-Stack Web-Based Parcel Management System that tracks parcel movement in an institution/office. Include feature like payment, parcel tracking, staff management.",
-    project_DemoLink: "https://uniparcel.my/"
+    project_DemoLink: "https://uniparcel.my/",
   },
   // {
   //   asset: {
@@ -595,7 +614,7 @@ const DevelopmentProjects = [
   {
     asset: {
       url: "/assets/images/project/Room.png",
-      alt: "Room E-Commerce"
+      alt: "Room E-Commerce",
     },
     development_Type: ["Full-Stack", "Front-End", "Back-End"],
     project_Name: "E-Commerce Platform",
@@ -603,12 +622,12 @@ const DevelopmentProjects = [
     project_Technologies: ["React.js", "PHP", "SCSS", "MySQL", "Chart.JS"],
     project_description:
       "An E-Commerce platform that showcases basic shopping features like checkout, adding product to card and many mores. Developed during my 4th semester for an assignment.",
-    project_RepoLink: "https://github.com/adhaghani/roomecommerce"
+    project_RepoLink: "https://github.com/adhaghani/roomecommerce",
   },
   {
     asset: {
       url: "/assets/images/project/Portfolio.png",
-      alt: "Personal Portfolio Website"
+      alt: "Personal Portfolio Website",
     },
     development_Type: ["Front-End"],
     project_Name: "Personal Portfolio Website",
@@ -617,13 +636,13 @@ const DevelopmentProjects = [
     project_description:
       "personal portfolio websites to showcase my front-end development skills. The site also contains all my previous project either in design or development.",
     project_DemoLink: "https://www.adhaghani.com/",
-    project_RepoLink: "https://github.com/adhaghani/Portfolio"
+    project_RepoLink: "https://github.com/adhaghani/Portfolio",
   },
 
   {
     asset: {
       url: "/assets/images/project/Bank.png",
-      alt: "Simple Bank System"
+      alt: "Simple Bank System",
     },
     development_Type: ["Others"],
     project_Name: "Simple Bank System",
@@ -631,16 +650,16 @@ const DevelopmentProjects = [
     project_Technologies: [
       "JAVA",
       "Object Oriented Programming",
-      "Data Structure"
+      "Data Structure",
     ],
     project_description:
       "A simple Banking application developed to demonstrate my abilities with handling Object Oriented Programming using Java. User are able to create account and do basic transaction like deposit, withdraw and transfer.",
-    project_RepoLink: "https://github.com/adhaghani/SimpleBankingApplication"
+    project_RepoLink: "https://github.com/adhaghani/SimpleBankingApplication",
   },
   {
     asset: {
       url: "/assets/images/project/SunnySide.png",
-      alt: "SunnySide Landing Page"
+      alt: "SunnySide Landing Page",
     },
     development_Type: ["Front-End"],
     project_Name: "SunnySide Landing Page",
@@ -649,12 +668,12 @@ const DevelopmentProjects = [
     project_description:
       "A simple landing page completed for task by FrontEnd Mentor. Showcasing my abilities to developed basic Landing Page for companies.",
     project_DemoLink: "https://adhaghani.github.io/SunnySideLandingPage/",
-    project_RepoLink: "https://github.com/adhaghani/SunnySideLandingPage"
+    project_RepoLink: "https://github.com/adhaghani/SunnySideLandingPage",
   },
   {
     asset: {
       url: "/assets/images/project/starbucks.png",
-      alt: "Starbucks Landing Page"
+      alt: "Starbucks Landing Page",
     },
     development_Type: ["Front-End"],
     project_Name: "Starbucks Landing Page",
@@ -663,12 +682,12 @@ const DevelopmentProjects = [
       "HTML",
       "CSS",
       "JavaScript",
-      "Responsive Web Design"
+      "Responsive Web Design",
     ],
     project_description:
       "My first ever Landing Page project, a copy of starbucks landing page. Developed to learn and understand the basics and fundamental of HTML, CSS and Javasript languages, which greatly helps me in the long run.",
     project_DemoLink: "https://adhaghani.github.io/starbuck-lp.github.io/",
-    project_RepoLink: "https://github.com/adhaghani/starbuck-lp.github.io"
+    project_RepoLink: "https://github.com/adhaghani/starbuck-lp.github.io",
   },
   {
     project_Name: "Car DealerShip Application",
@@ -677,13 +696,13 @@ const DevelopmentProjects = [
     project_Technologies: [
       "Java",
       "Object Oriented Programming",
-      "Java Foundation"
+      "Java Foundation",
     ],
     project_description:
       "A Car Dealership Application developed to increase understanding of OOP concepts. Contain objects like car, dealership and buyer.",
     project_RepoLink:
-      "https://github.com/adhaghani/SimpleCarDealershipApplication"
-  }
+      "https://github.com/adhaghani/SimpleCarDealershipApplication",
+  },
 ];
 export {
   AboutPhotoGallery,
@@ -692,5 +711,5 @@ export {
   Certificate,
   DesignProjects,
   DevelopmentProjects,
-  Testimonials
+  Testimonials,
 };
