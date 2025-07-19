@@ -555,6 +555,19 @@ const DevelopmentProjects = [
       "A Full-Stack Web-Based Parcel Management System that tracks parcel movement in an institution/office. Include feature like payment, parcel tracking, staff management.",
     project_DemoLink: "https://uniparcel.my/",
   },
+  {
+    asset: {
+      url: "/assets/images/project/aar.png",
+      alt: "AbleAce Raakin Website",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "AbleAce Raakin Website",
+    project_Timeline: "January 2025",
+    project_Technologies: ["React.js", "SCSS", "Motion"],
+    project_description:
+      "A website developed to replace the company's old website. This is my internship project, where I am responsible to design, develop and launch the website. The website is developed using React.js and SCSS, with a focus on performance and user experience.",
+    project_RepoLink: "https://ableaceraakin.com/",
+  },
   // {
   //   asset: {
   //     url: "/assets/project/Todo.png",
