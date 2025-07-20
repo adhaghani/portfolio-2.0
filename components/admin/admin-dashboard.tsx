@@ -59,26 +59,18 @@ export default function AdminDashboard({
   };
 
   return (
-    <div className="min-h-screen bg-background mt-24">
+    <div className="min-h-screen mt-24">
       {/* Header */}
-      <header className="border-b border-border bg-card">
+      <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <Text as="h1" className="text-2xl font-bold">
-                Blog Administration
-              </Text>
+            <div className="space-y-2">
+              <Text as="h1">Blog Administration</Text>
               <Text as="p" styleVariant="muted">
-                Welcome back, {adminEmail}
+                Welcome back, Adha
               </Text>
             </div>
             <div className="flex items-center gap-2">
-              <Link href="/blog" target="_blank">
-                <Button variant="outline" size="sm">
-                  <Eye className="w-4 h-4 mr-2" />
-                  View Blog
-                </Button>
-              </Link>
               <Button
                 variant="ghost"
                 size="sm"

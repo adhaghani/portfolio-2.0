@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { clearAdminSession } from "@/utils/admin-auth";
+import { AdminAuthClient } from "@/utils/admin-auth-client";
 
 export async function POST() {
   try {
-    await clearAdminSession();
+    await AdminAuthClient.logout();
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Admin logout error:", error);

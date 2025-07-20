@@ -113,18 +113,18 @@ export default function PostsManagement({
   };
 
   return (
-    <div className="min-h-screen bg-background mt-24">
+    <div className="min-h-screen mt-24">
       {/* Header */}
-      <header className="border-b border-border bg-card">
+      <header className="border-b border-border ">
         <div className="container mx-auto px-4 py-4">
+          <Link href="/admin">
+            <Button variant="ghost" className="mb-5" size="sm">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Dashboard
+            </Button>
+          </Link>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Link href="/admin">
-                <Button variant="ghost" size="sm">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
-                </Button>
-              </Link>
               <div>
                 <Text as="h1" className="text-2xl font-bold">
                   Manage Posts

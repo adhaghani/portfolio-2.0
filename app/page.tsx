@@ -83,7 +83,7 @@ const stats = [
   { icon: Trophy, value: "15+", label: "Projects Completed" },
   { icon: Users, value: "8+", label: "Happy Clients" },
   { icon: Star, value: "5.0", label: "Average Rating" },
-  { icon: Zap, value: "2+", label: "Years Experience" },
+  { icon: Zap, value: "2+", label: "Years in coding" },
 ];
 
 export default function Home() {
@@ -146,7 +146,7 @@ export default function Home() {
                   as="p"
                   className="max-w-2xl mx-auto text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
                 >
-                  A passionate <strong>Full-Stack Developer</strong> and{" "}
+                  A passionate <strong>Student Developer</strong> and{" "}
                   <strong>UI/UX Designer</strong> crafting digital experiences
                   that blend creativity with functionality.
                 </Text>

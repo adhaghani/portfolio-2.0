@@ -11,6 +11,8 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { ArrowLeft, Save, Eye, Plus, X, ImagePlus } from "lucide-react";
 import Link from "next/link";
+import ImageUpload from "@/components/ui/image-upload";
+import { AdminAuthClient } from "@/utils/admin-auth-client";
 
 interface CreatePostFormProps {
   adminEmail: string;
@@ -78,9 +80,7 @@ export default function CreatePostForm({ adminEmail }: CreatePostFormProps) {
     try {
       const response = await fetch("/api/admin/posts", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: AdminAuthClient.getAuthHeaders(),
         body: JSON.stringify({
           title: formData.title,
           slug: formData.slug,
@@ -110,18 +110,18 @@ export default function CreatePostForm({ adminEmail }: CreatePostFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-background mt-24">
+    <div className="min-h-screen mt-24">
       {/* Header */}
-      <header className="border-b border-border bg-card">
+      <header className="border-b border-border ">
         <div className="container mx-auto px-4 py-4">
+          <Link href="/admin">
+            <Button variant="ghost" className="mb-4" size="sm">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Dashboard
+            </Button>
+          </Link>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Link href="/admin">
-                <Button variant="ghost" size="sm">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
-                </Button>
-              </Link>
               <div>
                 <Text as="h1" className="text-2xl font-bold">
                   Create New Post
@@ -292,24 +292,17 @@ export default function CreatePostForm({ adminEmail }: CreatePostFormProps) {
                   <CardTitle>Cover Image</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Image URL
-                    </label>
-                    <Input
-                      value={formData.coverImageUrl}
-                      onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          coverImageUrl: e.target.value,
-                        }))
-                      }
-                      placeholder="https://example.com/image.jpg"
-                    />
-                    <Text as="p" styleVariant="muted" className="text-sm mt-1">
-                      Recommended: 1200x630px for social sharing
-                    </Text>
-                  </div>
+                  <ImageUpload
+                    value={formData.coverImageUrl}
+                    onChange={(url) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        coverImageUrl: url,
+                      }))
+                    }
+                    label="Cover Image"
+                    description="Upload a cover image for your post"
+                  />
                 </CardContent>
               </Card>
 
