@@ -7,7 +7,7 @@ import {
   MotionValue,
   useMotionValue,
   useSpring,
-  useTransform
+  useTransform,
 } from "motion/react";
 import React, { PropsWithChildren, useRef } from "react";
 
@@ -27,7 +27,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md"
+  "bg-card border-2 mx-auto mt-8 flex h-[58px] items-center justify-center gap-2 rounded-2xl p-2"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -53,7 +53,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
             mouseX: mouseX,
             size: iconSize,
             magnification: iconMagnification,
-            distance: iconDistance
+            distance: iconDistance,
           });
         }
         return child;
@@ -69,7 +69,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         className={cn(dockVariants({ className }), {
           "items-start": direction === "top",
           "items-center": direction === "middle",
-          "items-end": direction === "bottom"
+          "items-end": direction === "bottom",
         })}
       >
         {renderChildren()}
@@ -118,7 +118,7 @@ const DockIcon = ({
   const scaleSize = useSpring(sizeTransform, {
     mass: 0.1,
     stiffness: 150,
-    damping: 12
+    damping: 12,
   });
 
   return (

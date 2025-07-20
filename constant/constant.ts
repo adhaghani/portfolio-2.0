@@ -4,7 +4,7 @@ const Testimonials = [
   {
     title: "Outstanding Creativity and Dedication",
     quote:
-      "Collaborating with Ahmad Adha has been a truly rewarding experience. Their creativity, professionalism, and consistent ability to deliver high-quality graphic design work played a significant role in elevating the visual appeal of our faculty projects. Whether it was event posters, social media content, or presentation materials, their designs always reflected excellence and aligned perfectly with our goals. I'm grateful for their support and dedication throughout our term.",
+      "Collaborating with Ahmad Adha has been a truly rewarding experience. His creativity, professionalism, and consistent ability to deliver high-quality graphic design work played a significant role in elevating the visual appeal of our faculty projects. Whether it was event posters, social media content, or presentation materials, his designs always reflected excellence and aligned perfectly with our goals. I'm grateful for his support and dedication throughout our term.",
     name: "Syahreen",
     position:
       "Former President, Faculty of Business and Management, UiTM Pahang (Session 23/24)",
