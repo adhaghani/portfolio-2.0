@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import BlogCard from "@/components/blog-card";
 import SearchBar from "@/components/search-bar";
 import BlogPagination from "@/components/blog-pagination";
+import BlogLoadingSkeleton from "@/components/blog-loading-skeleton";
+import BlogEmptyState from "@/components/blog-empty-state";
 import { Text } from "@/components/ui/text";
 
 interface BlogPost {
@@ -93,6 +95,10 @@ export default function BlogClient({
     handleSearch(initialQuery, initialTags, initialSort, newPage);
   };
 
+  // Check if there are active filters
+  const hasActiveFilters =
+    Boolean(initialQuery) || initialTags.length > 0 || initialSort !== "newest";
+
   // Perform initial search if there are URL parameters
   useEffect(() => {
     if (
@@ -116,29 +122,46 @@ export default function BlogClient({
 
   return (
     <>
-      <div className="pt-40 py-20 px-4">
-        <Text as="h1" className="text-center">
-          Blog Posts
-        </Text>
-        <Text as="p" styleVariant="muted" className="text-center">
-          Search and explore my blog posts
-        </Text>
+      {/* Hero Section */}
+      <div className="relative pt-40 pb-20 px-4 overflow-hidden">
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            Latest Blog Posts
+          </div>
+          <Text
+            as="h1"
+            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
+          >
+            Blog Posts
+          </Text>
+          <Text
+            as="p"
+            styleVariant="muted"
+            className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
+          >
+            Discover insights, tutorials, and thoughts on development, design,
+            and technology
+          </Text>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 pb-20">
         {/* Search Bar */}
-        <div className="mb-8">
-          <SearchBar
-            availableTags={availableTags}
-            onSearch={handleSearchWithReset}
-            initialQuery={initialQuery}
-            initialTags={initialTags}
-            initialSort={initialSort}
-          />
+        <div className="mb-12">
+          <div className="max-w-4xl mx-auto">
+            <SearchBar
+              availableTags={availableTags}
+              onSearch={handleSearchWithReset}
+              initialQuery={initialQuery}
+              initialTags={initialTags}
+              initialSort={initialSort}
+            />
+          </div>
         </div>
 
-        {/* Results Count */}
-        <div className="mb-6">
+        {/* Results Count and Sort */}
+        <div className="mb-8 flex justify-between items-center">
           <Text as="p" styleVariant="muted" className="text-sm">
             {loading
               ? "Searching..."
@@ -146,18 +169,32 @@ export default function BlogClient({
                   pagination.total !== 1 ? "s" : ""
                 } found`}
           </Text>
+          {!loading && blogs.length > 0 && (
+            <div className="text-xs text-muted-foreground">
+              Page {pagination.page} of {pagination.totalPages}
+            </div>
+          )}
         </div>
 
         {/* Blog Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog: BlogPost) => (
-            <BlogCard key={blog.id} props={blog} />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+          {blogs.map((blog: BlogPost, index: number) => (
+            <div
+              key={blog.id}
+              className="animate-fade-in"
+              style={{
+                animationDelay: `${index * 100}ms`,
+                animationFillMode: "both",
+              }}
+            >
+              <BlogCard props={blog} />
+            </div>
           ))}
         </div>
 
         {/* Pagination */}
         {!loading && pagination.totalPages > 1 && (
-          <div className="mt-12">
+          <div className="mt-16">
             <BlogPagination
               currentPage={pagination.page}
               totalPages={pagination.totalPages}
@@ -171,23 +208,28 @@ export default function BlogClient({
 
         {/* No Results */}
         {!loading && blogs.length === 0 && (
-          <div className="text-center py-20">
-            <Text as="p" styleVariant="muted">
-              No blog posts found matching your criteria.
-            </Text>
-            <Text as="p" styleVariant="muted" className="text-sm mt-2">
-              Try adjusting your search terms or clearing the filters.
-            </Text>
-          </div>
+          <BlogEmptyState
+            hasFilters={hasActiveFilters}
+            onClearFilters={() => handleSearch("", [], "newest", 1)}
+          />
         )}
 
         {/* Loading State */}
         {loading && (
-          <div className="text-center py-20">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
-            <Text as="p" styleVariant="muted" className="mt-4">
-              Searching posts...
-            </Text>
+          <div className="space-y-8">
+            <BlogLoadingSkeleton count={9} />
+            <div className="text-center">
+              <div className="relative">
+                <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary/20 border-t-primary mx-auto"></div>
+                <div
+                  className="absolute inset-0 rounded-full h-8 w-8 border-2 border-transparent border-t-primary/40 animate-spin mx-auto"
+                  style={{ animationDuration: "0.75s" }}
+                ></div>
+              </div>
+              <Text as="p" styleVariant="muted" className="mt-4">
+                Searching posts...
+              </Text>
+            </div>
           </div>
         )}
       </div>

@@ -1,9 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Text } from "./ui/text";
 import LikeButton from "./like-button";
 import SocialShare from "./social-share";
+import OptimizedImage from "./ui/optimized-image";
+import { Calendar, Eye, Clock } from "lucide-react";
 import {
   Card,
   CardFooter,
@@ -41,32 +42,42 @@ interface BlogPost {
 const BlogCard = ({ props }: { props: BlogPost }) => {
   return (
     <Dialog>
-      <Card className="h-full group hover:shadow-lg transition-shadow duration-300">
+      <Card className="h-full group transition-all duration-300 overflow-hidden">
         {/* Cover Image */}
         {props.cover_image_url ? (
-          <div className="aspect-video overflow-hidden rounded-t-lg">
-            <Image
+          <div className="aspect-video overflow-hidden rounded-t-lg bg-muted/30 relative group-hover:bg-muted/50 transition-colors duration-300">
+            <OptimizedImage
               src={props.cover_image_url}
               alt={props.title}
               width={400}
               height={225}
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              priority={false}
+              quality={80}
+              placeholder="blur"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         ) : (
-          <div className="aspect-video bg-card border rounded-t-lg flex items-center justify-center">
-            <Text as="p" styleVariant="muted" className="text-center px-4">
-              📝 {props.title}
-            </Text>
+          <div className="aspect-video bg-gradient-to-br from-muted via-muted/50 to-muted border rounded-t-lg flex items-center justify-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+            <div className="relative z-10 text-center px-4">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-2xl">📝</span>
+              </div>
+              <Text as="p" styleVariant="muted" className="text-sm font-medium">
+                {props.title}
+              </Text>
+            </div>
           </div>
         )}
 
-        <CardHeader>
-          <div className="space-y-2">
+        <CardHeader className="space-y-3">
+          <div className="space-y-3">
             <CardTitle>
               <Text
                 as="h3"
-                className="line-clamp-2 group-hover:text-primary transition-colors"
+                className="line-clamp-2 group-hover:text-primary transition-colors text-lg font-semibold leading-tight"
               >
                 {props.title}
               </Text>
@@ -74,17 +85,17 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
 
             {/* Tags */}
             {props.tags && props.tags.length > 0 && (
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-1.5">
                 {props.tags.slice(0, 3).map((tag, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 bg-card border text-primary text-xs rounded-md font-medium"
+                    className="px-2.5 py-1 bg-primary/5 border border-primary/10 text-primary text-xs rounded-full font-medium hover:bg-primary/10 transition-colors"
                   >
                     #{tag}
                   </span>
                 ))}
                 {props.tags.length > 3 && (
-                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
+                  <span className="px-2.5 py-1 bg-muted/50 text-muted-foreground text-xs rounded-full border border-border">
                     +{props.tags.length - 3} more
                   </span>
                 )}
@@ -93,9 +104,13 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
           </div>
         </CardHeader>
 
-        <CardContent className="flex-1">
+        <CardContent className="flex-1 px-6 py-0">
           <CardDescription>
-            <Text as="p" styleVariant="muted" className="line-clamp-3">
+            <Text
+              as="p"
+              styleVariant="muted"
+              className="line-clamp-3 text-sm leading-relaxed"
+            >
               {props.excerpt ||
                 (props.content.length > 120
                   ? `${props.content.substring(0, 120)}...`
@@ -104,13 +119,14 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
           </CardDescription>
         </CardContent>
 
-        <CardFooter className="pt-0">
-          <div className="w-full space-y-3">
+        <CardFooter className="pt-4 px-6 pb-6">
+          <div className="w-full space-y-4">
             {/* Stats and Date */}
             <div className="flex justify-between items-center text-sm text-muted-foreground">
-              <div className="flex gap-3 items-center">
-                <span className="flex items-center gap-1">
-                  👀 {props.views.toLocaleString()}
+              <div className="flex gap-4 items-center">
+                <span className="flex items-center gap-1.5">
+                  <Eye className="w-3.5 h-3.5" />
+                  {props.views.toLocaleString()}
                 </span>
                 <LikeButton
                   blogId={props.id}
@@ -118,31 +134,42 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
                   className="text-xs"
                 />
               </div>
-              <time className="text-xs">
-                {props.published_at
-                  ? new Date(props.published_at).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                  : new Date(props.created_at).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-              </time>
+              <div className="flex items-center gap-1.5 text-xs">
+                <Calendar className="w-3.5 h-3.5" />
+                <time>
+                  {props.published_at
+                    ? new Date(props.published_at).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })
+                    : new Date(props.created_at).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                </time>
+              </div>
+            </div>
+
+            {/* Reading Time Estimate */}
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Clock className="w-3.5 h-3.5" />
+              <span>
+                {Math.max(1, Math.ceil(props.content.length / 200))} min read
+              </span>
             </div>
 
             {/* Action Buttons */}
             <div className="flex gap-2">
               <Link href={`/blog/${props.slug}`} className="flex-1">
-                <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-md">
                   Read More
                 </button>
               </Link>
 
               <DialogTrigger asChild>
-                <button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                <button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-md">
                   Preview
                 </button>
               </DialogTrigger>
@@ -154,7 +181,7 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
                 title={props.title}
                 description={props.excerpt || undefined}
                 variant="icon"
-                className="h-9 w-9"
+                className="h-9 w-9 rounded-lg hover:shadow-md transition-all duration-200"
               />
             </div>
           </div>
@@ -165,13 +192,16 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           {props.cover_image_url && (
-            <div className="aspect-video overflow-hidden rounded-lg mb-4">
-              <Image
+            <div className="aspect-video overflow-hidden rounded-lg mb-4 bg-muted/30">
+              <OptimizedImage
                 src={props.cover_image_url}
                 alt={props.title}
                 width={800}
                 height={450}
                 className="object-cover w-full h-full"
+                priority={true}
+                quality={85}
+                placeholder="blur"
               />
             </div>
           )}

@@ -623,7 +623,7 @@ export default function Home() {
             ) : recentPosts.length > 0 ? (
               recentPosts.map((post, index) => (
                 <BlurFade key={post.id} inView delay={0.1 * index}>
-                  <Card className="h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border-2">
+                  <Card className="h-full group transition-all duration-300 hover:-translate-y-2 bg-card border-2">
                     {/* Cover Image */}
                     <div className="aspect-video overflow-hidden rounded-t-lg">
                       {post.cover_image_url ? (
