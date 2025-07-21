@@ -160,26 +160,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Newsletter Signup */}
-            <div className="p-4 bg-card border-2 rounded-lg mb-4">
-              <Text as="p" className="font-medium mb-2 flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                Stay Updated
-              </Text>
-              <Text as="p" styleVariant="muted" className="text-sm mb-3">
-                Get notified about new blog posts and projects.
-              </Text>
-              <Button
-                size="sm"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                asChild
-              >
-                <Link href="mailto:adhaghani@gmail.com?subject=Newsletter Subscription">
-                  Subscribe
-                </Link>
-              </Button>
-            </div>
-
             {/* Theme Preferences */}
             <div className="p-4 bg-card border-2 rounded-lg">
               <Text as="p" className="font-medium mb-2">
