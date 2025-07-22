@@ -74,6 +74,13 @@ const Education = [
               "Parliamentary Secretariat, I am mainly responsible for managing the media sides of the parliament. Mainly taking photos and shooting videos of the entire parliamentary sessions. I am also involved with creating graphical posters, editing secretariat photos and lending a hand to other units in need.",
             role: "Multimedia and Publicity Unit",
           },
+          {
+            title: "Malaysia Inovation Data Talent 2025 (MIDT)",
+            date: "July 2025 - Present",
+            description:
+              "The Malaysia Data Innovation Talent x DOSM Datathon 2025 is a premier national competition that brings together the brightest minds from universities across Malaysia to tackle real-world data challenges.",
+            role: "Multimedia and Publicity Unit",
+          },
         ],
       },
       {
@@ -200,6 +207,41 @@ const Work = [
 ];
 
 const Certificate = [
+  {
+    PreviewLink:
+      "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/f8ddf63e-cd6e-495b-ae09-04b56fb5538e-ahmad-adha-e8fe37a4-541b-4438-806f-fb1c46eea8c9-certificate.pdf",
+    Name: "MongoDB and the Document Model",
+    Organization: "MongoDB",
+    Date: "July 2025",
+  },
+  {
+    PreviewLink:
+      "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/f8ddf63e-cd6e-495b-ae09-04b56fb5538e-ahmad-adha-c91395c4-71a5-485c-a9d9-c23f4a573930-certificate.pdf",
+    Name: " MongoDB CRUD Operations: Insert and Find Documents",
+    Organization: "MongoDB",
+    Date: "July 2025",
+  },
+  {
+    PreviewLink:
+      "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/f8ddf63e-cd6e-495b-ae09-04b56fb5538e-ahmad-adha-de9eb04c-115a-4af8-8d1b-2bbc23cbe699-certificate.pdf",
+    Name: "MongoDB CRUD Operations in Node.js",
+    Organization: "MongoDB",
+    Date: "July 2025",
+  },
+  {
+    PreviewLink:
+      "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/f8ddf63e-cd6e-495b-ae09-04b56fb5538e-ahmad-adha-20de5535-7d18-4d64-a0e5-da3499d4ff0d-certificate.pdf",
+    Name: " MongoDB Indexes",
+    Organization: "MongoDB",
+    Date: "July 2025",
+  },
+  {
+    PreviewLink:
+      "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/f8ddf63e-cd6e-495b-ae09-04b56fb5538e-ahmad-adha-bc7a7df5-c482-44af-a827-4f42b0103740-certificate.pdf",
+    Name: " MongoDB Aggregation",
+    Organization: "MongoDB",
+    Date: "July 2025",
+  },
   {
     PreviewLink:
       "https://www.linkedin.com/learning/certificates/ad7e82da17938e49141a34db201226dc362d16e99fa7f05ea032f84045636e0d",
@@ -523,22 +565,28 @@ const DevelopmentProjects = [
   },
   {
     asset: {
-      url: "/assets/images/project/Qrcode.png",
-      alt: "QR Code Generator",
+      url: "/assets/images/project/Portfolio.png",
+      alt: "Personal Portfolio Website",
     },
     development_Type: ["Front-End"],
-    project_Name: "QR Code Generator",
-    project_Timeline: "August 2024",
-    project_Technologies: ["React.js", "SCSS", "QRcode.react", "HTML2Canvas"],
+    project_Name: "Personal Portfolio Website",
+    project_Timeline: "July 2025",
+    project_Technologies: [
+      "Next.js",
+      "ShadCN UI",
+      "Tailwind CSS",
+      "Vercel",
+      "Supabase",
+    ],
     project_description:
-      "A simple QR Code generated that generate a link to a given url. User's are able to download the QR code generated. Simple, fast, efficient, and no ads.",
-    project_DemoLink: "https://adhaghani.github.io/qrcodegen/",
-    project_RepoLink: "https://github.com/adhaghani/qrcodegen",
+      "personal portfolio websites to showcase my front-end development skills. The site also contains all my previous project either in design or development.",
+    project_DemoLink: "https://www.adhaghani.com/",
+    project_RepoLink: "https://github.com/adhaghani/Portfolio",
   },
   {
     asset: {
       url: "/assets/images/project/UniParcel.png",
-      alt: "QR Code Generator",
+      alt: "UniParcel",
     },
     development_Type: ["Full-Stack", "Front-End", "Back-End"],
     project_Name: "UniParcel",
@@ -557,16 +605,31 @@ const DevelopmentProjects = [
   },
   {
     asset: {
+      url: "/assets/images/project/Qrcode.png",
+      alt: "QR Code Generator",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "QR Code Generator",
+    project_Timeline: "August 2024",
+    project_Technologies: ["React.js", "SCSS", "QRcode.react", "HTML2Canvas"],
+    project_description:
+      "A simple QR Code generated that generate a link to a given url. User's are able to download the QR code generated. Simple, fast, efficient, and no ads.",
+    project_DemoLink: "https://adhaghani.github.io/qrcodegen/",
+    project_RepoLink: "https://github.com/adhaghani/qrcodegen",
+  },
+
+  {
+    asset: {
       url: "/assets/images/project/aar.png",
       alt: "AbleAce Raakin Website",
     },
     development_Type: ["Front-End"],
     project_Name: "AbleAce Raakin Website",
     project_Timeline: "January 2025",
-    project_Technologies: ["React.js", "SCSS", "Motion"],
+    project_Technologies: ["React.js", "SCSS", "Motion", "PHP", "MySQL"],
     project_description:
       "A website developed to replace the company's old website. This is my internship project, where I am responsible to design, develop and launch the website. The website is developed using React.js and SCSS, with a focus on performance and user experience.",
-    project_RepoLink: "https://ableaceraakin.com/",
+    project_DemoLink: "https://ableaceraakin.com/",
   },
   // {
   //   asset: {
@@ -636,20 +699,6 @@ const DevelopmentProjects = [
     project_description:
       "An E-Commerce platform that showcases basic shopping features like checkout, adding product to card and many mores. Developed during my 4th semester for an assignment.",
     project_RepoLink: "https://github.com/adhaghani/roomecommerce",
-  },
-  {
-    asset: {
-      url: "/assets/images/project/Portfolio.png",
-      alt: "Personal Portfolio Website",
-    },
-    development_Type: ["Front-End"],
-    project_Name: "Personal Portfolio Website",
-    project_Timeline: "July 2024",
-    project_Technologies: ["React", "TypeScript", "ShadCN UI", "Tailwind CSS"],
-    project_description:
-      "personal portfolio websites to showcase my front-end development skills. The site also contains all my previous project either in design or development.",
-    project_DemoLink: "https://www.adhaghani.com/",
-    project_RepoLink: "https://github.com/adhaghani/Portfolio",
   },
 
   {

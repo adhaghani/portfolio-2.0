@@ -2277,7 +2277,7 @@ const AboutLogo = {
   UiTM: UiTMLogo,
   AAR: AARLogo,
   PWC: PWCLogo,
-  SPM: SPMLogo
+  SPM: SPMLogo,
 };
 
 export default AboutLogo;

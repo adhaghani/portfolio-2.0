@@ -20,7 +20,6 @@ import {
   BrushIcon,
   ArrowRight,
   Download,
-  ExternalLink,
   Github,
   Mail,
   MapPin,
@@ -29,9 +28,9 @@ import {
   Users,
   Trophy,
   Zap,
-  Clock,
   Eye,
   Heart,
+  CoffeeIcon,
 } from "lucide-react";
 import Contact from "@/components/contact";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
@@ -82,7 +81,7 @@ const Service = [
 const stats = [
   { icon: Trophy, value: "15+", label: "Projects Completed" },
   { icon: Users, value: "8+", label: "Happy Clients" },
-  { icon: Star, value: "5.0", label: "Average Rating" },
+  { icon: CoffeeIcon, value: "900+", label: "Coffee Consumed" },
   { icon: Zap, value: "2+", label: "Years in coding" },
 ];
 
@@ -463,7 +462,6 @@ export default function Home() {
                 <InteractiveHoverButton className="text-xl px-10 py-5">
                   <span className="flex items-center gap-3">
                     View All Projects
-                    <ArrowRight className="w-6 h-6" />
                   </span>
                 </InteractiveHoverButton>
               </Link>

@@ -5,7 +5,7 @@ import { Text } from "@/components/ui/text";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
+
 import {
   Education,
   Work,
@@ -18,23 +18,11 @@ import EducationCard from "@/components/education-card";
 import WorkCard from "@/components/work-card";
 import { Marquee } from "@/components/magicui/marquee";
 import Contact from "@/components/contact";
-import { Spotlight } from "@/components/ui/spotlight-new";
+
 import CertificateCard from "@/components/ui/certificate-card";
 import {
-  Code2,
-  Palette,
-  Database,
-  Smartphone,
-  GraduationCap,
-  Briefcase,
-  Award,
   Download,
-  MapPin,
-  Calendar,
-  Coffee,
   Heart,
-  Dumbbell,
-  Book,
   Lightbulb,
   Target,
   Zap,
@@ -42,10 +30,9 @@ import {
   Gamepad2,
   Music,
   MoreHorizontal,
-  Trophy,
-  Users,
+  CoffeeIcon,
 } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
 const PhotoGalleryReverse = AboutPhotoGallery.toReversed();
 
@@ -65,18 +52,17 @@ const achievements = [
   { label: "Technologies Learned", value: "20+", icon: Lightbulb },
   { label: "Years Experience", value: "2+", icon: Zap },
   {
-    label: "Certifications",
-    value: Certificate.length.toString(),
-    icon: Award,
+    label: "Coffee Consumed",
+    value: "900+",
+    icon: CoffeeIcon,
   },
 ];
 
 const page = () => {
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   return (
     <>
       {/* Hero Section */}
-      <Spotlight xOffset={0} />
+
       <div className="min-h-screen max-h-[1100px] flex items-center justify-center relative pt-16">
         <div className="w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
           <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0">
@@ -284,31 +270,44 @@ const page = () => {
                 </Text>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <img
-                      src="/assets/images/photoGallery/image1.png"
-                      alt="Personal photo 1"
+                    <Image
+                      src={"/assets/images/photoGallery/image1.png"}
+                      alt={"Personal photo 1"}
+                      quality={100}
+                      width={500}
+                      height={200}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <img
-                      src="/assets/images/photoGallery/image2.png"
-                      alt="Personal photo 2"
+                    <Image
+                      src={"/assets/images/photoGallery/image2.png"}
+                      alt={"Personal photo 2"}
+                      quality={100}
+                      width={500}
+                      height={200}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <img
-                      src="/assets/images/photoGallery/image3.png"
-                      alt="Personal photo 3"
+                    <Image
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      src={"/assets/images/photoGallery/image3.png"}
+                      alt={"Personal photo 3"}
+                      quality={100}
+                      width={500}
+                      height={200}
                     />
                   </div>
-                  <div className="aspect-square rounded-xl overflow-hidden bg-card border-2 flex items-center justify-center cursor-pointer hover:bg-accent transition-colors">
-                    <div className="text-center">
-                      <MoreHorizontal className="w-8 h-8 mx-auto mb-2" />
-                      <span className="text-sm font-medium">View More</span>
-                    </div>
+                  <div className="aspect-square rounded-xl overflow-hidden border-2">
+                    <Image
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      src={"/assets/images/photoGallery/image10.png"}
+                      alt={"Personal photo 10"}
+                      quality={100}
+                      width={500}
+                      height={200}
+                    />
                   </div>
                 </div>
               </div>

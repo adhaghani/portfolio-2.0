@@ -12,17 +12,17 @@ import { cn } from "@/lib/utils";
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "300", "200", "800"],
   variable: "--font-poppins",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Adhaghani - Portolio",
   description:
-    "Adhaghani's personal portfolio website, a computer science student at UiTM."
+    "Adhaghani's personal portfolio website, a computer science student at UiTM.",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
