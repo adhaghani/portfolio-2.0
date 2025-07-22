@@ -122,7 +122,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div className="relative">
-        <BackgroundLines className="min-h-screen max-h-[500px] flex items-center justify-center w-full flex-col px-4 bg-transparent">
+        <BackgroundLines className="min-h-fit py-24 sm:py-32  max-h-[700px] flex items-center justify-center w-full flex-col px-4 bg-transparent">
           <BlurFade inView>
             <div className="text-center space-y-8 max-w-4xl mx-auto">
               <div className="space-y-4">
@@ -162,7 +162,7 @@ export default function Home() {
                   const IconComponent = achievement.icon;
                   return (
                     <BlurFade key={index} inView delay={0.1 * index}>
-                      <Card className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <Card className="text-center hover:shadow-lg transition-all h-full duration-300 hover:-translate-y-1">
                         <CardContent className="p-4">
                           <IconComponent className="w-8 h-8 mx-auto mb-2 text-primary" />
                           <Text
@@ -240,18 +240,14 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <BlurFade inView delay={0.2}>
                 <div className="space-y-8">
-                  <Text as="p" className="text-xl leading-relaxed">
+                  <Text as="p" className="text-lg leading-relaxed">
                     I'm a passionate tech enthusiast and full-time student,
                     deeply immersed in the world of software development and
                     design. With a keen eye for detail and a love for creating
                     intuitive user experiences, I specialize in building modern
                     web applications using cutting-edge technologies.
                   </Text>
-                  <Text
-                    as="p"
-                    styleVariant="muted"
-                    className="text-lg leading-relaxed"
-                  >
+                  <Text as="p" styleVariant="muted" className="leading-relaxed">
                     Currently pursuing my degree, I balance my academic pursuits
                     with hands-on project work, constantly learning and adapting
                     to new technologies in the ever-evolving tech landscape.
@@ -268,7 +264,7 @@ export default function Home() {
               </BlurFade>
 
               <BlurFade inView delay={0.4}>
-                <Card className="p-8 bg-card border-2">
+                <Card>
                   <CardHeader className="pb-6">
                     <CardTitle className="text-2xl">Quick Facts</CardTitle>
                   </CardHeader>
@@ -277,25 +273,25 @@ export default function Home() {
                       <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
                         <MapPin className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-lg">Based in Malaysia</span>
+                      <Text as="p">Based in Malaysia</Text>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
                         <Calendar className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-lg">2+ Years of Experience</span>
+                      <Text as="p">2+ Years of Experience</Text>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
                         <Users className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-lg">8+ Happy Clients</span>
+                      <Text as="p">8+ Happy Clients</Text>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
                         <Trophy className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-lg">15+ Projects Completed</span>
+                      <Text as="p">15+ Projects Completed</Text>
                     </div>
                   </CardContent>
                 </Card>
@@ -323,10 +319,10 @@ export default function Home() {
             </div>
           </BlurFade>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {Service.map((service, i) => (
               <BlurFade inView key={i} delay={0.1 * i}>
-                <Card className="h-full group  transition-all duration-500 hover:-translate-y-1 bg-card border-2">
+                <Card className="h-full">
                   <CardHeader className="pb-6">
                     <div className="w-16 h-16 rounded-2xl bg-card border-2 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <div className="text-primary">{service.icon}</div>
@@ -500,17 +496,9 @@ export default function Home() {
               {Testimonials.map((testimonial, i) => (
                 <Card
                   key={i}
-                  className="mx-6 h-fit max-w-lg bg-card border-2 hover:border-primary/20 transition-all duration-300"
+                  className="mx-2 h-fit max-w-lg hover:border-primary/20 transition-all duration-300"
                 >
                   <CardHeader>
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(5)].map((_, index) => (
-                        <Star
-                          key={index}
-                          className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
                     <CardTitle className="text-xl font-semibold">
                       "{testimonial.title}"
                     </CardTitle>

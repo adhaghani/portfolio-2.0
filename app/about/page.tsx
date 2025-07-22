@@ -317,36 +317,6 @@ const page = () => {
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
-          <BlurFade inView>
-            <Text as="h2" className="text-3xl font-bold mb-8">
-              About Me
-            </Text>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <Text as="p" className="text-md" styleVariant="muted">
-                  I{`'`}m a tech enthusiast and full-time student, deeply
-                  immersed in the world of software development and design. With
-                  a keen eye for detail and a love for creating intuitive user
-                  experiences, I specialize in building modern web applications
-                  using cutting-edge technologies.
-                </Text>
-              </div>
-              <div>
-                <Text as="p" className="text-md" styleVariant="muted">
-                  Currently pursuing my degree, I balance my academic pursuits
-                  with hands-on project work, constantly learning and adapting
-                  to new technologies in the ever-evolving tech landscape. Oh
-                  and other than coding and studying, i also love going to the
-                  gym.
-                </Text>
-              </div>
-            </div>
-          </BlurFade>
-        </div>
-      </section>
       {/* Education Section */}
       <section id="education" className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">

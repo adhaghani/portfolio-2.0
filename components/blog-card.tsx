@@ -176,7 +176,7 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
 
               <SocialShare
                 url={`${
-                  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001"
+                  process.env.NEXT_PUBLIC_SITE_URL || "https://adhaghani.com"
                 }/blog/${props.slug}`}
                 title={props.title}
                 description={props.excerpt || undefined}
