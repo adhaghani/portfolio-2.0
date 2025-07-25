@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useAdmin } from "@/contexts/AdminContext";
 import { createClient } from "@/utils/supabase/client";
 import EditPostForm from "@/components/admin/edit-post-form";
@@ -12,8 +11,7 @@ export default function EditPostPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { session, isLoading } = useAdmin();
-  const router = useRouter();
+  const { session } = useAdmin();
   const [post, setPost] = useState<any>(null);
   const [dataLoading, setDataLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,15 +28,11 @@ export default function EditPostPage({
   }, [params]);
 
   useEffect(() => {
-    if (!isLoading && !session.isAuthenticated) {
-      router.push("/admin/login");
-      return;
-    }
-
-    if (session.isAuthenticated && resolvedParams) {
+    // Since AuthGuard ensures we're authenticated, we can directly fetch when params are ready
+    if (resolvedParams) {
       fetchPost();
     }
-  }, [session, isLoading, router, resolvedParams]);
+  }, [resolvedParams]);
 
   const fetchPost = async () => {
     if (!resolvedParams) return;
@@ -65,7 +59,7 @@ export default function EditPostPage({
     }
   };
 
-  if (isLoading || dataLoading || !resolvedParams) {
+  if (dataLoading || !resolvedParams) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex items-center gap-2">

@@ -1,29 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useAdmin } from "@/contexts/AdminContext";
 import { createClient } from "@/utils/supabase/client";
 import PostsManagement from "@/components/admin/posts-management";
 import { Loader2 } from "lucide-react";
 
 export default function PostsPage() {
-  const { session, isLoading } = useAdmin();
-  const router = useRouter();
+  const { session } = useAdmin();
   const [posts, setPosts] = useState<any[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isLoading && !session.isAuthenticated) {
-      router.push("/admin/login");
-      return;
-    }
-
-    if (session.isAuthenticated) {
-      fetchPosts();
-    }
-  }, [session, isLoading, router]);
+    // Since AuthGuard ensures we're authenticated, we can directly fetch posts
+    fetchPosts();
+  }, []);
 
   const fetchPosts = async () => {
     try {
@@ -50,7 +42,7 @@ export default function PostsPage() {
     }
   };
 
-  if (isLoading || dataLoading) {
+  if (dataLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex items-center gap-2">

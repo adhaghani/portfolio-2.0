@@ -4,6 +4,7 @@ import { Text } from "./ui/text";
 import LikeButton from "./like-button";
 import SocialShare from "./social-share";
 import OptimizedImage from "./ui/optimized-image";
+import MarkdownRenderer from "./markdown-renderer";
 import { Calendar, Eye, Clock } from "lucide-react";
 import {
   Card,
@@ -249,10 +250,15 @@ const BlogCard = ({ props }: { props: BlogPost }) => {
         </DialogHeader>
 
         <DialogDescription asChild>
-          <div className="prose prose-sm max-w-none dark:prose-invert">
-            <div className="whitespace-pre-wrap leading-relaxed text-foreground">
-              {props.content}
-            </div>
+          <div className="max-h-96 overflow-y-auto">
+            <MarkdownRenderer
+              content={
+                props.content.length > 1000
+                  ? `${props.content.substring(0, 1000)}...`
+                  : props.content
+              }
+              className="prose prose-sm max-w-none dark:prose-invert text-foreground"
+            />
           </div>
         </DialogDescription>
 

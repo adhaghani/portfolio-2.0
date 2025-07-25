@@ -76,7 +76,7 @@ const DATA = {
     },
   },
   admin: {
-    href: "/admin",
+    href: "/admin/login",
     icon: UserIcon,
     label: "Admin",
   },

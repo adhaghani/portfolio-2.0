@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useAdmin } from "@/contexts/AdminContext";
 import AdminDashboard from "@/components/admin/admin-dashboard";
 import { AdminAuthClient } from "@/utils/admin-auth-client";
@@ -24,29 +23,15 @@ interface RecentPost {
 }
 
 export default function AdminPage() {
-  const { session, isLoading } = useAdmin();
-  const router = useRouter();
+  const { session } = useAdmin();
   const [stats, setStats] = useState<BlogStats | null>(null);
   const [recentPosts, setRecentPosts] = useState<RecentPost[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
 
   useEffect(() => {
-    console.log("Admin page useEffect:", {
-      isLoading,
-      isAuthenticated: session.isAuthenticated,
-      hasToken: !!session.token,
-      hasAdmin: !!session.admin,
-    });
-
-    if (!isLoading && !session.isAuthenticated) {
-      router.push("/admin/login");
-      return;
-    }
-
-    if (session.isAuthenticated) {
-      fetchDashboardData();
-    }
-  }, [session, isLoading, router]);
+    // Since AuthGuard ensures we're authenticated, we can directly fetch data
+    fetchDashboardData();
+  }, []);
 
   const fetchDashboardData = async () => {
     try {
@@ -73,7 +58,7 @@ export default function AdminPage() {
     }
   };
 
-  if (isLoading || dataLoading) {
+  if (dataLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex items-center gap-2">

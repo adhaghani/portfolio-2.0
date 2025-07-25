@@ -1,11 +1,12 @@
 import { createClient } from "@/utils/supabase/server";
 import { Text } from "@/components/ui/text";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import LikeButton from "@/components/like-button";
 import SocialShare from "@/components/social-share";
+import OptimizedImage from "@/components/ui/optimized-image";
+import MarkdownRenderer from "@/components/markdown-renderer";
 
 interface BlogPost {
   id: string;
@@ -130,7 +131,7 @@ export default async function BlogPostPage({
     .eq("id", blog.id);
 
   return (
-    <article className="min-h-screen bg-background">
+    <article className="h-fit">
       {/* Back Button */}
       <div className="pt-20 pb-8">
         <div className="container mx-auto px-4">
@@ -146,17 +147,19 @@ export default async function BlogPostPage({
 
       {/* Hero Section */}
       <div className="container mx-auto px-4 pb-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Cover Image */}
           {blog.cover_image_url && (
-            <div className="aspect-video mb-8 overflow-hidden rounded-lg">
-              <Image
+            <div className="aspect-video mb-8 overflow-hidden rounded-lg bg-muted/30">
+              <OptimizedImage
                 src={blog.cover_image_url}
                 alt={blog.title}
                 width={1200}
                 height={675}
                 className="object-cover w-full h-full"
-                priority
+                priority={true}
+                quality={85}
+                placeholder="blur"
               />
             </div>
           )}
@@ -233,11 +236,10 @@ export default async function BlogPostPage({
           </header>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:text-primary prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-muted prose-pre:border">
-            <div className="whitespace-pre-wrap leading-relaxed">
-              {blog.content}
-            </div>
-          </div>
+          <MarkdownRenderer
+            content={blog.content}
+            className="prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
+          />
 
           {/* Article Footer */}
           <footer className="mt-12 pt-8 border-t">
