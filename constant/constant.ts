@@ -546,6 +546,40 @@ const AboutPhotoGallery = [
 const DevelopmentProjects = [
   {
     asset: {
+      url: "/assets/images/project/appliTrack.png",
+      alt: "AppliTrack",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "AppliTrack",
+    project_Timeline: "July 2025",
+    project_Technologies: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Vercel",
+    ],
+    project_description:
+      "Web-based application that allows users to track their job applications, including details like company name, position, application date, and status.",
+    project_DemoLink: "https://applitrack-kappa.vercel.app/",
+    project_RepoLink: "https://github.com/adhaghani/applitrack",
+  },
+  {
+    asset: {
+      url: "/assets/images/project/resumeBuilder.png",
+      alt: "Resume Builder",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "Resume Builder",
+    project_Timeline: "July 2025",
+    project_Technologies: ["Next.js", "ShadCN UI", "Tailwind CSS", "Vercel"],
+    project_description:
+      "A web-based application that allows users to create and manage their resumes easily.",
+    project_DemoLink: "https://resume-builder-eight-virid.vercel.app/",
+    project_RepoLink: "https://github.com/adhaghani/resume-builder",
+  },
+  {
+    asset: {
       url: "/assets/images/project/Boatly.png",
       alt: "Boatly Puzzle Game",
     },
