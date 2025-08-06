@@ -546,6 +546,26 @@ const AboutPhotoGallery = [
 const DevelopmentProjects = [
   {
     asset: {
+      url: "/assets/images/project/eduitraya.png",
+      alt: "EduitRaya",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "E-Duit Raya",
+    project_Timeline: "August 2025",
+    project_Technologies: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Vercel",
+    ],
+    project_description:
+      "Web-based application that allows user to prepare a proper budget for their duit raya gift, track total spending and manage their duit raya gift list.",
+    project_DemoLink: "https://eduitraya-ten.vercel.app/",
+    project_RepoLink: "https://github.com/adhaghani/eduitraya",
+  },
+  {
+    asset: {
       url: "/assets/images/project/appliTrack.png",
       alt: "AppliTrack",
     },
