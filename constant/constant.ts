@@ -335,6 +335,18 @@ const Certificate = [
 const DesignProjects = [
   {
     asset: {
+      url: "/assets/images/design/mdit2025lanyard.png",
+      alt: "Lanyard MDIT x DOSM Datathon 2025",
+    },
+
+    project_Name: "Lanyard MDIT x DOSM Datathon 2025",
+    project_Timeline: "May 2025",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
+      "I created and designed the lanyard for Malaysia Data Innovation Talent x DOSM Datathon 2025 event.",
+  },
+  {
+    asset: {
       url: "/assets/images/design/LanyardSPM.webp",
       alt: "Lanyard SPM 24/25",
     },
@@ -544,6 +556,26 @@ const AboutPhotoGallery = [
 ];
 
 const DevelopmentProjects = [
+  {
+    asset: {
+      url: "/assets/images/project/mdit2025.png",
+      alt: "MDIT x DOSM Datathon 2025",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "MDIT x DOSM Datathon 2025 Website",
+    project_Timeline: "August 2025",
+    project_Technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Vercel",
+    ],
+    project_description:
+      "A web-based application that serves as the official website for Malaysia Data Innovation Talent x DOSM Datathon 2025 event. The website provides information about the event, including the agenda, speakers, and registration details.",
+    project_DemoLink: "https://mdit2025.vercel.app/",
+    project_RepoLink: "https://github.com/adhaghani/mdit2025",
+  },
   {
     asset: {
       url: "/assets/images/project/eduitraya.png",
