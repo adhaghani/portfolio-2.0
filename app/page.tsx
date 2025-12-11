@@ -112,8 +112,8 @@ export default function Home() {
 
   const SelectedProjects = DevelopmentProjects.filter(
     (project) =>
-      project.project_Name === "UniParcel" ||
-      project.project_Name === "E-Commerce Platform" ||
+      project.project_Name === "MDIT x DOSM Datathon 2025 Website" ||
+      project.project_Name === "AppliTrack" ||
       project.project_Name === "Personal Portfolio Website"
   );
 

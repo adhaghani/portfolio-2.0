@@ -66,25 +66,25 @@ const Education = [
       {
         title: "Volunteers",
         details: [
-          {
-            logo: AboutLogo.SPM,
-            title: "Sekretariat Parlimen Mahasiswa UiTM",
-            date: "May 2025 - Present",
-            description:
-              "Parliamentary Secretariat, I am mainly responsible for managing the media sides of the parliament. Mainly taking photos and shooting videos of the entire parliamentary sessions. I am also involved with creating graphical posters, editing secretariat photos and lending a hand to other units in need.",
-            role: "Multimedia and Publicity Unit",
-          },
-          {
-            title: "Malaysia Inovation Data Talent 2025 (MIDT)",
-            date: "July 2025 - Present",
+                    {
+            title: "Malaysia Inovation Data Talent 2025 x DOSM Datathon 2025 (MDIT x DD 2025)",
+            date: "July 2025 - October 2025",
             description:
               "The Malaysia Data Innovation Talent x DOSM Datathon 2025 is a premier national competition that brings together the brightest minds from universities across Malaysia to tackle real-world data challenges.",
             role: "Multimedia and Publicity Unit",
           },
+          {
+            logo: AboutLogo.SPM,
+            title: "Sekretariat Parlimen Mahasiswa UiTM",
+            date: "May 2025 - June 2025",
+            description:
+              "Parliamentary Secretariat, I am mainly responsible for managing the media sides of the parliament. Mainly taking photos and shooting videos of the entire parliamentary sessions. I am also involved with creating graphical posters, editing secretariat photos and lending a hand to other units in need.",
+            role: "Multimedia and Publicity Unit",
+          },
+
         ],
       },
       {
-        logo: AboutLogo.PWC,
         title: "PWC Trust Ambassador 2025/2026",
         details: [
           {
@@ -98,6 +98,12 @@ const Education = [
             date: "July 2025",
             description:
               "Ambassador Day is the day where i was officialy recognized as PWC Trust Ambassador for 2025/2026. It is also the day where PWC Trust Ambassador 2024/2025 oficially graduates from their ambassadorship.",
+          },
+                    {
+            title: "FACTS SportsMania 2025",
+            date: "July 2025",
+            description:
+              "Represented PwC as one of the main sponsors of the event. A sports event under the faculty of accountancy UiTM Puncak Alam.",
           },
         ],
       },
@@ -333,6 +339,30 @@ const Certificate = [
 ];
 
 const DesignProjects = [
+      {
+    asset: {
+      url: "/assets/images/design/ipgIMZ.png",
+      alt: "Jersey for Institut Pendidikan Guru (IPG) Raja Melewar",
+    },
+
+    project_Name: "Jersey for Institut Pendidikan Guru (IPG) Raja Melewar",
+    project_Timeline: "August 2025",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
+      "Designed Jersey for Institut Pendidikan Guru (IPG) Raja Melewar for their concert event.",
+  },
+    {
+    asset: {
+      url: "/assets/images/design/mdit2025tshirt.png",
+      alt: "Jersey MDIT x DOSM Datathon 2025",
+    },
+
+    project_Name: "Jersey MDIT x DOSM Datathon 2025",
+    project_Timeline: "May 2025",
+    project_Technologies: ["PhotoShop", "Illustrator", "Figma", "Canva"],
+    project_description:
+      "I created and designed the jersey for Malaysia Data Innovation Talent x DOSM Datathon 2025 event.",
+  },
   {
     asset: {
       url: "/assets/images/design/mdit2025lanyard.png",
