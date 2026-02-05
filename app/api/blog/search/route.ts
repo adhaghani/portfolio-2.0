@@ -8,7 +8,12 @@ export async function GET(request: NextRequest) {
     const filters: SearchFilters = {
       query: searchParams.get("q") || undefined,
       tags: searchParams.get("tags")?.split(",").filter(Boolean) || undefined,
-      sortBy: (searchParams.get("sort") as any) || "newest",
+      sortBy:
+        (searchParams.get("sort") as
+          | "newest"
+          | "oldest"
+          | "most_viewed"
+          | "most_liked") || "newest",
       page: parseInt(searchParams.get("page") || "1"),
       limit: parseInt(searchParams.get("limit") || "9"),
     };
@@ -16,6 +21,7 @@ export async function GET(request: NextRequest) {
     const result = await searchBlogs(filters);
     return NextResponse.json(result);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Blog search error:", error);
     return NextResponse.json(
       {

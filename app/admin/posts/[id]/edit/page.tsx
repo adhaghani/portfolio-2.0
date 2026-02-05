@@ -12,6 +12,7 @@ export default function EditPostPage({
   params: Promise<{ id: string }>;
 }) {
   const { session } = useAdmin();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [post, setPost] = useState<any>(null);
   const [dataLoading, setDataLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -32,6 +33,7 @@ export default function EditPostPage({
     if (resolvedParams) {
       fetchPost();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resolvedParams]);
 
   const fetchPost = async () => {
@@ -52,6 +54,7 @@ export default function EditPostPage({
         setPost(post);
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error fetching post:", error);
       setError("Unable to load post. Please try again later.");
     } finally {

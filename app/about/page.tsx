@@ -6,12 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-import {
-  Education,
-  Work,
-  Certificate,
-  AboutPhotoGallery,
-} from "@/constant/constant";
+import { Education } from "@/constant/Education";
+import { Work } from "@/constant/Work";
+import { Certificate } from "@/constant/Certificate";
+import { AboutPhotoGallery } from "@/constant/AboutPhotoGallery";
 import Link from "next/link";
 import Image from "next/image";
 import EducationCard from "@/components/education-card";
@@ -29,7 +27,6 @@ import {
   Camera,
   Gamepad2,
   Music,
-  MoreHorizontal,
   CoffeeIcon,
 } from "lucide-react";
 import React from "react";
@@ -80,7 +77,7 @@ const page = () => {
                   className="mt-4 font-normal text-base lg:text-lg max-w-3xl mx-auto"
                 >
                   Passionate developer, lifelong learner, and creative problem
-                  solver. Here's my journey, skills, and what drives me every
+                  solver. Here&apos;s my journey, skills, and what drives me every
                   day.
                 </Text>
 
@@ -248,7 +245,7 @@ const page = () => {
                   My Journey
                 </Text>
                 <Text as="p" className="text-xl leading-relaxed">
-                  I'm a passionate web developer and designer with over 2 years
+                  I&apos;m a passionate web developer and designer with over 2 years
                   of experience creating digital experiences. With a keen eye
                   for detail and a love for creating intuitive user experiences,
                   I specialize in building modern web applications using
@@ -400,14 +397,14 @@ const page = () => {
               <CardContent className="p-10 text-center">
                 <div className="space-y-6">
                   <Text as="h2" className="text-3xl lg:text-4xl font-bold">
-                    Let's Build Something Amazing Together
+                    Let&apos;s Build Something Amazing Together
                   </Text>
                   <Text
                     as="p"
                     styleVariant="muted"
                     className="text-lg max-w-2xl mx-auto"
                   >
-                    Ready to turn your ideas into reality? Let's discuss your
+                    Ready to turn your ideas into reality? Let&apos;s discuss your
                     next project and create something extraordinary.
                   </Text>
                   <div className="flex gap-4 justify-center flex-wrap">
@@ -430,10 +427,10 @@ const page = () => {
           <BlurFade inView>
             <div className="text-center mb-12">
               <Text as="h2" className="text-3xl lg:text-5xl font-bold mb-4">
-                Let's Connect
+                Let&apos;s Connect
               </Text>
               <Text as="p" styleVariant="muted" className="text-lg">
-                Ready to start a conversation? I'd love to hear from you.
+                Ready to start a conversation? I&apos;d love to hear from you.
               </Text>
             </div>
             <Contact />

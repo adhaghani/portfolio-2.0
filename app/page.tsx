@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Marquee } from "@/components/magicui/marquee";
+// Marquee import removed - not used
 import TechCard from "@/components/ui/tech-card";
 import {
   PaintbrushIcon,
@@ -24,7 +24,7 @@ import {
   Mail,
   MapPin,
   Calendar,
-  Star,
+
   Users,
   Trophy,
   Zap,
@@ -45,7 +45,8 @@ import {
   DesignTech,
   OtherTech,
 } from "@/components/technology-stack-icon";
-import { DevelopmentProjects, Testimonials } from "@/constant/constant";
+import { DevelopmentProjects } from "@/constant/DevelopmentProjects";
+import { Testimonials } from "@/constant/Testimonials";
 
 const Service = [
   {
@@ -98,9 +99,11 @@ export default function Home() {
         if (result.success) {
           setRecentPosts(result.data);
         } else {
+          // eslint-disable-next-line no-console
           console.error("Error fetching recent posts:", result.error);
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Error fetching recent posts:", error);
       } finally {
         setIsLoading(false);
@@ -133,7 +136,7 @@ export default function Home() {
                   as="h1"
                   className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-4xl lg:text-7xl py-2 md:py-6 tracking-tight font-bold"
                 >
-                  Hello Everyone, <br /> I'm{" "}
+                  Hello Everyone, <br /> I&apos;m{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Adha
                   </span>
@@ -240,7 +243,7 @@ export default function Home() {
               <BlurFade inView delay={0.2}>
                 <div className="space-y-8">
                   <Text as="p" className="text-lg leading-relaxed">
-                    I'm a passionate tech enthusiast and full-time student,
+                    I&apos;m a passionate tech enthusiast and full-time student,
                     deeply immersed in the world of software development and
                     design. With a keen eye for detail and a love for creating
                     intuitive user experiences, I specialize in building modern
@@ -497,7 +500,7 @@ export default function Home() {
                 >
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold">
-                      "{testimonial.title}"
+                      &ldquo;{testimonial.title}&rdquo;
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -672,7 +675,7 @@ export default function Home() {
                   No Blog Posts Yet
                 </Text>
                 <Text as="p" styleVariant="muted">
-                  I'm working on some exciting content. Check back soon!
+                  I&apos;m working on some exciting content. Check back soon!
                 </Text>
               </div>
             )}
@@ -686,14 +689,14 @@ export default function Home() {
           <BlurFade inView>
             <div className="text-center mb-20">
               <Text as="h2" className="text-4xl lg:text-6xl font-bold mb-6">
-                Let's Work Together
+                Let&apos;s Work Together
               </Text>
               <Text
                 as="p"
                 styleVariant="muted"
                 className="text-xl max-w-2xl mx-auto"
               >
-                Ready to bring your ideas to life? Let's discuss your next
+                Ready to bring your ideas to life? Let&apos;s discuss your next
                 project and create something amazing together.
               </Text>
             </div>

@@ -1,6 +1,8 @@
 import { getAllTags, getInitialBlogs } from "@/utils/blog-search";
 import BlogClient from "@/components/blog-client";
 
+// BlogPost type for reference (matches Supabase schema)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BlogPost {
   id: string;
   title: string;

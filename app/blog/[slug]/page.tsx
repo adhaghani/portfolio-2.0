@@ -8,6 +8,8 @@ import SocialShare from "@/components/social-share";
 import OptimizedImage from "@/components/ui/optimized-image";
 import MarkdownRenderer from "@/components/markdown-renderer";
 
+// BlogPost type for reference (matches Supabase schema)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BlogPost {
   id: string;
   title: string;

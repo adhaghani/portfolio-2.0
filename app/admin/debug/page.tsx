@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AdminAuthClient } from "@/utils/admin-auth-client";
 
 export default function AdminDebugPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [debugInfo, setDebugInfo] = useState<any>({});
 
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function AdminDebugPage() {
               },
             });
             const data = await result.json();
+            // eslint-disable-next-line no-console
             console.log("Direct verify test:", { status: result.status, data });
             alert(`Verify result: ${result.status} - ${JSON.stringify(data)}`);
           }}

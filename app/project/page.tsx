@@ -22,12 +22,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { DevelopmentProjects, DesignProjects } from "@/constant/constant";
+import { DevelopmentProjects } from "@/constant/DevelopmentProjects";
+import { DesignProjects } from "@/constant/DesignProjects";
 import { DevelopmentProjectType } from "@/constant/types";
 import { useState, useMemo } from "react";
-import { cn } from "@/lib/utils";
 
-const page = () => {
+const Page = () => {
   const [viewValue, setViewValue] = useState<string[]>([
     "Full-Stack",
     "Front-End",
@@ -425,15 +425,15 @@ const page = () => {
                 as="h2"
                 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               >
-                Let's Work Together
+                Let&apos;s Work Together
               </Text>
               <Text
                 as="p"
                 styleVariant="muted"
                 className="text-lg max-w-2xl mx-auto"
               >
-                Have a project in mind? Let's discuss how we can bring your
-                ideas to life. I'm always excited to work on new challenges and
+                Have a project in mind? Let&apos;s discuss how we can bring your
+                ideas to life. I&apos;m always excited to work on new challenges and
                 create amazing digital experiences.
               </Text>
             </div>
@@ -445,4 +445,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -8,6 +8,7 @@ import { Loader2 } from "lucide-react";
 
 export default function PostsPage() {
   const { session } = useAdmin();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [posts, setPosts] = useState<any[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,12 +30,14 @@ export default function PostsPage() {
         .order("created_at", { ascending: false });
 
       if (error) {
+        // eslint-disable-next-line no-console
         console.error("Error fetching posts:", error);
         setError("Unable to load posts. Please try again later.");
       } else {
         setPosts(posts || []);
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error fetching posts:", error);
       setError("Unable to load posts. Please try again later.");
     } finally {

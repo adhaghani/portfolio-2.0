@@ -5,8 +5,6 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
-    console.log("Login attempt for email:", email);
-
     if (!email || !password) {
       return NextResponse.json(
         { success: false, message: "Email and password are required" },
@@ -24,20 +22,7 @@ export async function POST(request: NextRequest) {
       .eq("is_active", true)
       .single();
 
-    console.log("Database query result:", {
-      admin: admin
-        ? {
-            id: admin.id,
-            email: admin.email,
-            name: admin.name,
-            hasPassword: !!admin.password,
-          }
-        : "not found",
-      error: error?.message || "no error",
-    });
-
     if (error || !admin) {
-      console.log("Admin not found or error:", error?.message);
       return NextResponse.json(
         { success: false, message: "Invalid credentials" },
         { status: 401 }
@@ -46,12 +31,6 @@ export async function POST(request: NextRequest) {
 
     // Simple raw password comparison - no hashing
     const isValidPassword = password === admin.password;
-
-    console.log("Password check:", {
-      provided: password,
-      storedPassword: admin.password,
-      isValid: isValidPassword,
-    });
 
     if (!isValidPassword) {
       return NextResponse.json(
@@ -70,9 +49,8 @@ export async function POST(request: NextRequest) {
     const token = `admin_${admin.id}_${Date.now()}`;
 
     // Return admin data without password
-    const { password: _, ...adminData } = admin;
-
-    console.log("Login successful for:", email);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password: _unusedPassword, ...adminData } = admin;
 
     return NextResponse.json({
       success: true,
@@ -81,6 +59,7 @@ export async function POST(request: NextRequest) {
       message: "Login successful",
     });
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Admin login error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },

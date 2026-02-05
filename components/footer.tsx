@@ -17,6 +17,7 @@ import {
   ExternalLink,
   Calendar,
 } from "lucide-react";
+import { VisitorCounter } from "@/components/visitor-counter";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -225,6 +226,10 @@ const Footer = () => {
               <Text as="p" className="text-sm">
                 using Next.js & TypeScript
               </Text>
+            </div>
+
+            <div className="hidden md:block">
+              <VisitorCounter />
             </div>
 
             {/* Tech Stack */}

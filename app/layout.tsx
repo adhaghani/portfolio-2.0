@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
+import { CommandMenu } from "@/components/command-menu";
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "300", "200", "800"],
   variable: "--font-poppins",
@@ -16,9 +17,29 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Adhaghani - Portolio",
+  title: "Adhaghani - Portfolio",
   description:
-    "Adhaghani's personal portfolio website, a computer science student at UiTM.",
+    "Ahmad Adha's personal portfolio - Full-stack developer and UI/UX designer crafting digital experiences. Computer Science student at UiTM Malaysia.",
+  keywords: ["developer", "portfolio", "react", "nextjs", "malaysia", "ui/ux", "web development"],
+  authors: [{ name: "Ahmad Adha" }],
+  creator: "Ahmad Adha",
+  openGraph: {
+    title: "Adhaghani - Portfolio",
+    description: "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
+    url: "https://www.adhaghani.com",
+    siteName: "Adhaghani Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adhaghani - Portfolio",
+    description: "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -38,6 +59,7 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
+          <CommandMenu />
           <Header />
           <main className="md:px-4 max-w-6xl mx-auto overflow-x-hidden">
             {children}
