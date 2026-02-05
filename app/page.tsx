@@ -476,25 +476,24 @@ export default function Home() {
           <BlurFade inView>
             <div className="text-center mb-20">
               <Text as="h2" className="text-4xl lg:text-6xl font-bold mb-6">
-                Client Testimonials
+               Testimonials
               </Text>
               <Text
                 as="p"
                 styleVariant="muted"
                 className="text-xl max-w-2xl mx-auto"
               >
-                What my clients say about working with me
+                What my clients/colleague say about working with me
               </Text>
             </div>
           </BlurFade>
 
           {/* Desktop Marquee */}
-          <div className="hidden md:block">
-            <Marquee className="py-4">
-              {Testimonials.map((testimonial, i) => (
+          <div className="flex flex-wrap flex-grow-1 gap-4">
+                          {Testimonials.map((testimonial, i) => (
                 <Card
                   key={i}
-                  className="mx-2 h-fit max-w-lg hover:border-primary/20 transition-all duration-300"
+                  className=" h-fit max-w-lg hover:border-primary/20 transition-all duration-300"
                 >
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold">
@@ -518,45 +517,6 @@ export default function Home() {
                   </CardFooter>
                 </Card>
               ))}
-            </Marquee>
-          </div>
-
-          {/* Mobile Grid */}
-          <div className="md:hidden space-y-8">
-            {Testimonials.map((testimonial, i) => (
-              <BlurFade key={i} inView delay={0.1 * i}>
-                <Card className="bg-card border-2">
-                  <CardHeader>
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(5)].map((_, index) => (
-                        <Star
-                          key={index}
-                          className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    <CardTitle className="text-xl">
-                      "{testimonial.title}"
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Text as="p" className="text-lg">
-                      {testimonial.quote}
-                    </Text>
-                  </CardContent>
-                  <CardFooter>
-                    <div>
-                      <Text as="p" className="font-medium text-lg">
-                        {testimonial.name}
-                      </Text>
-                      <Text as="p" styleVariant="muted" className="text-sm">
-                        {testimonial.position}
-                      </Text>
-                    </div>
-                  </CardFooter>
-                </Card>
-              </BlurFade>
-            ))}
           </div>
         </div>
       </section>
