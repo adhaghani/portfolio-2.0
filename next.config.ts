@@ -24,10 +24,6 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
-      "eiclppoikpzmffrucwmw.supabase.co", // Your Supabase project
-    ],
     localPatterns: [
       {
         pathname: "/assets/images/**",
@@ -38,10 +34,6 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   // output: "export",
   // assetPrefix: "https://www.adhaghani.com"

@@ -48,17 +48,18 @@ export default function MarkdownRenderer({
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         components={{
           // Custom image component with optimization
-          img: ({ src, alt, ...props }) => {
+          img: ({ src, alt}) => {
             if (!src) return null;
             return (
               <OptimizedImage
-                src={src}
+                src={src as string}
                 alt={alt || "Blog image"}
                 width={800}
                 height={450}
                 className="rounded-lg my-6 w-full h-auto"
                 quality={85}
                 placeholder="blur"
+                
               />
             );
           },
