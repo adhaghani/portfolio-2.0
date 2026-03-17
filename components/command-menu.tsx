@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   Briefcase,
+  Code2,
   FileText,
   Github,
   Home,
@@ -56,21 +57,31 @@ export function CommandMenu() {
             <Home className="mr-2 h-4 w-4" />
             <span>Home</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push("/about"))}>
-            <User className="mr-2 h-4 w-4" />
-            <span>About</span>
-          </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push("/project"))}>
-            <Briefcase className="mr-2 h-4 w-4" />
-            <span>Projects</span>
-          </CommandItem>
           <CommandItem onSelect={() => runCommand(() => router.push("/blog"))}>
             <FileText className="mr-2 h-4 w-4" />
             <span>Blog</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push("/snippets"))}>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/project"))}
+          >
+            <Briefcase className="mr-2 h-4 w-4" />
+            <span>Development</span>
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/snippets"))}
+          >
             <FileText className="mr-2 h-4 w-4" />
             <span>Snippets</span>
+          </CommandItem>
+          <CommandItem onSelect={() => runCommand(() => router.push("/about"))}>
+            <User className="mr-2 h-4 w-4" />
+            <span>About</span>
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/contact"))}
+          >
+            <Code2 className="mr-2 h-4 w-4" />
+            <span>Contact</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
@@ -92,7 +103,9 @@ export function CommandMenu() {
         <CommandGroup heading="Social">
           <CommandItem
             onSelect={() =>
-              runCommand(() => window.open("https://github.com/adhaghani", "_blank"))
+              runCommand(() =>
+                window.open("https://github.com/adhaghani", "_blank"),
+              )
             }
           >
             <Github className="mr-2 h-4 w-4" />
@@ -101,7 +114,7 @@ export function CommandMenu() {
           <CommandItem
             onSelect={() =>
               runCommand(() =>
-                window.open("https://www.linkedin.com/in/adhaghani/", "_blank")
+                window.open("https://www.linkedin.com/in/adhaghani/", "_blank"),
               )
             }
           >

@@ -120,7 +120,7 @@ export default function BlogPagination({
                 e.preventDefault();
                 navigateToPage(currentPage - 1);
               }}
-              className={`rounded-lg border-2 transition-all duration-200 ${
+              className={`border-2 transition-all duration-200 ${
                 hasPrevPage
                   ? "hover:border-primary/50 hover:bg-primary/5"
                   : "opacity-50 cursor-not-allowed hover:bg-transparent hover:border-border"
@@ -141,9 +141,9 @@ export default function BlogPagination({
                     navigateToPage(page as number);
                   }}
                   isActive={currentPage === page}
-                  className={`rounded-lg border-2 transition-all duration-200 ${
+                  className={`border-2 text-xs transition-all duration-200 ${
                     currentPage === page
-                      ? "border-primary bg-primary text-primary-foreground font-semibold shadow-md"
+                      ? "border-primary bg-primary text-primary-foreground font-semibold"
                       : "border-transparent hover:border-primary/50 hover:bg-primary/5"
                   }`}
                 >
@@ -165,7 +165,7 @@ export default function BlogPagination({
                 e.preventDefault();
                 navigateToPage(currentPage + 1);
               }}
-              className={`rounded-lg border-2 transition-all duration-200 ${
+              className={`border-2 transition-all duration-200 ${
                 hasNextPage
                   ? "hover:border-primary/50 hover:bg-primary/5"
                   : "opacity-50 cursor-not-allowed hover:bg-transparent hover:border-border"
@@ -182,7 +182,7 @@ export default function BlogPagination({
           <select
             value={currentPage}
             onChange={(e) => navigateToPage(parseInt(e.target.value))}
-            className="bg-background border border-muted rounded-lg px-3 py-1 text-sm focus:border-primary focus:outline-none transition-colors"
+            className="bg-background border-2 border-muted px-3 py-1 text-xs uppercase tracking-[0.06em] focus:border-primary focus:outline-none transition-colors"
           >
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <option key={page} value={page}>

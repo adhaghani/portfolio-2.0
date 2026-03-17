@@ -9,7 +9,13 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Menu, MessageCircleIcon, X } from "lucide-react";
+import {
+  Code2,
+  Menu,
+  MessageCircleIcon,
+  TerminalSquare,
+  X,
+} from "lucide-react";
 import {
   HomeIcon,
   MailIcon,
@@ -47,8 +53,10 @@ const Data = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: MessageCircleIcon, label: "Blog" },
-    { href: "/about", icon: UserIcon, label: "About Me" },
-    { href: "/project", icon: FolderGit2Icon, label: "Project" },
+    { href: "/project", icon: FolderGit2Icon, label: "Development" },
+    { href: "/snippets", icon: TerminalSquare, label: "Snippets" },
+    { href: "/about", icon: UserIcon, label: "About" },
+    { href: "/contact", icon: Code2, label: "Contact" },
   ],
   contact: {
     social: {
@@ -97,7 +105,7 @@ const HeaderMobile = () => {
               <DrawerClose asChild key={i} className="w-full">
                 <Link
                   href={data.href}
-                  className="flex gap-2 items-center w-full p-2 rounded-lg hover:bg-muted active:bg-muted focus:bg-muted"
+                  className="flex gap-2 items-center w-full border border-transparent p-2 rounded-none hover:border-border hover:bg-muted active:bg-muted focus:bg-muted"
                 >
                   <data.icon className="size-5" />
                   <Text as="p" className="font-light ml-2">
@@ -111,7 +119,7 @@ const HeaderMobile = () => {
               <DrawerClose asChild key={i} className="w-full">
                 <Link
                   href={social.url}
-                  className="flex gap-2 items-center w-full p-2 rounded-lg hover:bg-muted active:bg-muted focus:bg-muted"
+                  className="flex gap-2 items-center w-full border border-transparent p-2 rounded-none hover:border-border hover:bg-muted active:bg-muted focus:bg-muted"
                 >
                   <social.icon className="size-5" />
                   <Text as="p" className="font-light ml-2">

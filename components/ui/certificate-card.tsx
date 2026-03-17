@@ -1,5 +1,4 @@
 import React from "react";
-import { BlurFade } from "../magicui/blur-fade";
 import { LinkPreview } from "./link-preview";
 import { Card, CardHeader, CardTitle } from "./card";
 import { Text } from "./text";
@@ -15,7 +14,7 @@ const CertificateCard = ({
   i: number;
 }) => {
   return (
-    <BlurFade inView key={i} delay={0.2}>
+    <React.Fragment key={i}>
       {data.PreviewLink ? (
         <LinkPreview url={data.PreviewLink}>
           <Card className="h-full">
@@ -38,7 +37,7 @@ const CertificateCard = ({
           </Card>
         </LinkPreview>
       ) : (
-        <Card className="h-full"  >
+        <Card className="h-full">
           <CardHeader>
             <div className="flex justify-between gap-2">
               <CardTitle>{data.Name}</CardTitle>
@@ -57,7 +56,7 @@ const CertificateCard = ({
           </CardHeader>
         </Card>
       )}
-    </BlurFade>
+    </React.Fragment>
   );
 };
 

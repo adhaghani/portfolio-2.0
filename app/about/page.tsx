@@ -1,444 +1,342 @@
 "use client";
 
-import { BlurFade } from "@/components/magicui/blur-fade";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowRight,
+  Briefcase,
+  Code2,
+  Coffee,
+  Download,
+  GraduationCap,
+  Camera,
+  Gamepad2,
+  Heart,
+  Music,
+  Sparkles,
+} from "lucide-react";
+
 import { Text } from "@/components/ui/text";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import EducationCard from "@/components/education-card";
+import WorkCard from "@/components/work-card";
+import CertificateCard from "@/components/ui/certificate-card";
 
 import { Education } from "@/constant/Education";
 import { Work } from "@/constant/Work";
 import { Certificate } from "@/constant/Certificate";
 import { AboutPhotoGallery } from "@/constant/AboutPhotoGallery";
-import Link from "next/link";
-import Image from "next/image";
-import EducationCard from "@/components/education-card";
-import WorkCard from "@/components/work-card";
-import { Marquee } from "@/components/magicui/marquee";
-import Contact from "@/components/contact";
-
-import CertificateCard from "@/components/ui/certificate-card";
-import {
-  Download,
-  Heart,
-  Lightbulb,
-  Target,
-  Zap,
-  Camera,
-  Gamepad2,
-  Music,
-  CoffeeIcon,
-} from "lucide-react";
-import React from "react";
-
-const PhotoGalleryReverse = AboutPhotoGallery.toReversed();
 
 const interests = [
-  "Coding",
-  "Gym & Fitness",
-  "Learning",
+  "System Design",
+  "Fitness",
+  "Continuous Learning",
   "Coffee",
   "Photography",
-  "Gaming",
+  "Games",
   "Music",
   "Travel",
 ];
 
-const achievements = [
-  { label: "Projects Completed", value: "15+", icon: Target },
-  { label: "Technologies Learned", value: "20+", icon: Lightbulb },
-  { label: "Years Experience", value: "2+", icon: Zap },
-  {
-    label: "Coffee Consumed",
-    value: "900+",
-    icon: CoffeeIcon,
-  },
+const stats = [
+  { label: "Years of Building", value: "2+" },
+  { label: "Work Experiences", value: `${Work.length}` },
+  { label: "Education Entries", value: `${Education.length}` },
+  { label: "Certifications", value: `${Certificate.length}` },
 ];
 
-const page = () => {
+export default function AboutPage() {
   return (
-    <>
-      {/* Hero Section */}
-
-      <div className="min-h-screen max-h-[1100px] flex items-center justify-center relative pt-16">
-        <div className="w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
-          <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <BlurFade inView>
-              <div className="text-center space-y-6">
-                <Text
-                  as="h1"
-                  className="text-4xl lg:text-7xl py-2 md:py-10 tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-                >
-                  About Me
-                </Text>
-                <Text
-                  as="p"
-                  styleVariant="muted"
-                  className="mt-4 font-normal text-base lg:text-lg max-w-3xl mx-auto"
-                >
-                  Passionate developer, lifelong learner, and creative problem
-                  solver. Here&apos;s my journey, skills, and what drives me every
-                  day.
-                </Text>
-
-                {/* Quick Info Cards */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
-                  {achievements.map((achievement, index) => {
-                    const IconComponent = achievement.icon;
-                    return (
-                      <BlurFade key={index} inView delay={0.1 * index}>
-                        <Card className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                          <CardContent className="p-4">
-                            <IconComponent className="w-8 h-8 mx-auto mb-2 text-primary" />
-                            <Text
-                              as="p"
-                              className="text-2xl font-bold text-primary"
-                            >
-                              {achievement.value}
-                            </Text>
-                            <Text
-                              as="p"
-                              styleVariant="muted"
-                              className="text-sm"
-                            >
-                              {achievement.label}
-                            </Text>
-                          </CardContent>
-                        </Card>
-                      </BlurFade>
-                    );
-                  })}
-                </div>
-
-                {/* Download Resume Button */}
-                <div className="pt-8">
-                  <Button asChild size="lg" className="gap-2">
-                    <Link href="/assets/Resume.pdf" target="_blank">
-                      <Download className="w-4 h-4" />
-                      Download Resume
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </BlurFade>
-          </div>
+    <div className="mx-auto px-4 pb-20 pt-32 md:px-8">
+      <section className="border-2 border-border bg-card p-6 md:p-10">
+        <div className="mb-4 inline-flex items-center gap-2 border border-border bg-secondary px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+          <Sparkles className="h-3.5 w-3.5" />
+          Developer Profile
         </div>
-      </div>
-      {/* Photo gallery */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4 relative">
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
-          <Marquee>
-            {AboutPhotoGallery.map((photo, index) => {
-              return (
-                <BlurFade className="w-1/2" inView delay={0.2} key={index}>
-                  <Image
-                    className="aspect-video object-cover md:max-w-xl max-w-[200px] w-full rounded-lg object-center"
-                    src={photo.image.src}
-                    alt={photo.image.alt}
-                    quality={100}
-                    width={500}
-                    height={200}
-                  />
-                </BlurFade>
-              );
-            })}
-          </Marquee>
-          <Marquee reverse>
-            {PhotoGalleryReverse.map((photo, index) => {
-              return (
-                <BlurFade className="w-1/2" inView delay={0.2} key={index}>
-                  <Image
-                    className="aspect-video object-cover md:max-w-xl max-w-[200px] w-full rounded-lg object-center"
-                    src={photo.image.src}
-                    alt={photo.image.alt}
-                    quality={100}
-                    width={500}
-                    height={200}
-                  />
-                </BlurFade>
-              );
-            })}
-          </Marquee>
+        <Text
+          as="h1"
+          className="text-4xl font-bold uppercase tracking-[0.03em] md:text-6xl"
+        >
+          Build clearly. Learn continuously.
+        </Text>
+        <Text
+          as="p"
+          styleVariant="muted"
+          className="mt-4 max-w-3xl text-sm leading-relaxed md:text-base"
+        >
+          I am a developer focused on maintainable product systems and
+          thoughtful interfaces. This page summarizes how I work, what I have
+          shipped, and the learning path behind it.
+        </Text>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge variant="secondary">Product-Minded Engineering</Badge>
+          <Badge variant="secondary">Design + Development</Badge>
+          <Badge variant="secondary">Documentation-Driven Growth</Badge>
+          <Badge variant="secondary">Execution Under Constraints</Badge>
+        </div>
+
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="border-2 border-border bg-background p-4"
+            >
+              <Text
+                as="p"
+                className="text-xs uppercase tracking-[0.08em] text-muted-foreground"
+              >
+                {item.label}
+              </Text>
+              <Text as="p" className="mt-1 text-2xl font-bold">
+                {item.value}
+              </Text>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-2">
+          <Button asChild>
+            <Link href="/project">
+              <Code2 className="h-4 w-4" />
+              View Project Work
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link
+              href="/assets/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download className="h-4 w-4" />
+              Download Resume
+            </Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/contact">
+              <Briefcase className="h-4 w-4" />
+              Start a Conversation
+            </Link>
+          </Button>
         </div>
       </section>
-      {/* Skills Section */}
-      <section className="py-32 px-4 max-w-7xl mx-auto">
-        <BlurFade inView>
-          <div className="text-center mb-20">
-            <Text as="h2" className="text-4xl lg:text-6xl font-bold mb-6">
-              Skills & Expertise
+
+      <section className="mt-10 grid gap-4 lg:grid-cols-3">
+        <Card className="border-2 lg:col-span-2">
+          <CardHeader>
+            <CardTitle>
+              <Text
+                as="h3"
+                className="text-2xl font-semibold uppercase tracking-[0.03em]"
+              >
+                Journey and Working Style
+              </Text>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Text
+              as="p"
+              styleVariant="muted"
+              className="text-sm leading-relaxed md:text-base"
+            >
+              I bridge product thinking, UI craft, and implementation detail.
+              Over the last two years, I have focused on building systems that
+              are easy to maintain, clear to use, and fast to iterate.
             </Text>
             <Text
               as="p"
               styleVariant="muted"
-              className="text-xl max-w-2xl mx-auto"
+              className="text-sm leading-relaxed md:text-base"
             >
-              Technologies and tools I work with, constantly learning and
-              improving
+              Balancing academic commitments with real project delivery taught
+              me disciplined execution, transparent communication, and practical
+              trade-off decisions.
             </Text>
-          </div>
-        </BlurFade>
-
-        <div className="grid">
-          {/* Interests and Hobbies */}
-          <BlurFade inView delay={0.4}>
-            <Card className="p-8 bg-card border-2">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <Heart className="w-6 h-6" />
-                  Interests & Hobbies
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-3">
-                  {interests.map((interest, index) => (
-                    <Badge
-                      key={index}
-                      variant="secondary"
-                      className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-sm px-4 py-2"
-                    >
-                      {interest}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="mt-8 space-y-6">
-                  <div className="flex items-center gap-4 text-muted-foreground">
-                    <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
-                      <Camera className="w-5 h-5" />
-                    </div>
-                    <span className="text-lg">
-                      Photography enthusiast capturing moments and memories
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4 text-muted-foreground">
-                    <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
-                      <Gamepad2 className="w-5 h-5" />
-                    </div>
-                    <span className="text-lg">
-                      Gaming for creativity and strategic thinking
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4 text-muted-foreground">
-                    <div className="w-10 h-10 rounded-full bg-card border-2 flex items-center justify-center">
-                      <Music className="w-5 h-5" />
-                    </div>
-                    <span className="text-lg">
-                      Music lover exploring various genres and artists
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </BlurFade>
-        </div>
-      </section>
-
-      {/* Personal Story Section */}
-      <section className="py-32 px-4">
-        <div className="max-w-7xl mx-auto">
-          <BlurFade inView>
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <Text as="h2" className="text-4xl lg:text-5xl font-bold">
-                  My Journey
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="border border-border bg-background p-4">
+                <Text
+                  as="p"
+                  className="text-xs uppercase tracking-[0.08em] text-muted-foreground"
+                >
+                  Core Principle
                 </Text>
-                <Text as="p" className="text-xl leading-relaxed">
-                  I&apos;m a passionate web developer and designer with over 2 years
-                  of experience creating digital experiences. With a keen eye
-                  for detail and a love for creating intuitive user experiences,
-                  I specialize in building modern web applications using
-                  cutting-edge technologies.
-                </Text>
-                <Text as="p" className="text-lg" styleVariant="muted">
-                  Currently pursuing my degree, I balance my academic pursuits
-                  with hands-on project work, constantly learning and adapting
-                  to new technologies in the ever-evolving tech landscape. Oh
-                  and other than coding and studying, i also love going to the
-                  gym.
+                <Text as="p" className="mt-2 text-sm font-medium">
+                  Clarity first, then scale.
                 </Text>
               </div>
-
-              {/* Photo Gallery Preview */}
-              <div className="space-y-6">
-                <Text as="h3" className="text-2xl font-semibold">
-                  Life in Pictures
+              <div className="border border-border bg-background p-4">
+                <Text
+                  as="p"
+                  className="text-xs uppercase tracking-[0.08em] text-muted-foreground"
+                >
+                  Daily Stack
                 </Text>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <Image
-                      src={"/assets/images/photoGallery/image1.png"}
-                      alt={"Personal photo 1"}
-                      quality={100}
-                      width={500}
-                      height={200}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <Image
-                      src={"/assets/images/photoGallery/image2.png"}
-                      alt={"Personal photo 2"}
-                      quality={100}
-                      width={500}
-                      height={200}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <Image
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      src={"/assets/images/photoGallery/image3.png"}
-                      alt={"Personal photo 3"}
-                      quality={100}
-                      width={500}
-                      height={200}
-                    />
-                  </div>
-                  <div className="aspect-square rounded-xl overflow-hidden border-2">
-                    <Image
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      src={"/assets/images/photoGallery/image10.png"}
-                      alt={"Personal photo 10"}
-                      quality={100}
-                      width={500}
-                      height={200}
-                    />
-                  </div>
-                </div>
+                <Text as="p" className="mt-2 text-sm font-medium">
+                  Next.js, TypeScript, Supabase, Tailwind CSS
+                </Text>
               </div>
             </div>
-          </BlurFade>
-        </div>
-      </section>
+          </CardContent>
+        </Card>
 
-      {/* Education Section */}
-      <section id="education" className="py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <BlurFade inView>
-            <div className="text-center mb-16">
-              <Text as="h2" className="text-3xl lg:text-5xl font-bold mb-4">
-                Education & Certifications
-              </Text>
+        <Card className="border-2">
+          <CardHeader>
+            <CardTitle>
               <Text
-                as="p"
-                styleVariant="muted"
-                className="text-lg max-w-2xl mx-auto"
+                as="h3"
+                className="text-2xl font-semibold uppercase tracking-[0.03em]"
               >
-                My academic journey and professional certifications that shape
-                my expertise
+                Personal Interests
               </Text>
-            </div>
-          </BlurFade>
-
-          <div className="space-y-12">
-            {/* Education Cards */}
-            <div className="space-y-8">
-              {Education.map((edu, i) => (
-                <BlurFade key={i} inView delay={0.1 * i}>
-                  <EducationCard data={edu} />
-                </BlurFade>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              {interests.map((interest) => (
+                <Badge key={interest} variant="secondary">
+                  {interest}
+                </Badge>
               ))}
             </div>
-
-            {/* Certifications Grid */}
-            <BlurFade inView delay={0.4}>
-              <div className="mt-16">
-                <Text as="h3" className="text-2xl font-bold mb-8 text-center">
-                  Professional Certifications
-                </Text>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {Certificate.map((cert, i) => (
-                    <BlurFade key={i} inView delay={0.1 * i}>
-                      <CertificateCard data={cert} i={i} />
-                    </BlurFade>
-                  ))}
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex border border-border bg-secondary p-1.5">
+                  <Camera className="h-4 w-4" />
                 </div>
+                Photography for visual sensitivity
               </div>
-            </BlurFade>
-          </div>
-        </div>
-      </section>
-      {/* Work Experience Section */}
-      <section id="work" className="py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <BlurFade inView>
-            <div className="text-center mb-16">
-              <Text as="h2" className="text-3xl lg:text-5xl font-bold mb-4">
-                Work Experience
-              </Text>
-              <Text
-                as="p"
-                styleVariant="muted"
-                className="text-lg max-w-2xl mx-auto"
-              >
-                Professional experience and contributions that have shaped my
-                career
-              </Text>
-            </div>
-          </BlurFade>
-
-          <div className="space-y-8">
-            {Work.map((work, i) => (
-              <BlurFade key={i} inView delay={0.1 * i}>
-                <WorkCard data={work} />
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section id="CTA" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <BlurFade inView>
-            <Card>
-              <CardContent className="p-10 text-center">
-                <div className="space-y-6">
-                  <Text as="h2" className="text-3xl lg:text-4xl font-bold">
-                    Let&apos;s Build Something Amazing Together
-                  </Text>
-                  <Text
-                    as="p"
-                    styleVariant="muted"
-                    className="text-lg max-w-2xl mx-auto"
-                  >
-                    Ready to turn your ideas into reality? Let&apos;s discuss your
-                    next project and create something extraordinary.
-                  </Text>
-                  <div className="flex gap-4 justify-center flex-wrap">
-                    <Button asChild size="lg">
-                      <Link href="/project">View My Projects</Link>
-                    </Button>
-                    <Button asChild variant="outline" size="lg">
-                      <Link href="#contact">Get In Touch</Link>
-                    </Button>
-                  </div>
+              <div className="flex items-center gap-3">
+                <div className="inline-flex border border-border bg-secondary p-1.5">
+                  <Gamepad2 className="h-4 w-4" />
                 </div>
-              </CardContent>
-            </Card>
-          </BlurFade>
-        </div>
-      </section>
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="container mx-auto px-4">
-          <BlurFade inView>
-            <div className="text-center mb-12">
-              <Text as="h2" className="text-3xl lg:text-5xl font-bold mb-4">
-                Let&apos;s Connect
-              </Text>
-              <Text as="p" styleVariant="muted" className="text-lg">
-                Ready to start a conversation? I&apos;d love to hear from you.
-              </Text>
+                Games for systems and strategy
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="inline-flex border border-border bg-secondary p-1.5">
+                  <Music className="h-4 w-4" />
+                </div>
+                Music for focus and recovery
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="inline-flex border border-border bg-secondary p-1.5">
+                  <Coffee className="h-4 w-4" />
+                </div>
+                Coffee and long build sessions
+              </div>
             </div>
-            <Contact />
-          </BlurFade>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="mt-10 border-y-2 border-border py-3">
+        <Text
+          as="p"
+          className="text-xs uppercase tracking-[0.08em] text-muted-foreground"
+        >
+          Process snapshots: field notes from shipping, learning, and
+          documenting
+        </Text>
+      </section>
+
+      <section className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        {AboutPhotoGallery.slice(0, 6).map((photo, index) => (
+          <div
+            key={index}
+            className="aspect-square overflow-hidden border-2 border-border bg-muted"
+          >
+            <Image
+              src={photo.image.src}
+              alt={photo.image.alt}
+              width={500}
+              height={500}
+              className="h-full w-full object-cover"
+              quality={90}
+            />
+          </div>
+        ))}
+      </section>
+
+      <section className="mt-14 border-y-2 border-border py-3">
+        <Text
+          as="p"
+          className="text-xs uppercase tracking-[0.08em] text-muted-foreground"
+        >
+          Education and certifications: formal training and practical proof of
+          skill
+        </Text>
+      </section>
+
+      <section className="mt-8 space-y-6">
+        <div className="inline-flex items-center gap-2 border border-border bg-secondary px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+          <GraduationCap className="h-3.5 w-3.5" />
+          Education
+        </div>
+        <div className="space-y-4">
+          {Education.map((edu, i) => (
+            <EducationCard key={i} data={edu} />
+          ))}
         </div>
       </section>
-    </>
-  );
-};
 
-export default page;
+      <section className="mt-10">
+        <Text
+          as="p"
+          className="mb-4 text-xs uppercase tracking-[0.08em] text-muted-foreground"
+        >
+          Certifications
+        </Text>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {Certificate.map((cert, i) => (
+            <CertificateCard key={i} data={cert} i={i} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-14 border-y-2 border-border py-3">
+        <Text
+          as="p"
+          className="text-xs uppercase tracking-[0.08em] text-muted-foreground"
+        >
+          Work experience: professional roles and product delivery outcomes
+        </Text>
+      </section>
+
+      <section className="mt-8 space-y-4" id="work">
+        {Work.map((work, i) => (
+          <WorkCard key={i} data={work} />
+        ))}
+      </section>
+
+      <section className="mt-14 border-2 border-border bg-card p-6 md:p-8">
+        <Text
+          as="h2"
+          className="text-3xl font-semibold uppercase tracking-[0.03em] md:text-5xl"
+        >
+          Let&apos;s Build Something Useful.
+        </Text>
+        <Text
+          as="p"
+          styleVariant="muted"
+          className="mt-3 max-w-2xl text-sm leading-relaxed md:text-base"
+        >
+          If your team needs someone who can design, ship, and explain technical
+          decisions clearly, I am open to product-focused collaboration.
+        </Text>
+        <div className="mt-5 flex flex-wrap gap-2">
+          <Button asChild>
+            <Link href="/project">View Projects</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/contact">
+              <Heart className="h-4 w-4" />
+              Contact Me
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+}

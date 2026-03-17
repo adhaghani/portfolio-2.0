@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import Footer from "@/components/footer";
+import { IBM_Plex_Mono } from "next/font/google";
+import Footer from "../components/footer";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -10,9 +10,9 @@ import "./globals.css";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
 import { CommandMenu } from "@/components/command-menu";
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700", "300", "200", "800"],
-  variable: "--font-poppins",
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-plex-mono",
   subsets: ["latin"],
 });
 
@@ -20,12 +20,21 @@ export const metadata: Metadata = {
   title: "Adhaghani - Portfolio",
   description:
     "Ahmad Adha's personal portfolio - Full-stack developer and UI/UX designer crafting digital experiences. Computer Science student at UiTM Malaysia.",
-  keywords: ["developer", "portfolio", "react", "nextjs", "malaysia", "ui/ux", "web development"],
+  keywords: [
+    "developer",
+    "portfolio",
+    "react",
+    "nextjs",
+    "malaysia",
+    "ui/ux",
+    "web development",
+  ],
   authors: [{ name: "Ahmad Adha" }],
   creator: "Ahmad Adha",
   openGraph: {
     title: "Adhaghani - Portfolio",
-    description: "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
+    description:
+      "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
     url: "https://www.adhaghani.com",
     siteName: "Adhaghani Portfolio",
     locale: "en_US",
@@ -34,7 +43,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Adhaghani - Portfolio",
-    description: "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
+    description:
+      "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
   },
   robots: {
     index: true,
@@ -50,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased w-full mx-auto overflow-x-hidden selection:bg-primary/50 selection:text-white`}
+        className={`${ibmPlexMono.className} font-mono antialiased w-full mx-auto overflow-x-hidden selection:bg-primary selection:text-primary-foreground`}
       >
         <SpeedInsights />
         <Analytics />
@@ -61,7 +71,7 @@ export default function RootLayout({
         >
           <CommandMenu />
           <Header />
-          <main className="md:px-4 max-w-6xl mx-auto overflow-x-hidden">
+          <main className="md:px-4 bg-background border-l border-r border-border container mx-auto overflow-x-hidden">
             {children}
           </main>
           <Footer />
@@ -71,9 +81,7 @@ export default function RootLayout({
             x={-1}
             y={-1}
             strokeDasharray={"4 2"}
-            className={cn(
-              "fixed -z-10 [mask-image:radial-gradient(900px_circle_at_center,white,transparent)]"
-            )}
+            className={cn("fixed -z-10")}
           />
         </ThemeProvider>
       </body>

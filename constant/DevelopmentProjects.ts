@@ -1,6 +1,47 @@
 const DevelopmentProjects = [
   {
     asset: {
+      url: "/assets/images/project/cybersafe.png",
+      alt: "Cyber crime awareness and facility website",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "CyberSafe - Cyber Crime Awareness and Facility Website",
+    project_Timeline: "January 2026",
+    project_Technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "OpenAI API",
+      "Vercel",
+    ],
+    project_description:
+      "A web-based application that serves as a platform for cyber crime awareness and reporting. The website provides information about different types of cyber crimes, preventive measures, and a facility for users to report cyber crimes anonymously.",
+    project_RepoLink: "https://github.com/adhaghani/cybercrime-platform",
+  },
+  {
+    asset: {
+      url: "/assets/images/project/resumeReview.png",
+      alt: "Resume Review using AI",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "Resume Review using AI",
+    project_Timeline: "February 2026",
+    project_Technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "OpenAI API",
+      "Vercel",
+    ],
+    project_description:
+      "A web-based application that allows users to get feedback on their resumes using AI. Users can upload their resumes, paste linkedin job links and receive suggestions for improvement, including formatting, content, and keyword optimization.",
+    project_DemoLink: "https://amigoodenough.vercel.app",
+    project_RepoLink: "https://github.com/adhaghani/amigoodenough",
+  },
+  {
+    asset: {
       url: "/assets/images/project/mdit2025.png",
       alt: "MDIT x DOSM Datathon 2025",
     },
@@ -296,6 +337,4 @@ const DevelopmentProjects = [
   },
 ];
 
-export {
-    DevelopmentProjects
-}
+export { DevelopmentProjects };

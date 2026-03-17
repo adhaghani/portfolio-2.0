@@ -23,11 +23,11 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
 }
 
 const DEFAULT_SIZE = 40;
-const DEFAULT_MAGNIFICATION = 60;
+const DEFAULT_MAGNIFICATION = 52;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "bg-card border-2 mx-auto mt-8 flex h-[58px] items-center justify-center gap-2 rounded-2xl p-2"
+  "bg-card border-2 mx-auto mt-8 flex h-[58px] items-center justify-center gap-2 rounded-none p-2",
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -41,7 +41,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       direction = "middle",
       ...props
     },
-    ref
+    ref,
   ) => {
     const mouseX = useMotionValue(Infinity);
 
@@ -75,13 +75,15 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         {renderChildren()}
       </motion.div>
     );
-  }
+  },
 );
 
 Dock.displayName = "Dock";
 
-export interface DockIconProps
-  extends Omit<MotionProps & React.HTMLAttributes<HTMLDivElement>, "children"> {
+export interface DockIconProps extends Omit<
+  MotionProps & React.HTMLAttributes<HTMLDivElement>,
+  "children"
+> {
   size?: number;
   magnification?: number;
   distance?: number;
@@ -112,7 +114,7 @@ const DockIcon = ({
   const sizeTransform = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [size, magnification, size]
+    [size, magnification, size],
   );
 
   const scaleSize = useSpring(sizeTransform, {
@@ -126,8 +128,8 @@ const DockIcon = ({
       ref={ref}
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className
+        "flex aspect-square cursor-pointer items-center justify-center rounded-none",
+        className,
       )}
       {...props}
     >

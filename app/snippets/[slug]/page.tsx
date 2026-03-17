@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 import MarkdownRenderer from "@/components/markdown-renderer";
 import { Text } from "@/components/ui/text";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Calendar, Code, Tag } from "lucide-react";
+import { ArrowLeft, Code, Tag } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import { use, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function SnippetDetailPage({
   params,
@@ -39,7 +39,7 @@ ${snippet.code}
   `;
 
   return (
-    <div className="py-24 px-4 min-h-screen">
+    <div className="py-24 md:py-32 px-4 min-h-screen">
       <BlurFade inView>
         <div className="container mx-auto max-w-4xl">
           <Link href="/snippets">
@@ -58,18 +58,22 @@ ${snippet.code}
                 {snippet.language}
               </Badge>
             </div>
-            
+
             <Text as="h1" className="text-3xl md:text-5xl font-bold mb-4">
               {snippet.title}
             </Text>
-            
+
             <Text as="p" styleVariant="muted" className="text-lg md:text-xl">
               {snippet.description}
             </Text>
 
             <div className="flex flex-wrap gap-2 mt-6">
               {snippet.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="flex items-center gap-1">
+                <Badge
+                  key={tag}
+                  variant="secondary"
+                  className="flex items-center gap-1"
+                >
                   <Tag className="w-3 h-3" />
                   {tag}
                 </Badge>

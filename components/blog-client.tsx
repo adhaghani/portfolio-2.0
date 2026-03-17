@@ -67,7 +67,7 @@ export default function BlogClient({
     query: string,
     tags: string[],
     sortBy: string,
-    page: number = 1
+    page: number = 1,
   ) => {
     setLoading(true);
     try {
@@ -115,41 +115,39 @@ export default function BlogClient({
   const handleSearchWithReset = (
     query: string,
     tags: string[],
-    sortBy: string
+    sortBy: string,
   ) => {
     handleSearch(query, tags, sortBy, 1); // Always reset to page 1 on new search
   };
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative pt-40 pb-20 px-4 overflow-hidden">
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-            Latest Blog Posts
+      <div className="mx-auto px-4 pb-16 pt-36 md:px-8">
+        <div className="border-2 border-border bg-card p-6 md:p-8">
+          <div className="mb-4 inline-flex items-center border border-border bg-secondary px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+            Writing Archive
           </div>
           <Text
             as="h1"
-            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
+            className="text-4xl font-bold uppercase tracking-[0.03em] md:text-6xl"
           >
-            Blog Posts
+            Blog
           </Text>
           <Text
             as="p"
             styleVariant="muted"
-            className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
+            className="mt-4 max-w-3xl text-sm leading-relaxed md:text-base"
           >
-            Discover insights, tutorials, and thoughts on development, design,
-            and technology
+            Notes on education journey, systems thinking, and product execution.
+            This feed is optimized for fast scanning and deep reading.
           </Text>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pb-20">
+      <div className="container mx-auto px-4 md:px-8 pb-20">
         {/* Search Bar */}
-        <div className="mb-12">
-          <div className="max-w-4xl mx-auto">
+        <div className="mb-10">
+          <div className=" mx-auto">
             <SearchBar
               availableTags={availableTags}
               onSearch={handleSearchWithReset}
@@ -161,8 +159,12 @@ export default function BlogClient({
         </div>
 
         {/* Results Count and Sort */}
-        <div className="mb-8 flex justify-between items-center">
-          <Text as="p" styleVariant="muted" className="text-sm">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-y-2 border-border py-3">
+          <Text
+            as="p"
+            styleVariant="muted"
+            className="text-xs uppercase tracking-[0.08em]"
+          >
             {loading
               ? "Searching..."
               : `${pagination.total} post${
@@ -170,14 +172,14 @@ export default function BlogClient({
                 } found`}
           </Text>
           {!loading && blogs.length > 0 && (
-            <div className="text-xs text-muted-foreground">
+            <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">
               Page {pagination.page} of {pagination.totalPages}
             </div>
           )}
         </div>
 
         {/* Blog Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog: BlogPost, index: number) => (
             <div
               key={blog.id}

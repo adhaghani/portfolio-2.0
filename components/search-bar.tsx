@@ -23,7 +23,7 @@ import {
 // Custom debounce function
 function debounce<T extends (...args: any[]) => any>(
   func: T,
-  wait: number
+  wait: number,
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout;
   return (...args: Parameters<T>) => {
@@ -62,7 +62,7 @@ export default function SearchBar({
       onSearch(searchQuery, tags, sort);
       updateURL(searchQuery, tags, sort);
     }, 300),
-    [onSearch]
+    [onSearch],
   );
 
   // Update URL with search parameters
@@ -86,7 +86,7 @@ export default function SearchBar({
 
     try {
       const response = await fetch(
-        `/api/blog/suggestions?q=${encodeURIComponent(searchQuery)}`
+        `/api/blog/suggestions?q=${encodeURIComponent(searchQuery)}`,
       );
       if (response.ok) {
         const data = await response.json();
@@ -141,10 +141,11 @@ export default function SearchBar({
     query || selectedTags.length > 0 || sortBy !== "newest";
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5 border-2 border-border bg-card p-4 md:p-6">
       {/* Search Input */}
       <div className="relative">
         <div className="relative group">
+          <Search className="pointer-events-none absolute left-4 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             type="text"
             placeholder="Search blog posts, topics, or keywords..."
@@ -152,21 +153,21 @@ export default function SearchBar({
             onChange={(e) => handleSearchChange(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-            className="pl-12 pr-4 h-12 bg-background/80 backdrop-blur-sm border-2 border-muted hover:border-muted-foreground/50 focus:border-primary focus:ring-0 focus:outline-none rounded-xl text-base transition-all duration-200 shadow-sm"
+            className="h-11 border-2 border-input bg-background pl-11 pr-4 text-sm tracking-wide focus-visible:ring-0"
           />
         </div>
 
         {/* Search Suggestions */}
         {showSuggestions && suggestions.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-background/95 backdrop-blur-md border border-muted rounded-xl shadow-xl z-50 overflow-hidden">
+          <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden border-2 border-border bg-card">
             <div className="p-2">
-              <div className="text-xs font-medium text-muted-foreground mb-2 px-2">
+              <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
                 Suggestions
               </div>
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
-                  className="w-full text-left px-3 py-2 hover:bg-muted/50 rounded-lg transition-colors text-sm flex items-center gap-2"
+                  className="flex w-full items-center gap-2 border border-transparent px-3 py-2 text-left text-xs uppercase tracking-[0.06em] transition-colors hover:border-border hover:bg-muted"
                   onMouseDown={() => {
                     setQuery(suggestion);
                     setShowSuggestions(false);
@@ -187,26 +188,22 @@ export default function SearchBar({
         {/* Tag Filter */}
         <Popover open={isTagsOpen} onOpenChange={setIsTagsOpen}>
           <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              className="h-10 rounded-lg border-2 hover:border-primary/50 transition-all duration-200"
-            >
+            <Button variant="outline" className="h-10 border-2">
               <Filter className="w-4 h-4 mr-2" />
               Tags{" "}
               {selectedTags.length > 0 && (
-                <span className="ml-1 bg-primary text-primary-foreground text-xs px-1.5 py-0.5 rounded-full">
+                <span className="ml-1 border border-primary bg-primary px-1.5 py-0.5 text-[10px] text-primary-foreground">
                   {selectedTags.length}
                 </span>
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent
-            className="w-80 p-4 rounded-xl border-2"
-            align="start"
-          >
+          <PopoverContent className="w-80 border-2 p-4" align="start">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <h4 className="font-semibold text-sm">Filter by Tags</h4>
+                <h4 className="text-xs font-semibold uppercase tracking-[0.08em]">
+                  Filter by tags
+                </h4>
                 {selectedTags.length > 0 && (
                   <button
                     onClick={() => {
@@ -224,7 +221,7 @@ export default function SearchBar({
                   <Badge
                     key={tag}
                     variant={selectedTags.includes(tag) ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-muted transition-colors text-xs px-2.5 py-1 rounded-full"
+                    className="cursor-pointer px-2.5 py-1 transition-colors hover:bg-muted"
                     onClick={() => toggleTag(tag)}
                   >
                     #{tag}
@@ -238,16 +235,13 @@ export default function SearchBar({
         {/* Sort Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="h-10 rounded-lg border-2 hover:border-primary/50 transition-all duration-200"
-            >
+            <Button variant="outline" className="h-10 border-2">
               <SortAsc className="w-4 h-4 mr-2" />
               Sort: {sortOptions.find((opt) => opt.value === sortBy)?.label}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="rounded-xl border-2">
-            <DropdownMenuLabel className="text-xs font-semibold">
+          <DropdownMenuContent align="start" className="border-2">
+            <DropdownMenuLabel className="text-[11px] font-semibold uppercase tracking-[0.08em]">
               Sort by
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
@@ -255,7 +249,7 @@ export default function SearchBar({
               <DropdownMenuItem
                 key={option.value}
                 onClick={() => handleSortChange(option.value)}
-                className={`cursor-pointer rounded-lg ${
+                className={`cursor-pointer text-xs uppercase tracking-[0.06em] ${
                   sortBy === option.value
                     ? "bg-primary/10 text-primary font-medium"
                     : ""
@@ -274,7 +268,7 @@ export default function SearchBar({
             variant="ghost"
             size="sm"
             onClick={clearFilters}
-            className="h-10 text-muted-foreground hover:text-foreground transition-colors rounded-lg"
+            className="h-10 border border-transparent text-muted-foreground hover:border-border hover:text-foreground"
           >
             <X className="w-4 h-4 mr-2" />
             Clear all
@@ -285,19 +279,19 @@ export default function SearchBar({
       {/* Active Filters Display */}
       {(selectedTags.length > 0 || query) && (
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-muted-foreground">
+          <span className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
             Active filters:
           </span>
 
           {query && (
-            <Badge variant="secondary" className="gap-1 rounded-full">
+            <Badge variant="secondary" className="gap-1">
               Search: "{query}"
               <button
                 onClick={() => {
                   setQuery("");
                   debouncedSearch("", selectedTags, sortBy);
                 }}
-                className="hover:bg-muted-foreground/20 rounded-full p-0.5 transition-colors"
+                className="p-0.5 transition-colors hover:bg-muted-foreground/20"
               >
                 <X className="w-3 h-3" />
               </button>
@@ -305,11 +299,11 @@ export default function SearchBar({
           )}
 
           {selectedTags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="gap-1 rounded-full">
+            <Badge key={tag} variant="secondary" className="gap-1">
               #{tag}
               <button
                 onClick={() => toggleTag(tag)}
-                className="hover:bg-muted-foreground/20 rounded-full p-0.5 transition-colors"
+                className="p-0.5 transition-colors hover:bg-muted-foreground/20"
               >
                 <X className="w-3 h-3" />
               </button>

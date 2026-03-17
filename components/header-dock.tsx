@@ -6,6 +6,8 @@ import {
   UserIcon,
   FolderGit2Icon,
   MessageCircleIcon,
+  Code2,
+  TerminalSquare,
   File,
 } from "lucide-react";
 import Link from "next/link";
@@ -48,8 +50,10 @@ const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: MessageCircleIcon, label: "Blog" },
-    { href: "/about", icon: UserIcon, label: "About Me" },
-    { href: "/project", icon: FolderGit2Icon, label: "Project" },
+    { href: "/project", icon: FolderGit2Icon, label: "Development" },
+    { href: "/snippets", icon: TerminalSquare, label: "Snippets" },
+    { href: "/about", icon: UserIcon, label: "About" },
+    { href: "/contact", icon: Code2, label: "Contact" },
   ],
   contact: {
     social: {
@@ -96,7 +100,7 @@ export function DockDemo() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 md:size-12 rounded-full"
+                      "size-10 md:size-12 rounded-none ",
                     )}
                   >
                     <item.icon className="size-4 md:size-5" />
@@ -118,7 +122,7 @@ export function DockDemo() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 md:size-12 rounded-full"
+                      "size-10 md:size-12 rounded-none",
                     )}
                   >
                     <social.icon className="size-4 md:size-5" />
@@ -140,7 +144,7 @@ export function DockDemo() {
                     aria-label={DATA.admin.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 md:size-12 rounded-full"
+                      "size-10 md:size-12 rounded-none",
                     )}
                   >
                     <DATA.admin.icon className="size-4 md:size-5" />
