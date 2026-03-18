@@ -40,7 +40,9 @@ const EducationCard = ({ data }: { data: EducationCardProps }) => {
 
         <div className="flex flex-wrap gap-2 mt-2">
           {data.relatedCourses.map((course, i) => (
-            <Badge variant={"secondary"}>{course}</Badge>
+            <Badge key={i} variant={"secondary"}>
+              {course}
+            </Badge>
           ))}
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function MarkdownRenderer({
     const loadHighlightTheme = async () => {
       // Remove existing highlight.js stylesheets
       const existingLinks = document.querySelectorAll(
-        'link[href*="highlight.js"]'
+        'link[href*="highlight.js"]',
       );
       existingLinks.forEach((link) => link.remove());
 
@@ -48,7 +48,7 @@ export default function MarkdownRenderer({
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         components={{
           // Custom image component with optimization
-          img: ({ src, alt}) => {
+          img: ({ src, alt }) => {
             if (!src) return null;
             return (
               <OptimizedImage
@@ -59,7 +59,6 @@ export default function MarkdownRenderer({
                 className="rounded-lg my-6 w-full h-auto"
                 quality={85}
                 placeholder="blur"
-                
               />
             );
           },
@@ -194,7 +193,7 @@ export default function MarkdownRenderer({
             const childArray = Array.isArray(children) ? children : [children];
             const hasCheckbox = childArray.some(
               (child) =>
-                typeof child === "string" && /^\s*\[[\sx]\]/i.test(child)
+                typeof child === "string" && /^\s*\[[\sx]\]/i.test(child),
             );
 
             if (hasCheckbox) {

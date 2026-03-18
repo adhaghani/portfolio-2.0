@@ -62,7 +62,7 @@ export default function OptimizedImage({
       <div
         className={cn(
           "bg-muted flex items-center justify-center text-muted-foreground text-sm",
-          className
+          className,
         )}
         style={{ width, height }}
       >
@@ -81,7 +81,7 @@ export default function OptimizedImage({
     className: cn(
       "transition-opacity duration-300",
       isLoading ? "opacity-0" : "opacity-100",
-      className
+      className,
     ),
     ...(placeholder === "blur" && {
       placeholder: "blur" as const,
@@ -100,13 +100,20 @@ export default function OptimizedImage({
         sizes={
           sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         }
+        alt={alt}
       />
     );
   }
 
   if (width && height) {
     return (
-      <Image {...imageProps} width={width} height={height} sizes={sizes} />
+      <Image
+        {...imageProps}
+        width={width}
+        height={height}
+        sizes={sizes}
+        alt={alt}
+      />
     );
   }
 
@@ -116,6 +123,7 @@ export default function OptimizedImage({
       {...imageProps}
       width={width || 800}
       height={height || 600}
+      alt={alt}
       sizes={
         sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       }

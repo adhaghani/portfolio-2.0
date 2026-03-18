@@ -39,7 +39,7 @@ export async function generateMetadata({
   const { data: blog } = await supabase
     .from("blogs")
     .select(
-      "title, meta_title, meta_description, excerpt, cover_image_url, published_at, tags"
+      "title, meta_title, meta_description, excerpt, cover_image_url, published_at, tags",
     )
     .eq("slug", resolvedParams.slug)
     .eq("is_published", true)
@@ -218,23 +218,6 @@ export default async function BlogPostPage({
                 ))}
               </div>
             )}
-
-            {/* Share Actions */}
-            <div className="flex items-center justify-between mb-8 p-4 bg-card border-2 rounded-lg">
-              <div className="flex items-center gap-2">
-                <Text as="p" styleVariant="muted" className="text-sm">
-                  Found this helpful? Share it with others:
-                </Text>
-              </div>
-              <SocialShare
-                url={`${
-                  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001"
-                }/blog/${blog.slug}`}
-                title={blog.title}
-                description={blog.excerpt || blog.meta_description || undefined}
-                variant="button"
-              />
-            </div>
           </header>
 
           {/* Article Content */}
