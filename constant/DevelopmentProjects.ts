@@ -1,6 +1,26 @@
 const DevelopmentProjects = [
   {
     asset: {
+      url: "/assets/images/project/VisualAlgo.png",
+      alt: "Interactive Data Structure and Algorithm Visualizer",
+    },
+    development_Type: ["Front-End"],
+    project_Name: "VisualAlgo",
+    project_Timeline: "April 2026",
+    project_Technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Framer-Motion",
+      "Vercel",
+    ],
+    project_description:
+      "Learn data structures and algorithms with interactive step-by-step visualizations and plain-language explanations.",
+    project_DemoLink: "https://visual-algo-chi.vercel.app",
+  },
+  {
+    asset: {
       url: "/assets/images/project/cybersafe.png",
       alt: "Cyber crime awareness and facility website",
     },

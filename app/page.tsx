@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import { GitHubCalendar } from "react-github-calendar";
 import DevelopmentCard from "@/components/ui/development-card";
 
 const stats = [
@@ -78,7 +79,7 @@ export default function Home() {
       DevelopmentProjects.filter((project) =>
         [
           "MDIT x DOSM Datathon 2025 Website",
-          "CyberSafe - Cyber Crime Awareness and Facility Website",
+          "VisualAlgo",
           "Resume Review using AI",
         ].includes(project.project_Name),
       ),
@@ -184,6 +185,10 @@ export default function Home() {
             </Card>
           );
         })}
+      </section>
+
+      <section className="mt-10">
+        <GitHubCalendar className="w-full mx-auto" username="adhaghani" />
       </section>
 
       <section className="mt-10 border-y-2 border-border py-3">
