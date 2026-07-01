@@ -1,91 +1,30 @@
-import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
-import Footer from "../components/footer";
-import Header from "@/components/header";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ScrollToTop } from "@/components/scroll-to-top";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
-import "./globals.css";
-import { GridPattern } from "@/components/magicui/grid-pattern";
-import { cn } from "@/lib/utils";
-import { CommandMenu } from "@/components/command-menu";
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-});
+import { Geist, Geist_Mono } from "next/font/google"
 
-export const metadata: Metadata = {
-  title: "Adhaghani - Portfolio",
-  description:
-    "Ahmad Adha's personal portfolio - Full-stack developer and UI/UX designer crafting digital experiences. Computer Science student at UiTM Malaysia.",
-  keywords: [
-    "developer",
-    "portfolio",
-    "react",
-    "nextjs",
-    "malaysia",
-    "ui/ux",
-    "web development",
-  ],
-  authors: [{ name: "Ahmad Adha" }],
-  creator: "Ahmad Adha",
-  openGraph: {
-    title: "Adhaghani - Portfolio",
-    description:
-      "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
-    url: "https://www.adhaghani.com",
-    siteName: "Adhaghani Portfolio",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Adhaghani - Portfolio",
-    description:
-      "Full-stack developer and UI/UX designer crafting beautiful digital experiences.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'})
+
+const fontMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${ibmPlexMono.className} font-mono antialiased w-full mx-auto overflow-x-hidden selection:bg-primary selection:text-primary-foreground`}
-      >
-        <SpeedInsights />
-        <Analytics />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          forcedTheme="dark"
-          disableTransitionOnChange
-        >
-          <CommandMenu />
-          <Header />
-          <main className="md:px-4 bg-background border-l border-r border-border container mx-auto overflow-x-hidden">
-            {children}
-          </main>
-          <Footer />
-          <ScrollToTop />
-          <GridPattern
-            width={30}
-            x={-1}
-            y={-1}
-            strokeDasharray={"4 2"}
-            className={cn("fixed -z-10")}
-          />
-        </ThemeProvider>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
