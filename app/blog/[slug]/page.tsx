@@ -30,6 +30,13 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      ...(post.coverImage ? { images: [post.coverImage] } : {}),
+    },
   }
 }
 
@@ -67,8 +74,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="relative mt-10 aspect-video overflow-hidden border border-border/50 bg-muted">
           <Image
             src={post.coverImage}
-            alt=""
+            alt={post.title}
             fill
+            priority
             sizes="(max-width: 768px) 100vw, 768px"
             className="object-cover"
           />

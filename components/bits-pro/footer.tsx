@@ -89,7 +89,7 @@ export default function Footer4() {
                     key={social.label}
                     href={social.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="group inline-flex items-center gap-1 font-mono text-sm tracking-tight text-foreground/40 transition-colors hover:text-foreground"
                   >
                     {social.label}
@@ -113,9 +113,9 @@ export default function Footer4() {
 
           <div className="flex flex-col gap-2 font-mono text-[10px] tracking-wider text-foreground/25 sm:flex-row sm:items-center sm:gap-4">
             <p>© {new Date().getFullYear()}</p>
-            <a href="#" className="transition-colors hover:text-foreground">
+            <span className="transition-colors">
               Crafted with care
-            </a>
+            </span>
           </div>
         </div>
       </div>

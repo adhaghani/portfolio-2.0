@@ -18,9 +18,9 @@ export function ThemeToggle() {
       className="text-foreground/35 hover:text-foreground"
     >
       {isDark ? (
-        <MoonIcon className="size-4" />
-      ) : (
         <SunIcon className="size-4" />
+      ) : (
+        <MoonIcon className="size-4" />
       )}
     </Button>
   )

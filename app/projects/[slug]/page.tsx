@@ -30,6 +30,12 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.tagline,
+    openGraph: {
+      title: project.title,
+      description: project.tagline,
+      type: "article",
+      ...(project.coverImage ? { images: [project.coverImage] } : {}),
+    },
   }
 }
 
@@ -80,7 +86,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <a
                 href={project.liveUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 bg-foreground px-4 py-2 font-mono text-xs font-medium text-background transition-colors hover:bg-foreground/85"
               >
                 Live site
@@ -91,7 +97,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <a
                 href={project.repoUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 border border-border bg-background px-4 py-2 font-mono text-xs font-medium transition-colors hover:bg-muted"
               >
                 Source
@@ -106,8 +112,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="relative mt-14 aspect-video overflow-hidden border border-border/50 bg-muted">
           <Image
             src={project.coverImage}
-            alt=""
+            alt={project.title}
             fill
+            priority
             sizes="(max-width: 1024px) 100vw, 1152px"
             className="object-cover"
           />

@@ -88,7 +88,7 @@ export function Hero() {
           Ideas,
           <br />
           engineered
-          <span className="text-foreground/30">.</span>
+          <span aria-hidden className="text-foreground/30">.</span>
         </motion.h1>
 
         <motion.p

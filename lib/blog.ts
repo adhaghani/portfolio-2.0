@@ -3,7 +3,6 @@
 // ---------------------------------------------------------------------------
 
 import { getServerClient } from "@/lib/supabase/server"
-import { getReadingTime } from "@/lib/reading-time"
 import type { BlogPost } from "@/lib/supabase/types"
 import type { BlogRow } from "@/lib/supabase/types"
 

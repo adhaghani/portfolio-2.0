@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { Hero } from "@/components/sections/hero"
 import { Skills } from "@/components/sections/skills"
 import { FeaturedPosts } from "@/components/sections/featured-posts"
@@ -5,16 +6,23 @@ import { SocialProofSection } from "@/components/sections/social-proof-section"
 import { FeaturedProjects } from "@/components/sections/featured-projects"
 import { EducationTeaser } from "@/components/sections/education-teaser"
 import { ContactCta } from "@/components/sections/contact-cta"
+import { HomepageSectionSkeleton } from "@/components/sections/homepage-section-skeleton"
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <Skills />
-      <FeaturedPosts />
+      <Suspense fallback={<HomepageSectionSkeleton />}>
+        <FeaturedPosts />
+      </Suspense>
       <SocialProofSection />
-      <FeaturedProjects />
-      <EducationTeaser />
+      <Suspense fallback={<HomepageSectionSkeleton />}>
+        <FeaturedProjects />
+      </Suspense>
+      <Suspense fallback={<HomepageSectionSkeleton />}>
+        <EducationTeaser />
+      </Suspense>
       <ContactCta />
     </>
   )

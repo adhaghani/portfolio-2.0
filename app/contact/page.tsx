@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowUpRight, Copy, FileDown, Mail } from "lucide-react"
+import { ArrowUpRight, FileDown, Mail } from "lucide-react"
 
 import { Container } from "@/components/layout/container"
 import { Reveal } from "@/components/layout/reveal"
@@ -103,7 +103,7 @@ export default function ContactPage() {
                     key={social.label}
                     href={social.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="group flex items-center justify-between border-b border-border/30 py-5 transition-colors hover:border-foreground/20"
                   >
                     <div className="flex flex-col gap-0.5">

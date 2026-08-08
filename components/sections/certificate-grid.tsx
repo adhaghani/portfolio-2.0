@@ -42,6 +42,7 @@ export function CertificateGrid({
               onClick={() => openDetails(cert)}
               className="group flex h-full w-full cursor-pointer flex-col border border-border/50 bg-card p-5 text-left transition-colors hover:border-foreground/15 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/30"
               aria-haspopup="dialog"
+              aria-expanded={open && selected === cert}
             >
               {/* Issuer + date */}
               <div className="flex items-center justify-between gap-2">
@@ -103,7 +104,7 @@ export function CertificateGrid({
               <a
                 href={selected.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-1.5 self-start border border-border/50 px-4 py-2 font-mono text-xs font-medium text-foreground transition-colors hover:bg-foreground/5"
               >
                 Verify certificate

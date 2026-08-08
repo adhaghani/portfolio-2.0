@@ -9,7 +9,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
     <article className="group flex h-full flex-col">
       <Link
         href={`/blog/${post.slug}`}
-        className="flex h-full flex-col focus-visible:outline-none"
+        className="flex h-full flex-col focus-visible:ring-1 focus-visible:ring-foreground/20"
       >
         <div className="relative aspect-[16/10] overflow-hidden border border-border/50 bg-muted">
           {post.coverImage ? (
@@ -19,6 +19,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              loading="lazy"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">

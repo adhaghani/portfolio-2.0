@@ -14,7 +14,7 @@ export function EducationMarquee() {
   const items = [...educationGallery, ...educationGallery]
 
   return (
-    <div
+    <section
       data-slot="education-marquee"
       className="relative mt-16 overflow-hidden border-y border-border/50"
       aria-label="Photos from my education years"
@@ -40,7 +40,7 @@ export function EducationMarquee() {
               src={item.src}
               alt={item.alt}
               fill
-              sizes="(max-width: 640px) 208px, 256px"
+              sizes="(max-width: 640px) 208px, (max-width: 1024px) 256px, 320px"
               className="object-cover"
             />
             <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-background/85 px-2.5 py-1.5 font-mono text-[10px] tracking-wider text-foreground/55 uppercase backdrop-blur-sm">
@@ -50,6 +50,6 @@ export function EducationMarquee() {
           </figure>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
