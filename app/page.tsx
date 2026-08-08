@@ -1,33 +1,21 @@
-"use client"
+import { Hero } from "@/components/sections/hero"
+import { Skills } from "@/components/sections/skills"
+import { FeaturedPosts } from "@/components/sections/featured-posts"
+import { SocialProofSection } from "@/components/sections/social-proof-section"
+import { FeaturedProjects } from "@/components/sections/featured-projects"
+import { EducationTeaser } from "@/components/sections/education-teaser"
+import { ContactCta } from "@/components/sections/contact-cta"
 
-import { motion } from "motion/react"
-
-export default function Page() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-svh items-center justify-center bg-background p-6">
-      <motion.div
-        className="flex flex-col items-center gap-4 text-center"
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <h1 className="text-2xl font-medium text-foreground">
-          Upgrade in Progress
-        </h1>
-        <motion.p
-          className="text-sm text-muted-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          I&apos;m working on something new. Check back soon.
-        </motion.p>
-        <motion.span
-          className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-muted-foreground"
-          animate={{ opacity: [0.3, 1, 0.3] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
-    </div>
+    <>
+      <Hero />
+      <Skills />
+      <FeaturedPosts />
+      <SocialProofSection />
+      <FeaturedProjects />
+      <EducationTeaser />
+      <ContactCta />
+    </>
   )
 }

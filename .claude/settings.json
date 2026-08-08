@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"import\\('lucide-react'\\).then\\(m => { const names = ['Github','GithubIcon','ExternalLink','ExternalLinkIcon','ArrowLeft','ArrowLeftIcon','ArrowUpRight','ArrowUpRightIcon','ArrowDown','ArrowDownIcon','ArrowRight','ArrowRightIcon','Sun','SunIcon','Moon','MoonIcon','Menu','MenuIcon']; names.forEach\\(n => console.log\\(n, n in m ? 'YES' : 'NO'\\)\\) }\\)\")",
+      "Bash(node -e \"import\\('lucide-react'\\).then\\(m => { ['Code','Code2','FolderGit2','GitBranch','BookOpen','PenLine','Sparkles','CircleDiamond','Diamond'].forEach\\(n => console.log\\(n, n in m ? 'YES' : 'NO'\\)\\) }\\)\")",
+      "Bash(node scripts/generate-placeholders.mjs)",
+      "Bash(node -e ' *)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"next start\")",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)"
+    ]
+  }
+}

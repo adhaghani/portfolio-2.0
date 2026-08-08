@@ -1,0 +1,31 @@
+---
+title: "Reading algorithms as stories"
+date: "2025-08-02"
+excerpt: "An algorithm is a narrative: a character, a conflict, a resolution. Reading them this way made data structures finally stick for me."
+tags: ["algorithms", "learning", "cs"]
+coverImage: "/images/blog/algorithms.png"
+---
+
+For the longest time I approached algorithms like a collection of recipes. Memoize the steps, pass the interview, forget by Friday. It worked until it didn't — until an interviewer asked *why* quicksort degrades to quadratic, and my memorised steps had nothing to say.
+
+Then I started reading them as stories, and everything shifted.
+
+## Every algorithm is a narrative
+
+Strip away the jargon and you find the same arc in all of them:
+
+- **A character.** The protagonist — a pointer, a key, an element looking for its home.
+- **A conflict.** The tension the algorithm exists to resolve: *where does this go?* *is this path shorter?* *have we seen this before?*
+- **A resolution.** The invariant that holds at the end — the sorted array, the shortest path, the loop closed.
+
+Take binary search. The character is a single `mid` pointer. The conflict is whether to look left or right. The resolution is the moment `low` and `high` cross, and the search space has shrunk to one. Once you see the narrative, the code is just the transcript.
+
+## Why the framing helps
+
+Stories give you a *why* to hang the *how* on. When you know that quicksort's conflict is "the pivot picked a bad neighbourhood," the quadratic worst case stops being a surprise and becomes a plot twist you can anticipate. The Lomuto partition isn't a bunch of index juggling — it's the protagonist walking through the crowd, swapping seats until everyone smaller is on the left.
+
+Next time you're learning an algorithm, try asking: who's the character, what's the conflict, where's the resolution? If you can't answer, you haven't understood it yet — and the interviewers can tell the difference.
+
+---
+
+*Further reading: CLRS is the full book; [this essay on invariants](https://example.com) is the short story.*
