@@ -8,6 +8,11 @@ import { Container } from "@/components/layout/container"
 import { MarkdownContent } from "@/components/markdown-content"
 import { getProject, getProjects } from "@/lib/projects"
 
+export const revalidate = 60
+// Allow projects added after the build to be generated and revalidated on demand.
+export const dynamic = "force-static"
+export const dynamicParams = true
+
 interface ProjectPageProps {
   params: Promise<{ slug: string }>
 }

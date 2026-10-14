@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next"
 import { getBlogSlugs } from "@/lib/blog"
 import { getProjects } from "@/lib/projects"
 
+export const revalidate = 60
+
 const BASE_URL = "https://adhaghani.com"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

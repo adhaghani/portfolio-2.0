@@ -8,6 +8,11 @@ import { ArticleContainer } from "@/components/layout/container"
 import { MarkdownContent } from "@/components/markdown-content"
 import { getBlogPost, getBlogSlugs } from "@/lib/blog"
 
+export const revalidate = 60
+// Allow posts published after the build to be generated and revalidated on demand.
+export const dynamic = "force-static"
+export const dynamicParams = true
+
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }

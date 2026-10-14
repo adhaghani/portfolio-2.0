@@ -5,6 +5,8 @@ import { PageHeader } from "@/components/sections/page-header"
 import ProjectShowcase from "@/components/bits-pro/project-showcase"
 import { getProjects } from "@/lib/projects"
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Projects",
   description:

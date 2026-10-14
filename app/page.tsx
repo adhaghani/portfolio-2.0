@@ -8,6 +8,9 @@ import { EducationTeaser } from "@/components/sections/education-teaser"
 import { ContactCta } from "@/components/sections/contact-cta"
 import { HomepageSectionSkeleton } from "@/components/sections/homepage-section-skeleton"
 
+// Refresh Supabase-backed sections without requiring a new deployment.
+export const revalidate = 60
+
 export default function HomePage() {
   return (
     <>
